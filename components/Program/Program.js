@@ -1,4 +1,5 @@
 import NavMenu from "../Nav/NavMenu";
+import TeamEntry from "../Team/TeamEntry";
 
 export default function Team({ programPavillion, programCertosa, locale }) {
   return (

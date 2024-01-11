@@ -15,7 +15,7 @@ export default function ExhibitionEntry({ entry, certosa, locale }) {
       </div>
       <div className="exhibitionArtists">
         {entry.artists.map((artist, i) => (
-          <h3>{artist.name}</h3>
+          <h3 key={i}>{artist.name}</h3>
         ))}
       </div>
       <PortableText
