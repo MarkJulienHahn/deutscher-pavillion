@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.11",
+    "@sanity/image-url": "^1.0.2",
     "@sanity/orderable-document-list": "^1.1.0",
     "@sanity/vision": "^3.21.3",
     "next": "14.0.4",
+    "next-intl": "^3.4.1",
     "next-sanity": "^7.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "eslint": "^8",

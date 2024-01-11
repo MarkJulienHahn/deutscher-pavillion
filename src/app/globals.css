@@ -1,76 +1,25 @@
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --gold: #af9151;
+  --red: #ff5c50;
+  --blue: #0000ff;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --space-XS: 10px;
+  --space-S: 20px;
+  --space-M: 60px;
+  --space-L: 120px;
+  --space-XL: 240px;
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  --fontSize-XS: 20px;
+  --lineHeight-XS: 25px;
 
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
+  --fontSize-S: 35px;
+  --lineHeight-S: 37px;
 
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
+  --fontSize-M: 50px;
+  --lineHeight-M: 51px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+  --fontSize-L: 100px;
+  --lineHeight-L: 101px;
 }
 
 * {
@@ -79,20 +28,30 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: "ABCDaily";
+  src: url("../../public/fonts/ABCDailyBETA-Regular.otf");
+}
+
+::selection {
+  color: var(--gold);
+  background: var(--blue);
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: "ABCDaily";
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always;
+  background: var(--gold);
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--blue);
 }
 
 a {
@@ -100,8 +59,327 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+p a {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+p + p {
+  padding-top: 1em;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+h1,
+h2 {
+  font-size: var(--fontSize-L);
+  line-height: var(--lineHeight-L);
+  text-align: center;
+}
+
+h3 {
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+}
+
+p {
+  font-size: var(--fontSize-S);
+  line-height: var(--lineHeight-S);
+}
+
+input,
+form {
+  background: none;
+  height: 69px;
+  font-family: "ABCDaily";
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+  color: var(--blue);
+}
+
+input:focus {
+  outline: 0;
+}
+
+.singlePageWrapper {
+  background: var(--gold);
+  padding: var(--space-L) var(--space-S);
+}
+
+.singlePageWrapper h1:first-child {
+  padding-bottom: var(--space-XL);
+}
+
+.columnPageWrapper {
+  display: flex;
+  /* padding-top: var(--space-L); */
+}
+
+.columnPageHeadline {
+  position: absolute;
+  top: var(--space-L);
+  width: 100%;
+  text-align: center;
+  color: white;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.columnWrapper {
+  padding: 500px var(--space-S) var(--space-S) var(--space-S);
+  width: 50%;
+}
+
+.bgRed {
+  color: var(--blue);
+  background: var(--red);
+}
+
+.bgBlue {
+  background: var(--blue);
+  color: var(--red);
+}
+
+.introText p {
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+}
+
+.introText {
+  padding-bottom: var(--space-S);
+}
+
+.twoColumns p {
+  column-count: 2;
+  column-gap: var(--space-S);
+}
+
+.imageCentered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageCentered span {
+  max-width: 1200px;
+  padding: var(--space-S) 0;
+}
+
+.imageFullwidth {
+  width: 100%;
+  padding-bottom: var(--space-XS);
+}
+
+.centered {
+  text-align: center;
+}
+
+.sectionWrapper {
+  padding-bottom: var(--space-L);
+}
+
+.sectionWrapper h2 {
+  padding-bottom: var(--space-S);
+}
+
+.button {
+  padding: 2px 20px 7px;
+  border: 3px solid var(--blue);
+  border-radius: 50px;
+}
+
+.formButton {
+  height: 69px;
+  background: none;
+  margin: 0 var(--space-S);
+  font-family: "ABCDaily";
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.downloadRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.downloadLeft {
+  display: flex;
+}
+
+.downloadDate,
+.downloadTitle {
+  padding-right: var(--space-M);
+  text-align: left;
+}
+
+.downloadButton {
+  text-transform: uppercase;
+}
+
+.downloadButton:hover,
+.formButton:hover {
+  background: var(--blue);
+  color: var(--gold);
+}
+
+.registrationForm {
+  margin: var(--space-S);
+}
+
+.pressDisclaimer p {
+  font-size: var(--fontSize-S);
+  line-height: var(--lineHeight-S);
+  margin-bottom: var(--space-S);
+}
+
+.teamWrapper p {
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+  padding: 0 !important;
+  text-align: center;
+}
+
+.teamWrapper a {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+.dankWrapper p,
+.imprint p {
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+  text-align: center;
+}
+
+.dankLogos {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 0 20%;
+  padding-top: var(--space-M);
+  padding-bottom: var(--space-L);
+}
+
+.landingWrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: var(--gold);
+  padding: var(--space-S);
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+
+.landingWrapper h3 {
+  text-align: center;
+}
+
+.artistSelector {
+  height: 700px;
+}
+
+.artistSelector h3 {
+  font-size: var(--fontSize-S);
+  line-height: var(--lineHeight-S);
+  text-align: center;
+}
+
+.artistWrapper {
+  padding-bottom: var(--space-L);
+}
+
+.artistSelector h2 {
+  line-height: 100px;
+  cursor: pointer;
+}
+
+.artistSelector h3 {
+  padding-bottom: 20px;
+}
+
+.columnWrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.columnWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.exhibitionWrapper h1 {
+  padding-bottom: var(--space-L);
+}
+
+.exhibitionWrapper h3 {
+  text-align: center;
+}
+
+.headlineWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-XS);
+  margin-top: var(--space-M);
+}
+
+.exhibitionArtists {
+  padding-bottom: var(--space-S);
+}
+
+.exhibitionArtists h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+.sliderWrapper {
+  margin: var(--space-S) 0;
+  position: relative;
+}
+
+.caption {
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+}
+
+.index {
+  font-size: var(--fontSize-M);
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-107px);
+  z-index: 50;
+}
+
+.sliderControl {
+  display: flex;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+}
+
+.sliderControlInner {
+  position: relative;
+  width: 50%;
+  height: 100%;
 }

@@ -1,0 +1,104 @@
+.menuWrapper {
+  left: 0;
+  padding-top: 40px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--gold);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  padding: var(--space-S);
+  top: 0;
+}
+
+.menuFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+  z-index: 100;
+  overscroll-behavior: none;
+}
+
+.button,
+.closeButton {
+  position: fixed;
+  top: 15px;
+  text-align: center;
+  padding: 2px 0px 7px;
+  border: 3px solid var(--blue);
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 150;
+  transition: opacity 0.5s ease;
+}
+
+.button {
+  width: 196px;
+  left: calc(50% - 98px);
+}
+
+.closeButton {
+  width: 310px;
+  left: calc(50% - 155px);
+}
+
+.twoColorButton {
+  position: fixed;
+  top: 15px;
+  width: 195px;
+  left: calc(50% - 97.5px);
+  transition: opacity 0.5s ease;
+}
+
+.menuListWrapper {
+  margin-top: 10vh;
+  width: 100vw;
+  height: 700px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--gold);
+}
+
+.menuList {
+  /* width: 100%;s */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuList span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20px;
+  transition: all 0.5s ease;
+  transition-delay: 0.2s;
+  cursor: pointer;
+}
+
+.menuList span:hover {
+  height: 200px;
+}
+
+.menuBottom {
+  padding: var(--space-M);
+  width: calc(100vw - 2 * var(--space-S));
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuBottom p {
+  font-size: var(--fontSize-S);
+}
