@@ -12,7 +12,7 @@ const invisible = {
   transform: "translateX(2px)",
 };
 
-export default function Team({ programPavillion, programCertosa, locale }) {
+export default function Team({ programPavillon, programCertosa, locale }) {
   const [showHeadline, setShowHeadline] = useState(true);
 
   const [scrollPositionLeft, setScrollPositionLeft] = useState("");
@@ -50,13 +50,13 @@ export default function Team({ programPavillion, programCertosa, locale }) {
           {locale == "de" ? "Programm" : "Program"}
         </h1>
 
-        {programPavillion.length ? (
+        {programPavillon.length ? (
           <div className="columnWrapper bgRed" ref={left}>
             <h1>
-              {locale == "de" ? "Deutscher Pavillion" : "German Pavillion"}
+              {locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}
             </h1>
 
-            {programPavillion.map((entry, i) => (
+            {programPavillon.map((entry, i) => (
               <ProgramEntry key={i} entry={entry} locale={locale} />
             ))}
           </div>

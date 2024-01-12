@@ -94,7 +94,7 @@ export default defineType({
               name: "filename",
               type: "slug",
               isUnique: false,
-              description: "Example: yael-bartana-deutscher-pavillion-2024",
+              description: "Example: yael-bartana-deutscher-pavillon-2024",
             },
           ],
         },

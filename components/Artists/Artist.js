@@ -20,11 +20,11 @@ export default function Artist({ artist, locale, anchor }) {
         <img
           src={`${urlFor(artist.image.asset.url).url()}/${
             artist.image.filename.current ||
-            "german-pavillion-2024-vernice-biennale"
+            "german-pavillon-2024-vernice-biennale"
           }`}
           alt={
             artist.image.alt ||
-            "An Image of by the German Pavillion of the 2024 Venice Art Biennale"
+            "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
           }
           loading="lazy"
           style={{

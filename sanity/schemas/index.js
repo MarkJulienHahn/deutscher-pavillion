@@ -1,7 +1,7 @@
-import exhibitionPavillion from "./exhibitionPavillion"
+import exhibitionPavillon from "./exhibitionPavillon"
 import exhibitionCertosa from "./exhibitionCertosa"
 
-import programPavillion from "./programPavillion"
+import programPavillon from "./programPavillon"
 import programCertosa from "./programCertosa"
 
 import about from "./about"
@@ -20,10 +20,10 @@ import durationType from "./duration/durationType"
 import timeValueType from "./duration/timeValueType"
 
 const schemaTypes = [
-  exhibitionPavillion,
+  exhibitionPavillon,
   exhibitionCertosa,
 
-  programPavillion,
+  programPavillon,
   programCertosa,
 
   about,

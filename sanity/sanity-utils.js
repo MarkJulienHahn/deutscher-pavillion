@@ -50,9 +50,9 @@ export async function getThanks() {
   );
 }
 
-export async function getExhibitionPavillion() {
+export async function getExhibitionPavillon() {
   return client.fetch(
-    groq`*[_type == "exhibitionPavillion"]|{..., "images": images[]{..., "asset": asset->{...}}, "artists": artists[]->{"name": name, "slug": slug}}`
+    groq`*[_type == "exhibitionPavillon"]|{..., "images": images[]{..., "asset": asset->{...}}, "artists": artists[]->{"name": name, "slug": slug}}`
   );
 }
 
@@ -62,9 +62,9 @@ export async function getExhibitionCertosa() {
   );
 }
 
-export async function getProgramPavillion() {
+export async function getProgramPavillon() {
   return client.fetch(
-    groq`*[_type == "programPavillion"]{..., "images": images[]{..., "asset": asset->{...}}}`
+    groq`*[_type == "programPavillon"]{..., "images": images[]{..., "asset": asset->{...}}}`
   );
 }
 

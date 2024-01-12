@@ -12,8 +12,8 @@ export const myStructure = (S, context) =>
       S.divider(),
 
       orderableDocumentListDeskItem({
-        type: "exhibitionPavillion",
-        title: "Ausstellung | Deutscher Pavillion",
+        type: "exhibitionPavillon",
+        title: "Ausstellung | Deutscher Pavillon",
         S,
         context,
       }),
@@ -42,8 +42,8 @@ export const myStructure = (S, context) =>
       S.divider(),
 
       orderableDocumentListDeskItem({
-        type: "programPavillion",
-        title: "Programm | Deutscher Pavillion",
+        type: "programPavillon",
+        title: "Programm | Deutscher Pavillon",
         S,
         context,
       }),

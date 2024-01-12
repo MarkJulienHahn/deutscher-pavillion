@@ -17,11 +17,11 @@ export default function Curators({ curators, locale }) {
             <img
               src={`${urlFor(curators[0].image.asset.url).url()}/${
                 curators[0].image.filename.current ||
-                "german-pavillion-2024-vernice-biennale"
+                "german-pavillon-2024-vernice-biennale"
               }`}
               alt={
                 curators[0].image.alt ||
-                "An Image of by the German Pavillion of the 2024 Venice Art Biennale"
+                "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
               }
               loading="lazy"
               style={{

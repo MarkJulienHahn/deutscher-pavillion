@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Backend | Deutscher Pavillion',
-  description: 'Welcome to the Backend of Deutscher Pavillion',
+  title: 'Backend | Deutscher Pavillon',
+  description: 'Welcome to the Backend of Deutscher Pavillon',
 }
 
 export default function RootLayout({

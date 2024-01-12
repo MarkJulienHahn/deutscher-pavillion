@@ -2,8 +2,8 @@ import { defineType } from "sanity";
 import { orderRankField } from "@sanity/orderable-document-list";
 
 export default defineType({
-  name: "exhibitionPavillion",
-  title: "Exhibition | Deutscher Pavillion",
+  name: "exhibitionPavillon",
+  title: "Exhibition | Deutscher Pavillon",
   type: "document",
 
   fields: [
@@ -94,13 +94,13 @@ export default defineType({
               name: "filename",
               type: "slug",
               isUnique: false,
-              description: "Example: yael-bartana-deutscher-pavillion-2024",
+              description: "Example: yael-bartana-deutscher-pavillon-2024",
             },
           ],
         },
       ],
     },
 
-    orderRankField({ type: "exhibitionPavillion" }),
+    orderRankField({ type: "exhibitionPavillon" }),
   ],
 });

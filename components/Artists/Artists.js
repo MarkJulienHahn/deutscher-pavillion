@@ -59,7 +59,7 @@ const Artists = ({ artists, locale }) => {
         <div className="columnWrapper bgRed" ref={left}>
           <div className="artistSelector">
             <h3>
-              {locale == "de" ? "Deutscher Pavillion" : "German Pavillion"}
+              {locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}
             </h3>
             {artists.map((artist, i) =>
               !artist.certosa ? (

@@ -1,13 +1,13 @@
 import Exhibition from "../../../../components/Exhibition/Exhibition";
 
-import { getExhibitionPavillion, getExhibitionCertosa } from "../../../../sanity/sanity-utils";
+import { getExhibitionPavillon, getExhibitionCertosa } from "../../../../sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
-  const exhibitionPavillion = await getExhibitionPavillion();
+  const exhibitionPavillon = await getExhibitionPavillon();
   const exhibitionCertosa = await getExhibitionCertosa();
   return (
     <Exhibition
-      exhibitionPavillion={exhibitionPavillion}
+      exhibitionPavillon={exhibitionPavillon}
       exhibitionCertosa={exhibitionCertosa}
       locale={locale}
     />

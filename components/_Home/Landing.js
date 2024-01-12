@@ -26,14 +26,14 @@ export default function Landing({ locale }) {
       <div>
         {locale == "de" ? (
           <h3>
-            Deutscher Pavillion 2024
+            Deutscher Pavillon 2024
             <br />
             60th International Art Exhibition –<br />
             La Biennale di Venezia
           </h3>
         ) : (
           <h3>
-            German Pavillion 2024
+            German Pavillon 2024
             <br />
             60th International Art Exhibition –<br />
             La Biennale di Venezia

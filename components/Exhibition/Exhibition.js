@@ -12,7 +12,7 @@ const invisible = {
 };
 
 export default function Exhibition({
-  exhibitionPavillion,
+  exhibitionPavillon,
   exhibitionCertosa,
   locale,
 }) {
@@ -59,8 +59,8 @@ export default function Exhibition({
         </h1> */}
 
         <div className="columnWrapper bgRed exhibitionWrapper" ref={left}>
-          <h1>{locale == "de" ? "Deutscher Pavillion" : "German Pavillion"}</h1>
-          {exhibitionPavillion.map((entry, i) => (
+          <h1>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h1>
+          {exhibitionPavillon.map((entry, i) => (
             <ExhibitionEntry key={i} entry={entry} locale={locale} />
           ))}
         </div>
