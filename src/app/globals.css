@@ -33,6 +33,11 @@
   src: url("../../public/fonts/ABCDailyBETA-Regular.otf");
 }
 
+@font-face {
+  font-family: "ABCDailyScotch";
+  src: url("../../public/fonts/ABCDailyScotchBETA-Bold.otf");
+}
+
 ::selection {
   color: var(--gold);
   background: var(--blue);
@@ -67,6 +72,11 @@ p a {
 
 p + p {
   padding-top: 1em;
+}
+
+em {
+  font-family: "ABCDailyScotch";
+  font-style: normal;
 }
 
 h1,
@@ -290,8 +300,8 @@ input:focus {
   text-align: center;
 }
 
-
-.artistSelector, .groupPicture {
+.artistSelector,
+.groupPicture {
   padding-bottom: 100px;
 }
 
