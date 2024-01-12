@@ -383,3 +383,12 @@ input:focus {
   width: 50%;
   height: 100%;
 }
+
+.animationWrapper {
+  display: flex;
+  height: 100vh;
+  
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}

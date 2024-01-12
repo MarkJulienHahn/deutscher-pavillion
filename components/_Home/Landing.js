@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useLottie } from "lottie-react";
+import animation from "../../public/animation/thresholds-animation.json";
 
 export default function Landing({ locale }) {
   const [hidden, setHidden] = useState(false);
@@ -8,8 +10,19 @@ export default function Landing({ locale }) {
   const visible = { opacity: "1", pointerEvents: "auto" };
   const invisible = { opacity: "0", pointerEvents: "none" };
 
+  const options = {
+    animationData: animation,
+    loop: true,
+  };
+
+  const { View } = useLottie(options);
+
   return (
-    <div className="landingWrapper" onClick={() => setHidden(true)} style={hidden ? invisible : visible}>
+    <div
+      className="landingWrapper"
+      onClick={() => setHidden(true)}
+      style={hidden ? invisible : visible}
+    >
       <div>
         {locale == "de" ? (
           <h3>
@@ -27,6 +40,9 @@ export default function Landing({ locale }) {
           </h3>
         )}
       </div>
+
+      <div className="animationWrapper">{View}</div>
+
       <div>
         {locale == "de" ? (
           <h3>
