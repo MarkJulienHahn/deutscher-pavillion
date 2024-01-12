@@ -1,4 +1,4 @@
-export default (req, res) => {
+export default async function handler(req, res) {
   // Set CORS headers to allow requests from any origin (you can customize this)
   res.setHeader(
     "Access-Control-Allow-Origin",
@@ -11,4 +11,4 @@ export default (req, res) => {
 
   // Send the response
   res.status(200).json({ message: "API response" });
-};
+}
