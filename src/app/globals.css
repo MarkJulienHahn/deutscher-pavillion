@@ -283,6 +283,7 @@ input:focus {
   padding: var(--space-S);
   cursor: pointer;
   transition: all 0.5s ease-in;
+  z-index: 200;
 }
 
 .landingWrapper h3 {
@@ -312,8 +313,12 @@ input:focus {
   padding-bottom: 20px;
 }
 
+.artistAnchor {
+  transform: translateY(-100px);
+}
+
 .columnWrapper {
-  height: 100vh;
+  height: 101vh;
   overflow-y: auto;
   overflow-x: hidden;
   -ms-overflow-style: none;
@@ -387,7 +392,7 @@ input:focus {
 .animationWrapper {
   display: flex;
   height: 100vh;
-  
+
   justify-content: center;
   align-items: center;
   position: absolute;

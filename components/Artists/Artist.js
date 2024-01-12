@@ -12,7 +12,8 @@ export default function Artist({ artist, locale, anchor }) {
   }, [anchor]);
 
   return (
-    <div className={"artistWrapper"} ref={ref}>
+    <div className={"artistWrapper"}>
+      <div className={"artistAnchor"} ref={ref}></div>
       <h2>{artist.name}</h2>
       <div className="imageFullwidth">
         <img
@@ -26,9 +27,6 @@ export default function Artist({ artist, locale, anchor }) {
           }
           loading="lazy"
           style={{
-            // aspectRatio:
-            //   entry.introImage.asset.metadata.width /
-            //   entry.introImage.asset.metadata.height,
             width: "100%",
           }}
         />
