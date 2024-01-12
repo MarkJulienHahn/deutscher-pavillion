@@ -290,8 +290,9 @@ input:focus {
   text-align: center;
 }
 
-.artistSelector {
-  height: 700px;
+
+.artistSelector, .groupPicture {
+  padding-bottom: 100px;
 }
 
 .artistSelector h3 {

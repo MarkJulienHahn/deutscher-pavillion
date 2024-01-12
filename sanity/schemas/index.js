@@ -6,6 +6,7 @@ import programCertosa from "./programCertosa"
 
 import about from "./about"
 import artists from "./artists";
+import artistImages from "./artistImages"
 import curators from "./curators";
 import visit from "./visit";
 import press from "./press";
@@ -28,6 +29,7 @@ const schemaTypes = [
 
   about,
   artists,
+  artistImages,
   curators,
   visit,
   press,

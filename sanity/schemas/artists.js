@@ -26,25 +26,25 @@ export default defineType({
       },
     },
     { name: "certosa", title: "La Certosa", type: "boolean" },
-    {
-      name: "image",
-      title: "Image",
-      type: "image",
-      fields: [
-        {
-          title: "Alternative Text",
-          name: "alt",
-          type: "string",
-        },
-        {
-          title: "SEO friendly file-name",
-          name: "filename",
-          type: "slug",
-          isUnique: false,
-          description: "Example: yael-bartana-deutscher-pavillon-2024",
-        },
-      ],
-    },
+    // {
+    //   name: "image",
+    //   title: "Image",
+    //   type: "image",
+    //   fields: [
+    //     {
+    //       title: "Alternative Text",
+    //       name: "alt",
+    //       type: "string",
+    //     },
+    //     {
+    //       title: "SEO friendly file-name",
+    //       name: "filename",
+    //       type: "slug",
+    //       isUnique: false,
+    //       description: "Example: yael-bartana-deutscher-pavillon-2024",
+    //     },
+    //   ],
+    // },
     {
       name: "text",
       title: "Text",

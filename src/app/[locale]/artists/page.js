@@ -1,10 +1,13 @@
 import Artists from "../../../../components/Artists/Artists";
 
-import { getArtists } from "../../../../sanity/sanity-utils";
+import { getArtists, getArtistImages } from "../../../../sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
   const artists = await getArtists();
-  return <Artists artists={artists} locale={locale} />;
+  const artistImages = await getArtistImages();
+  return (
+    <Artists artists={artists} artistImages={artistImages[0]} locale={locale} />
+  );
 }
 
 export const revalidate = 10;

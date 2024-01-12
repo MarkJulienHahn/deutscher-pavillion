@@ -5,6 +5,8 @@ import Artist from "./Artist";
 import ArtistOverviewEntry from "./ArtistsOverviewEntry";
 import NavMenu from "../Nav/NavMenu";
 
+import { urlFor } from "../../hooks/useImageUrlBuilder";
+
 const visible = { opacity: "1", height: "96px", transform: "translateX(2px)" };
 const invisible = {
   opacity: "0",
@@ -12,7 +14,7 @@ const invisible = {
   transform: "translateX(2px)",
 };
 
-const Artists = ({ artists, locale }) => {
+const Artists = ({ artists, artistImages, locale }) => {
   const [anchor, setAnchor] = useState(null);
 
   const anchorFunction = (slug) => {
@@ -46,6 +48,8 @@ const Artists = ({ artists, locale }) => {
       setShowHeadline(true);
   }, [scrollPositionLeft, scrollPositionRight]);
 
+  console.log(artistImages.imageRight);
+
   return (
     <main>
       <div className="columnPageWrapper">
@@ -58,9 +62,8 @@ const Artists = ({ artists, locale }) => {
 
         <div className="columnWrapper bgRed" ref={left}>
           <div className="artistSelector">
-            <h3>
-              {locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}
-            </h3>
+            <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h3>
+
             {artists.map((artist, i) =>
               !artist.certosa ? (
                 <ArtistOverviewEntry
@@ -72,6 +75,24 @@ const Artists = ({ artists, locale }) => {
                 ""
               )
             )}
+          </div>
+
+          <div className="imageFullwidth groupPicture">
+            <img
+              src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
+                artistImages.imageLeft?.filename.current
+                  ? artistImages.imageLeft?.filename.current
+                  : "german-pavillon-2024-vernice-biennale"
+              }`}
+              alt={
+                artistImages.imageLeft?.alt ||
+                "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+              }
+              loading="lazy"
+              style={{
+                width: "100%",
+              }}
+            />
           </div>
 
           {artists.map((artist, i) =>
@@ -97,6 +118,24 @@ const Artists = ({ artists, locale }) => {
                 ""
               )
             )}
+          </div>
+
+          <div className="imageFullwidth groupPicture">
+            <img
+              src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
+                artistImages.imageRight?.filename.current
+                  ? artistImages.imageRight?.filename.current
+                  : "german-pavillon-2024-vernice-biennale"
+              }`}
+              alt={
+                artistImages.imageRight?.alt ||
+                "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+              }
+              loading="lazy"
+              style={{
+                width: "100%",
+              }}
+            />
           </div>
 
           {artists.map((artist, i) =>

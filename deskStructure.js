@@ -26,12 +26,20 @@ export const myStructure = (S, context) =>
 
       S.divider(),
 
+      S.listItem()
+        .title("Künstler:innen Portraits")
+        .id("artistImages")
+        .child(
+          S.document().schemaType("artistImages").documentId("artistImages")
+        ),
+
       orderableDocumentListDeskItem({
         type: "artists",
         title: "Künstler:innen",
         S,
         context,
       }),
+
       orderableDocumentListDeskItem({
         type: "curators",
         title: "Kuratorin",

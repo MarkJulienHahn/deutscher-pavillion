@@ -19,6 +19,14 @@ export async function getArtists() {
   );
 }
 
+export async function getArtistImages() {
+  return client.fetch(
+    groq`*[_type == "artistImages"]{..., "imageLeft": imageLeft{..., "asset": asset->{...}
+  }, "imageRight": imageRight{..., "asset": asset->{...}
+}}`
+  );
+}
+
 export async function getCurators() {
   return client.fetch(
     groq`*[_type == "curators"]|order(orderRank){..., "image": image{..., "asset": asset->{...}
