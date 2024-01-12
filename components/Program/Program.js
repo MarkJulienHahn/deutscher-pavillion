@@ -38,6 +38,7 @@ export default function Team({ programPavillion, programCertosa, locale }) {
       scrollPositionRight < 240 &&
       setShowHeadline(true);
   }, [scrollPositionLeft, scrollPositionRight]);
+  
 
   return (
     <main>

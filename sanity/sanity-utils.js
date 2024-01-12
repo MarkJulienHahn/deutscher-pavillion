@@ -9,9 +9,7 @@ const client = createClient({
 export default client;
 
 export async function getAbout() {
-  return client.fetch(
-    groq`*[_type == "about"]{...}`
-  );
+  return client.fetch(groq`*[_type == "about"]{...}`);
 }
 
 export async function getArtists() {
@@ -66,24 +64,20 @@ export async function getExhibitionCertosa() {
 
 export async function getProgramPavillion() {
   return client.fetch(
-    groq`*[_type == "programPavillion"]{...}`
+    groq`*[_type == "programPavillion"]{..., "images": images[]{..., "asset": asset->{...}}}`
   );
 }
 
 export async function getProgramCertosa() {
   return client.fetch(
-    groq`*[_type == "programCertosa"]{...}`
+    groq`*[_type == "programCertosa"]{..., "images": images[]{..., "asset": asset->{...}}}`
   );
 }
 
 export async function getImprint() {
-  return client.fetch(
-    groq`*[_type == "imprint"]{...}`
-  );
+  return client.fetch(groq`*[_type == "imprint"]{...}`);
 }
 
 export async function getPrivacy() {
-  return client.fetch(
-    groq`*[_type == "privacy"]{...}`
-  );
+  return client.fetch(groq`*[_type == "privacy"]{...}`);
 }

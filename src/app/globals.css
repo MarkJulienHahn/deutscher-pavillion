@@ -46,7 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-smooth: always;
   background: var(--gold);
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
   -webkit-overflow-scrolling: touch;
 }
 

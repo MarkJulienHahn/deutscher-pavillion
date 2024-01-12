@@ -16,6 +16,7 @@ export default function Artist({ artist, locale, anchor }) {
       <div className={"artistAnchor"} ref={ref}></div>
       <h2>{artist.name}</h2>
       <div className="imageFullwidth">
+
         <img
           src={`${urlFor(artist.image.asset.url).url()}/${
             artist.image.filename.current ||
@@ -30,6 +31,7 @@ export default function Artist({ artist, locale, anchor }) {
             width: "100%",
           }}
         />
+        
       </div>
       <PortableText
         value={

@@ -42,7 +42,7 @@ export default function Nav({ locale }) {
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY) {
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
       // Scrolling down
       setShowButton(false);
     } else {
@@ -52,13 +52,27 @@ export default function Nav({ locale }) {
     setLastScrollY(currentScrollY);
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+// Debouncing the scroll event handler
+const debounce = (func, delay) => {
+  let timerId;
+  return function(...args) {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+    timerId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+};
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+useEffect(() => {
+  const debouncedHandleScroll = debounce(handleScroll, 100);
+  window.addEventListener("scroll", debouncedHandleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", debouncedHandleScroll);
+  };
+}, [lastScrollY]);
 
   useEffect(() => {
     pathname.includes("exhibition") ||
@@ -70,6 +84,8 @@ export default function Nav({ locale }) {
       ? setTwoColors(true)
       : setTwoColors(false);
   }, [pathname]);
+
+
 
   return (
     <>

@@ -22,7 +22,7 @@ export default function SwiperInner({ image, locale, trigger, setIndex, i }) {
     <div className="imageFullwidth">
       <img
         src={`${urlFor(image.asset.url).url()}/${
-          image.filename.current || "german-pavillion-2024-vernice-biennale"
+          image.filename?.current || "german-pavillion-2024-vernice-biennale"
         }`}
         alt={
           image.alt ||

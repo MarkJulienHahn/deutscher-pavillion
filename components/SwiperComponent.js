@@ -42,7 +42,7 @@ export default function SwiperComponent({ entry, locale }) {
         </Swiper>
       </div>
       <div className="index">
-        {index}/{entry.images.length}
+        {entry.images.length > 1 && `${index}/${entry.images.length}`}
       </div>
     </>
   );
