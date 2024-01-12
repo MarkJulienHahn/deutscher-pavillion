@@ -1,6 +1,5 @@
-// This function will handle the logic for your API route
-export default function handler(req, res) {
-  // Set CORS headers to allow requests from a specific origin
+export default (req, res) => {
+  // Set CORS headers to allow requests from any origin (you can customize this)
   res.setHeader(
     "Access-Control-Allow-Origin",
     "https://cdn.consentmanager.net"
@@ -12,4 +11,4 @@ export default function handler(req, res) {
 
   // Send the response
   res.status(200).json({ message: "API response" });
-}
+};
