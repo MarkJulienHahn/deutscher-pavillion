@@ -408,3 +408,29 @@ input:focus {
   align-items: center;
   position: absolute;
 }
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --gold: #af9151;
+    --red: #ff5c50;
+    --blue: #0000ff;
+
+    --space-XS: 10px;
+    --space-S: 20px;
+    --space-M: 60px;
+    --space-L: 120px;
+    --space-XL: 240px;
+
+    --fontSize-XS: 17px;
+    --lineHeight-XS: 21.25px;
+
+    --fontSize-S: 29.75px;
+    --lineHeight-S: 31.45px;
+
+    --fontSize-M: 20px;
+    --lineHeight-M: 23px;
+
+    --fontSize-L: 85px;
+    --lineHeight-L: 85.85px;
+  }
+}
