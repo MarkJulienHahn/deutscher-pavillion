@@ -1,12 +1,10 @@
 import Nav from "../../../components/Nav/Nav";
 import Script from "next/script";
 import "../globals.css";
-import CookieConsentScript from "../../../components/CookieConsent";
 
 export default function LocaleLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
-      {/* <CookieConsentScript /> */}
       <Script
         strategy="afterInteractive"
         src="https://cdn.consentmanager.net/delivery/autoblocking/04ba2a2631d12.js"

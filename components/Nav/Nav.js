@@ -52,27 +52,27 @@ export default function Nav({ locale }) {
     setLastScrollY(currentScrollY);
   };
 
-// Debouncing the scroll event handler
-const debounce = (func, delay) => {
-  let timerId;
-  return function(...args) {
-    if (timerId) {
-      clearTimeout(timerId);
-    }
-    timerId = setTimeout(() => {
-      func(...args);
-    }, delay);
+  // Debouncing the scroll event handler
+  const debounce = (func, delay) => {
+    let timerId;
+    return function (...args) {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+      timerId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
   };
-};
 
-useEffect(() => {
-  const debouncedHandleScroll = debounce(handleScroll, 100);
-  window.addEventListener("scroll", debouncedHandleScroll);
+  useEffect(() => {
+    const debouncedHandleScroll = debounce(handleScroll, 100);
+    window.addEventListener("scroll", debouncedHandleScroll);
 
-  return () => {
-    window.removeEventListener("scroll", debouncedHandleScroll);
-  };
-}, [lastScrollY]);
+    return () => {
+      window.removeEventListener("scroll", debouncedHandleScroll);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     pathname.includes("exhibition") ||
@@ -84,8 +84,6 @@ useEffect(() => {
       ? setTwoColors(true)
       : setTwoColors(false);
   }, [pathname]);
-
-
 
   return (
     <>
