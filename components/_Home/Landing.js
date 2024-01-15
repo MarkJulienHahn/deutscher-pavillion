@@ -53,7 +53,9 @@ export default function Landing({ locale }) {
         )}
       </div>
 
-      <div className="animationWrapper">{View}</div>
+      <div className="animationWrapper" style={{ height: height }}>
+        {View}
+      </div>
 
       <div>
         {locale == "de" ? (
