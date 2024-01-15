@@ -11,6 +11,7 @@ const CookieConsentScript = () => {
       data-cmp-cdn="cdn.consentmanager.net"
       data-cmp-codesrc="1"
       strategy="beforeInteractive"
+      
     />
   );
 };
