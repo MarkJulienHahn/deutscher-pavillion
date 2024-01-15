@@ -9,17 +9,17 @@
   --space-L: 120px;
   --space-XL: 240px;
 
-  --fontSize-XS: 20px;
-  --lineHeight-XS: 25px;
+  --fontSize-XS: 17px;
+  --lineHeight-XS: 21.25px;
 
-  --fontSize-S: 35px;
-  --lineHeight-S: 37px;
+  --fontSize-S: 29.75px;
+  --lineHeight-S: 31.45px;
 
-  --fontSize-M: 50px;
-  --lineHeight-M: 51px;
+  --fontSize-M: 42.5px;
+  --lineHeight-M: 43.85px;
 
-  --fontSize-L: 100px;
-  --lineHeight-L: 101px;
+  --fontSize-L: 85px;
+  --lineHeight-L: 85.85px;
 }
 
 * {
