@@ -408,3 +408,30 @@ input:focus {
   align-items: center;
   position: absolute;
 }
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --space-XS: 5px;
+    --space-S: 20px;
+    --space-M: 60px;
+    --space-L: 120px;
+    --space-XL: 240px;
+
+    --fontSize-XS: 17px;
+    --lineHeight-XS: 21.25px;
+
+    --fontSize-S: 13px;
+    --lineHeight-S: 15px;
+
+    --fontSize-M: 20px;
+    --lineHeight-M: 22px;
+
+    --fontSize-L: 40px;
+    --lineHeight-L: 42px;
+  }
+  .button, .closeButton {
+    padding: 2px 20px 7px;
+    border: 1px solid var(--blue);
+    border-radius: 50px;
+  }
+}
