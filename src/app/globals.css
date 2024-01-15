@@ -406,6 +406,7 @@ input:focus {
   justify-content: center;
   align-items: center;
   position: absolute;
+  left: 0;
 }
 
 @media screen and (max-width: 1000px) {
