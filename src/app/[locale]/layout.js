@@ -6,9 +6,10 @@ import "../globals.css";
 export default function LocaleLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
-      <Script
+
+      {/* <Script
         id="gtag"
-        strategy="afterInteractive"
+        // strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
         window.dataLayer = window.dataLayer || [];
@@ -19,8 +20,9 @@ export default function LocaleLayout({ children, params: { locale } }) {
                   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                   })(window,document,'script','dataLayer','GTM-MKL5XR2J');`,
         }}
-      />
-      {/* <Script
+      /> */}
+
+      <Script
         async
         strategy="beforeInteractive"
         src="https://cdn.consentmanager.net/delivery/autoblocking/04ba2a2631d12.js"
@@ -28,11 +30,13 @@ export default function LocaleLayout({ children, params: { locale } }) {
         data-cmp-host="d.delivery.consentmanager.net"
         data-cmp-cdn="cdn.consentmanager.net"
         data-cmp-codesrc="1"
-      /> */}
+      />
+
       <body>
         <Nav locale={locale} />
         {children}
       </body>
+      
     </html>
   );
 }
