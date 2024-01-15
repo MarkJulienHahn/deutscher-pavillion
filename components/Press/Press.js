@@ -28,12 +28,33 @@ export default function Press({ press, locale }) {
               ? "Bitte geben Sie hier Ihre E-Mailadresse ein."
               : "Please enter your e-mail address here."}
           </p>
+
           <div className="registrationForm">
-            <form>
-              <input className="button"></input>
-              <button className="button formButton">
-                {locale == "de" ? "Anmelden" : "Register"}{" "}
-              </button>
+            <form
+              action="https://seu2.cleverreach.com/f/360026-377546/wcs/"
+              method="post"
+              target="_blank"
+              style={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "center",
+              }}
+            >
+              <input
+                name="email"
+                id="text8554093"
+                className="button"
+                placeholder=""
+              />
+              <div id="8554095" rel="button">
+                <button type="submit" className="button formButton">
+                  {locale == "de" ? "Anmelden" : "Register"}
+                </button>
+              </div>
+
+              <noscript>
+                <a href="http://www.cleverreach.de">www.CleverReach.de</a>
+              </noscript>
             </form>
           </div>
 
