@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/api/newsletter.js"  ],
+, "src/app/api/newsletter.js", "src/app/api/newsletter/route.js", "src/app/api/newsletter/route.js"  ],
   "exclude": [
     "node_modules"
   ]
