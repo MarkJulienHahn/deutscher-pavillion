@@ -89,7 +89,7 @@ useEffect(() => {
 
   return (
     <>
-      {/* <div className={styles.header}>
+      <div className={styles.header}>
         <Link href="/">
           <h3>Thresholds</h3>
         </Link>
@@ -133,7 +133,7 @@ useEffect(() => {
           {locale == "de" ? "Schließen" : "Close"}
         </h3>
         <NavMenu locale={locale} />
-      </div> */}
+      </div>
     </>
   );
 }

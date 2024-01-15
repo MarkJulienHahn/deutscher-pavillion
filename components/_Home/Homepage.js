@@ -6,8 +6,8 @@ export default function Homepage({ locale }) {
   return (
     <>
       <Landing locale={locale} />
-      {/* <Livestream locale={locale} />
-      <NavMenu locale={locale} /> */}
+      <Livestream locale={locale} />
+      <NavMenu locale={locale} />
     </>
   );
 }
