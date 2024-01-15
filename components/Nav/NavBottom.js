@@ -4,16 +4,28 @@ import { Link } from "../../src/navigation";
 export default function NavBottom({ locale }) {
   return (
     <div className={styles.menuBottom}>
-      <a href="/" target="_blank" rel="noreferrer">
+      <a
+        href="https://www.facebook.com/deutscherpavillonvenedig"
+        target="_blank"
+        rel="noreferrer"
+      >
         <p>Facebook</p>
       </a>
-      <a href="/" target="_blank" rel="noreferrer">
+      <a
+        href="https://www.instagram.com/deutscherpavillon/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <p>Instagram</p>
       </a>
       <Link href={"/newsletter"}>
         <p>Newsletter</p>
       </Link>
-      <a href="/" target="_blank" rel="noreferrer">
+      <a
+        href="https://archiv.deutscher-pavillon.org/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <p>Archiv</p>
       </a>
 
