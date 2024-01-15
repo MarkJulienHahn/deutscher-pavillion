@@ -5,13 +5,12 @@ import { useState, useRef, useEffect } from "react";
 import NavMenu from "../Nav/NavMenu";
 import ProgramEntry from "../Program/ProgramEntry";
 
-const visible = { opacity: "1", height: "96px", transform: "translateX(2px)" };
+const visible = { opacity: "1", height: "81.6px", transform: "translateX(2px)" };
 const invisible = {
   opacity: "0",
-  height: "96px",
+  height: "81.6px",
   transform: "translateX(2px)",
 };
-
 export default function Team({ programPavillon, programCertosa, locale }) {
   const [showHeadline, setShowHeadline] = useState(true);
 

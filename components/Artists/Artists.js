@@ -7,13 +7,12 @@ import NavMenu from "../Nav/NavMenu";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 
-const visible = { opacity: "1", height: "96px", transform: "translateX(2px)" };
+const visible = { opacity: "1", height: "81.6px", transform: "translateX(2px)" };
 const invisible = {
   opacity: "0",
-  height: "96px",
+  height: "81.6px",
   transform: "translateX(2px)",
 };
-
 const Artists = ({ artists, artistImages, locale }) => {
   const [anchor, setAnchor] = useState(null);
 

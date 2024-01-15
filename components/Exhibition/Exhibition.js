@@ -4,13 +4,12 @@ import { useState, useRef, useEffect } from "react";
 import NavMenu from "../Nav/NavMenu";
 import ExhibitionEntry from "./ExhibitionEntry";
 
-const visible = { opacity: "1", height: "96px", transform: "translateX(2px)" };
+const visible = { opacity: "1", height: "81.6px", transform: "translateX(2px)" };
 const invisible = {
   opacity: "0",
-  height: "96px",
+  height: "81.6px",
   transform: "translateX(2px)",
 };
-
 export default function Exhibition({
   exhibitionPavillon,
   exhibitionCertosa,
