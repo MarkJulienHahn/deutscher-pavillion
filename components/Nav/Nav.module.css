@@ -112,6 +112,10 @@
   text-underline-offset: 5px;
 }
 
+.mobileHead {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) {
   .button,
   .closeButton {
@@ -144,5 +148,28 @@
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 5px;
+  }
+  .mobileHead {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    top: 80px;
+  }
+
+  .headerMobileOff {
+    display: none;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+  .button {
+    width: 100px;
+    left: calc(50% - 50px);
+  }
+  .closeButton {
+    width: 160px;
+    left: calc(50% - 80px);
   }
 }

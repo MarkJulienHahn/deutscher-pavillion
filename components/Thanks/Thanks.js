@@ -1,6 +1,8 @@
 import { PortableText } from "@portabletext/react";
 import NavMenu from "../Nav/NavMenu";
 
+import Image from "next/image";
+
 export default function Thanks({ thanks, locale }) {
   const content =
     locale === "de" ? thanks.partner.german : thanks.partner.english;
@@ -17,9 +19,13 @@ export default function Thanks({ thanks, locale }) {
           />
           <div className="dankLogos">
             {thanks.logos.map((logo, i) => (
-
-              <img style={{ width: "300px" }} key={i} src={logo.asset.url} />
-
+              <Image
+                style={{ width: "250px" }}
+                width={300}
+                height={150}
+                key={i}
+                src={logo.asset.url}
+              />
             ))}
           </div>
           <div>

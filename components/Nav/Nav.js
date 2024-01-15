@@ -66,7 +66,7 @@ export default function Nav({ locale }) {
   };
 
   useEffect(() => {
-    const debouncedHandleScroll = debounce(handleScroll, 20);
+    const debouncedHandleScroll = debounce(handleScroll, 50);
     window.addEventListener("scroll", debouncedHandleScroll);
 
     return () => {
@@ -92,7 +92,7 @@ export default function Nav({ locale }) {
   return (
     <>
       <div className={styles.header} style={showButton ? visible : hidden}>
-        <Link href="/">
+        <Link className={styles.hideMobile} href="/">
           <h3>Thresholds</h3>
         </Link>
 
@@ -117,7 +117,7 @@ export default function Nav({ locale }) {
         )}
 
         <h3
-          className={styles.localePicker}
+          className={`${styles.localePicker} ${styles.hideMobile}`}
           style={{ color: twoColors ? "var(--red)" : "var(--blue)" }}
         >
           <Link href={`/${neutralPath}`} locale="de">
@@ -138,10 +138,38 @@ export default function Nav({ locale }) {
         </h3>
       </div>
 
-      <div className={styles.menuFixed} style={active ? visible : hidden}>
-        <h3 className={styles.closeButton} onClick={() => setActive(false)}>
+      <div
+        className={styles.menuFixed}
+        style={active ? visible : hidden}
+        onClick={() => setActive(false)}
+      >
+        <h3 className={styles.closeButton}>
           {locale == "de" ? "Schließen" : "Close"}
         </h3>
+        <div className={styles.mobileHead}>
+          <Link href="/">
+            <h3>Thresholds</h3>
+          </Link>{" "}
+          <h3 className={styles.localePicker}>
+            <Link href={`/${neutralPath}`} locale="de">
+              <span
+                className={locale == "de" ? styles.selected : styles.unselected}
+              >
+                De
+              </span>
+            </Link>
+            /
+            <Link href={`/${neutralPath}`} locale="en">
+              <span
+                className={
+                  locale !== "de" ? styles.selected : styles.unselected
+                }
+              >
+                En
+              </span>
+            </Link>
+          </h3>
+        </div>
         <NavMenu locale={locale} />
       </div>
     </>
