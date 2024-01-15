@@ -17,6 +17,7 @@
   padding: var(--space-S);
   top: 0;
   z-index: 100;
+  transition: opacity 0.5s ease;
 }
 
 .menuFixed {
@@ -105,6 +106,12 @@
   font-size: var(--fontSize-S);
 }
 
+.selected {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
 @media screen and (max-width: 1000px) {
   .button,
   .closeButton {
@@ -113,7 +120,7 @@
     border-radius: 50px;
   }
   .menuList span:hover {
-    height: inherit;
+    height: 20px;
   }
   .menuListWrapper {
     margin-top: 26vh;
@@ -125,5 +132,17 @@
     justify-content: center;
     background: var(--gold);
   }
-  
+  .menuBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .menuBottom p {
+    font-size: var(--fontSize-M);
+    line-height: 25px;
+  }
+  .selected {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+  }
 }

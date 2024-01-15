@@ -1,5 +1,7 @@
 import NavMenu from "../Nav/NavMenu";
 
+import Image from "next/image";
+
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 import { PortableText } from "@portabletext/react";
 
@@ -14,7 +16,7 @@ export default function Curators({ curators, locale }) {
 
         <div className="imageCentered">
           <span>
-            <img
+            <Image
               src={`${urlFor(curators[0].image.asset.url).url()}/${
                 curators[0].image.filename.current ||
                 "german-pavillon-2024-vernice-biennale"
@@ -23,12 +25,9 @@ export default function Curators({ curators, locale }) {
                 curators[0].image.alt ||
                 "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
               }
-              loading="lazy"
+              fill
               style={{
-                // aspectRatio:
-                //   entry.introImage.asset.metadata.width /
-                //   entry.introImage.asset.metadata.height,
-                width: "100%",
+                objectFit: "cover",
               }}
             />
           </span>

@@ -17,15 +17,15 @@ function removeFirstThreeCharacters(str) {
 const visible = { opacity: "1", pointerEvents: "auto" };
 const hidden = { opacity: "0", pointerEvents: "none" };
 
-const selected = {
-  textDecoration: "underline",
-  textDecorationThickness: "3px",
-  textUnderlineOffset: "5px",
-};
+// const selected = {
+//   textDecoration: "underline",
+//   textDecorationThickness: "3px",
+//   textUnderlineOffset: "5px",
+// };
 
-const unselected = {
-  textDecoration: "none",
-};
+// const unselected = {
+//   textDecoration: "none",
+// };
 
 export default function Nav({ locale }) {
   const [active, setActive] = useState(false);
@@ -66,7 +66,7 @@ export default function Nav({ locale }) {
   };
 
   useEffect(() => {
-    const debouncedHandleScroll = debounce(handleScroll, 100);
+    const debouncedHandleScroll = debounce(handleScroll, 20);
     window.addEventListener("scroll", debouncedHandleScroll);
 
     return () => {
@@ -83,11 +83,15 @@ export default function Nav({ locale }) {
     pathname.includes("programm")
       ? setTwoColors(true)
       : setTwoColors(false);
+
+    pathname == "/en" || pathname == "de"
+      ? setShowButton(false)
+      : setShowButton(true);
   }, [pathname]);
 
   return (
     <>
-      <div className={styles.header}>
+      <div className={styles.header} style={showButton ? visible : hidden}>
         <Link href="/">
           <h3>Thresholds</h3>
         </Link>
@@ -95,7 +99,7 @@ export default function Nav({ locale }) {
         {twoColors ? (
           <img
             className={styles.twoColorButton}
-            style={showButton ? visible : hidden}
+            // style={showButton ? visible : hidden}
             alt="headline"
             onClick={() => setActive(true)}
             src={
@@ -106,7 +110,7 @@ export default function Nav({ locale }) {
           <h3
             className={styles.button}
             onClick={() => setActive(true)}
-            style={showButton ? visible : hidden}
+            // style={showButton ? visible : hidden}
           >
             {locale == "de" ? "Menü" : "Menu"}
           </h3>
@@ -117,11 +121,19 @@ export default function Nav({ locale }) {
           style={{ color: twoColors ? "var(--red)" : "var(--blue)" }}
         >
           <Link href={`/${neutralPath}`} locale="de">
-            <span style={locale == "de" ? selected : unselected}>De</span>
+            <span
+              className={locale == "de" ? styles.selected : styles.unselected}
+            >
+              De
+            </span>
           </Link>
           /
           <Link href={`/${neutralPath}`} locale="en">
-            <span style={locale !== "de" ? selected : unselected}>En</span>
+            <span
+              className={locale !== "de" ? styles.selected : styles.unselected}
+            >
+              En
+            </span>
           </Link>
         </h3>
       </div>

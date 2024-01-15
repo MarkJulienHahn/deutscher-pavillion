@@ -173,11 +173,14 @@ input:focus {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: var(--space-S) 0;
 }
 
 .imageCentered span {
-  max-width: 1200px;
-  padding: var(--space-S) 0;
+  width: 1200px;
+  height: 800px;
+  max-width: 100vw;
+  position: relative;
 }
 
 .imageFullwidth {
@@ -305,6 +308,12 @@ input:focus {
   padding-bottom: 100px;
 }
 
+.groupPicture {
+  position: relative;
+  width: 100%;
+  /* padding-bottom: 1350px */
+}
+
 .artistSelector h3 {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);
@@ -407,15 +416,23 @@ input:focus {
   justify-content: center;
   align-items: center;
   position: absolute;
+  left: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .imageCentered span {
+    width: 100vw;
+    height: 60vw;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   :root {
     --space-XS: 5px;
-    --space-S: 20px;
-    --space-M: 60px;
-    --space-L: 120px;
-    --space-XL: 240px;
+    --space-S: 10px;
+    --space-M: 30px;
+    --space-L: 60px;
+    --space-XL: 120px;
 
     --fontSize-XS: 17px;
     --lineHeight-XS: 21.25px;

@@ -1,13 +1,19 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 
+import Image from "next/image";
+
 import Artist from "./Artist";
 import ArtistOverviewEntry from "./ArtistsOverviewEntry";
 import NavMenu from "../Nav/NavMenu";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 
-const visible = { opacity: "1", height: "81.6px", transform: "translateX(2px)" };
+const visible = {
+  opacity: "1",
+  height: "81.6px",
+  transform: "translateX(2px)",
+};
 const invisible = {
   opacity: "0",
   height: "81.6px",
@@ -47,8 +53,6 @@ const Artists = ({ artists, artistImages, locale }) => {
       setShowHeadline(true);
   }, [scrollPositionLeft, scrollPositionRight]);
 
-  console.log(artistImages.imageRight);
-
   return (
     <main>
       <div className="columnPageWrapper">
@@ -77,21 +81,29 @@ const Artists = ({ artists, artistImages, locale }) => {
           </div>
 
           <div className="imageFullwidth groupPicture">
-            <img
-              src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
-                artistImages.imageLeft?.filename.current
-                  ? artistImages.imageLeft?.filename.current
-                  : "german-pavillon-2024-vernice-biennale"
-              }`}
-              alt={
-                artistImages.imageLeft?.alt ||
-                "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
-              }
-              loading="lazy"
-              style={{
-                width: "100%",
-              }}
-            />
+            {artistImages.imageLeft?.asset.url && (
+              <Image
+                src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
+                  artistImages.imageLeft?.filename.current
+                    ? artistImages.imageLeft?.filename.current
+                    : "german-pavillon-2024-vernice-biennale"
+                }`}
+                alt={
+                  artistImages.imageLeft?.alt ||
+                  "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                }
+                loading="lazy"
+                width={1000}
+                height={
+                  1000 /
+                  artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
+                }
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                }}
+              />
+            )}
           </div>
 
           {artists.map((artist, i) =>
@@ -120,21 +132,29 @@ const Artists = ({ artists, artistImages, locale }) => {
           </div>
 
           <div className="imageFullwidth groupPicture">
-            <img
-              src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
-                artistImages.imageRight?.filename.current
-                  ? artistImages.imageRight?.filename.current
-                  : "german-pavillon-2024-vernice-biennale"
-              }`}
-              alt={
-                artistImages.imageRight?.alt ||
-                "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
-              }
-              loading="lazy"
-              style={{
-                width: "100%",
-              }}
-            />
+            {artistImages.imageRight?.asset.url && (
+              <Image
+                src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
+                  artistImages.imageRight?.filename.current
+                    ? artistImages.imageRight?.filename.current
+                    : "german-pavillon-2024-vernice-biennale"
+                }`}
+                alt={
+                  artistImages.imageRight?.alt ||
+                  "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                }
+                loading="lazy"
+                width={1000}
+                height={
+                  1000 /
+                  artistImages.imageRight.asset.metadata.dimensions.aspectRatio
+                }
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                }}
+              />
+            )}
           </div>
 
           {artists.map((artist, i) =>
