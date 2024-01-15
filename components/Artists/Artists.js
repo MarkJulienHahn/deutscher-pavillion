@@ -22,6 +22,7 @@ const invisible = {
 };
 const Artists = ({ artists, artistImages, locale }) => {
   const [anchor, setAnchor] = useState(null);
+  const [delay, setDelay] = useState(true);
   const [heightLeft, setHeightLeft] = useState(null);
   const [heightRight, setHeightRight] = useState(null);
 
@@ -58,21 +59,27 @@ const Artists = ({ artists, artistImages, locale }) => {
       setShowHeadline(true);
   }, [scrollPositionLeft, scrollPositionRight]);
 
-  useEffect(
-    () =>
-      setHeightLeft(
-        left.current?.clientWidth /
-          artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
-      ),
-    [left]
-  );
+  useEffect(() => {
+    setTimeout(setDelay(false), 500);
+  }, []);
+
+  useEffect(() => {
+    setHeightLeft(
+      left.current?.clientWidth /
+        artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
+    );
+    setHeightRight(
+      right.current?.clientWidth /
+        artistImages.imageRight.asset.metadata.dimensions.aspectRatio
+    );
+  }, [left, right]);
 
   console.log(heightLeft);
 
   return (
     <main>
       <div className="columnPageWrapper">
-        {windowWidth > 1000 && (
+        {windowWidth > 1300 && !delay && (
           <img
             className="columnPageHeadline"
             style={showHeadline ? visible : invisible}
@@ -84,7 +91,7 @@ const Artists = ({ artists, artistImages, locale }) => {
         )}
 
         <div className="columnWrapper bgRed" ref={left}>
-          {windowWidth < 1000 && (
+          {windowWidth < 1300 && !delay && (
             <h1 className="mobileHeadline">
               {locale == "de" ? "Künstler:innen" : "Artists"}
             </h1>
@@ -107,41 +114,29 @@ const Artists = ({ artists, artistImages, locale }) => {
           </div>
 
           <div className="imageFullwidth groupPicture">
-            {artistImages.imageLeft?.asset.url && (
-              <span
-                style={{
-                  width: left.current?.clientWidth,
-                  height: "1000px",
-                }}
-              >
-                {heightLeft && (
-                  <Image
-                    src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
-                      artistImages.imageLeft?.filename.current
-                        ? artistImages.imageLeft?.filename.current
-                        : "german-pavillon-2024-vernice-biennale"
-                    }`}
-                    alt={
-                      artistImages.imageLeft?.alt ||
-                      "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
-                    }
-                    loading="lazy"
-                    fill
-                    // width={1000}
-                    // height={
-                    //   1000 /
-                    //   artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
-                    // }
-                    style={{
-                      objectFit: "cover",
-                      width: "100%",
-                      aspectRatio:
-                        artistImages.imageLeft.asset.metadata.dimensions
-                          .aspectRatio,
-                    }}
-                  />
-                )}
-              </span>
+            {heightLeft && (
+              <div style={{ width: "100%", height: `${heightLeft}px` }}>
+                <Image
+                  src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
+                    artistImages.imageLeft?.filename.current
+                      ? artistImages.imageLeft?.filename.current
+                      : "german-pavillon-2024-vernice-biennale"
+                  }`}
+                  alt={
+                    artistImages.imageLeft?.alt ||
+                    "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                  }
+                  loading="lazy"
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    aspectRatio:
+                      artistImages.imageLeft.asset.metadata.dimensions
+                        .aspectRatio,
+                  }}
+                />
+              </div>
             )}
           </div>
 
@@ -171,28 +166,29 @@ const Artists = ({ artists, artistImages, locale }) => {
           </div>
 
           <div className="imageFullwidth groupPicture">
-            {artistImages.imageRight?.asset.url && (
-              <Image
-                src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
-                  artistImages.imageRight?.filename.current
-                    ? artistImages.imageRight?.filename.current
-                    : "german-pavillon-2024-vernice-biennale"
-                }`}
-                alt={
-                  artistImages.imageRight?.alt ||
-                  "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
-                }
-                loading="lazy"
-                width={1000}
-                height={
-                  1000 /
-                  artistImages.imageRight.asset.metadata.dimensions.aspectRatio
-                }
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                }}
-              />
+            {heightRight && (
+              <div style={{ width: "100%", height: `${heightRight}px` }}>
+                <Image
+                  src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
+                    artistImages.imageRight?.filename.current
+                      ? artistImages.imageRight?.filename.current
+                      : "german-pavillon-2024-vernice-biennale"
+                  }`}
+                  alt={
+                    artistImages.imageRight?.alt ||
+                    "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                  }
+                  loading="lazy"
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    aspectRatio:
+                      artistImages.imageRight.asset.metadata.dimensions
+                        .aspectRatio,
+                  }}
+                />
+              </div>
             )}
           </div>
 

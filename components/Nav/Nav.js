@@ -85,8 +85,6 @@ export default function Nav({ locale }) {
       : setShowButton(true);
   }, [pathname]);
 
-  console.log(twoColors)
-
   return (
     <>
       <div className={styles.header} style={showButton ? visible : hidden}>

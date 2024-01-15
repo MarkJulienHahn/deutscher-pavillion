@@ -307,7 +307,7 @@ input:focus {
 
 .artistSelector,
 .groupPicture {
-  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .groupPicture {
@@ -425,19 +425,31 @@ input:focus {
   :root {
     --fontSize-S: 25px;
     --lineHeight-S: 28px;
-  
+
     --fontSize-M: 42.5px;
     --lineHeight-M: 43.85px;
 
     --fontSize-L: 70px;
     --lineHeight-L: 70px;
   }
+  .artistSelector h2 {
+    line-height: 60px;
+  }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
   .imageCentered span {
     width: 100vw;
     height: 60vw;
+  }
+  .columnPageWrapper {
+    display: block;
+    height: auto;
+  }
+  .columnWrapper {
+    padding-top: 100px;
+    width: 100vw;
+    height: auto;
   }
 }
 
@@ -478,15 +490,6 @@ input:focus {
     flex-direction: column;
     align-items: center;
   }
-  .columnPageWrapper {
-    display: block;
-    height: auto;
-  }
-  .columnWrapper {
-    padding-top: 100px;
-    width: 100vw;
-    height: auto;
-  }
 
   .mobileHeadline {
     width: 100%;
@@ -494,9 +497,5 @@ input:focus {
   }
   .artistSelector {
     padding-top: 60px;
-  }
-
-  .artistSelector h2 {
-    line-height: 50px;
   }
 }

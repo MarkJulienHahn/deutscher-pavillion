@@ -62,7 +62,7 @@
 }
 
 .menuListWrapper {
-  margin-top: 26vh;
+  margin-top: 16vh;
   width: 100vw;
   height: 500px;
   left: 0;
@@ -116,6 +116,15 @@
   display: none;
 }
 
+@media screen and (max-width: 1700px) {
+  .menuListWrapper {
+    height: 300px;
+  }
+  .menuList span:hover {
+    height: 100px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .button,
   .closeButton {
@@ -127,7 +136,7 @@
     height: 20px;
   }
   .menuListWrapper {
-    margin-top: 26vh;
+    margin-top: 16vh;
     width: 100vw;
     height: 300px;
     left: 0;
