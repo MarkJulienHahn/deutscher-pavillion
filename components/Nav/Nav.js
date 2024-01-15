@@ -9,6 +9,8 @@ import { usePathname } from "next/navigation";
 
 import NavMenu from "./NavMenu";
 
+import useWindowDimensions from "../useWindowDimensions";
+
 function removeFirstThreeCharacters(str) {
   str.length >= 3;
   return str.substring(3);
@@ -16,16 +18,6 @@ function removeFirstThreeCharacters(str) {
 
 const visible = { opacity: "1", pointerEvents: "auto" };
 const hidden = { opacity: "0", pointerEvents: "none" };
-
-// const selected = {
-//   textDecoration: "underline",
-//   textDecorationThickness: "3px",
-//   textUnderlineOffset: "5px",
-// };
-
-// const unselected = {
-//   textDecoration: "none",
-// };
 
 export default function Nav({ locale }) {
   const [active, setActive] = useState(false);
@@ -65,6 +57,8 @@ export default function Nav({ locale }) {
     };
   };
 
+  const { windowWidth } = useWindowDimensions();
+
   useEffect(() => {
     const debouncedHandleScroll = debounce(handleScroll, 50);
     window.addEventListener("scroll", debouncedHandleScroll);
@@ -84,10 +78,14 @@ export default function Nav({ locale }) {
       ? setTwoColors(true)
       : setTwoColors(false);
 
+    windowWidth < 1000 && setTwoColors(false);
+
     pathname == "/en" || pathname == "de"
       ? setShowButton(false)
       : setShowButton(true);
   }, [pathname]);
+
+  console.log(twoColors)
 
   return (
     <>

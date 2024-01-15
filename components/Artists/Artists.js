@@ -6,6 +6,7 @@ import Image from "next/image";
 import Artist from "./Artist";
 import ArtistOverviewEntry from "./ArtistsOverviewEntry";
 import NavMenu from "../Nav/NavMenu";
+import useWindowDimensions from "../useWindowDimensions";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 
@@ -21,6 +22,8 @@ const invisible = {
 };
 const Artists = ({ artists, artistImages, locale }) => {
   const [anchor, setAnchor] = useState(null);
+  const [heightLeft, setHeightLeft] = useState(null);
+  const [heightRight, setHeightRight] = useState(null);
 
   const anchorFunction = (slug) => {
     setAnchor(slug);
@@ -34,6 +37,8 @@ const Artists = ({ artists, artistImages, locale }) => {
 
   const [scrollPositionRight, setScrollPositionRight] = useState("");
   const right = useRef();
+
+  const { windowWidth } = useWindowDimensions();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,17 +58,38 @@ const Artists = ({ artists, artistImages, locale }) => {
       setShowHeadline(true);
   }, [scrollPositionLeft, scrollPositionRight]);
 
+  useEffect(
+    () =>
+      setHeightLeft(
+        left.current?.clientWidth /
+          artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
+      ),
+    [left]
+  );
+
+  console.log(heightLeft);
+
   return (
     <main>
       <div className="columnPageWrapper">
-        <img
-          className="columnPageHeadline"
-          style={showHeadline ? visible : invisible}
-          alt="headline"
-          src={locale == "de" ? "/svg/headline-03.svg" : "/svg/headline-04.svg"}
-        />
+        {windowWidth > 1000 && (
+          <img
+            className="columnPageHeadline"
+            style={showHeadline ? visible : invisible}
+            alt="headline"
+            src={
+              locale == "de" ? "/svg/headline-03.svg" : "/svg/headline-04.svg"
+            }
+          />
+        )}
 
         <div className="columnWrapper bgRed" ref={left}>
+          {windowWidth < 1000 && (
+            <h1 className="mobileHeadline">
+              {locale == "de" ? "Künstler:innen" : "Artists"}
+            </h1>
+          )}
+
           <div className="artistSelector">
             <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h3>
 
@@ -82,27 +108,40 @@ const Artists = ({ artists, artistImages, locale }) => {
 
           <div className="imageFullwidth groupPicture">
             {artistImages.imageLeft?.asset.url && (
-              <Image
-                src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
-                  artistImages.imageLeft?.filename.current
-                    ? artistImages.imageLeft?.filename.current
-                    : "german-pavillon-2024-vernice-biennale"
-                }`}
-                alt={
-                  artistImages.imageLeft?.alt ||
-                  "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
-                }
-                loading="lazy"
-                width={1000}
-                height={
-                  1000 /
-                  artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
-                }
+              <span
                 style={{
-                  objectFit: "cover",
-                  width: "100%",
+                  width: left.current?.clientWidth,
+                  height: "1000px",
                 }}
-              />
+              >
+                {heightLeft && (
+                  <Image
+                    src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
+                      artistImages.imageLeft?.filename.current
+                        ? artistImages.imageLeft?.filename.current
+                        : "german-pavillon-2024-vernice-biennale"
+                    }`}
+                    alt={
+                      artistImages.imageLeft?.alt ||
+                      "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                    }
+                    loading="lazy"
+                    fill
+                    // width={1000}
+                    // height={
+                    //   1000 /
+                    //   artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
+                    // }
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      aspectRatio:
+                        artistImages.imageLeft.asset.metadata.dimensions
+                          .aspectRatio,
+                    }}
+                  />
+                )}
+              </span>
             )}
           </div>
 

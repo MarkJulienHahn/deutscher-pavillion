@@ -452,8 +452,8 @@ input:focus {
     --fontSize-XS: 17px;
     --lineHeight-XS: 21.25px;
 
-    --fontSize-S: 13px;
-    --lineHeight-S: 15px;
+    --fontSize-S: 17px;
+    --lineHeight-S: 21.25px;
 
     --fontSize-M: 20px;
     --lineHeight-M: 28px;
@@ -477,5 +477,26 @@ input:focus {
     padding-top: 50px;
     flex-direction: column;
     align-items: center;
+  }
+  .columnPageWrapper {
+    display: block;
+    height: auto;
+  }
+  .columnWrapper {
+    padding-top: 100px;
+    width: 100vw;
+    height: auto;
+  }
+
+  .mobileHeadline {
+    width: 100%;
+    text-align: center;
+  }
+  .artistSelector {
+    padding-top: 60px;
+  }
+
+  .artistSelector h2 {
+    line-height: 50px;
   }
 }
