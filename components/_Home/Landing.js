@@ -7,7 +7,7 @@ import animation from "../../public/animation/thresholds-animation.json";
 export default function Landing({ locale }) {
   const [hidden, setHidden] = useState(false);
 
-  const visible = { opacity: "1", pointerEvents: "auto" };
+  const visible = { opacity: "1", pointerEvents: "none" };
   const invisible = { opacity: "0", pointerEvents: "none" };
 
   const options = {
@@ -20,7 +20,7 @@ export default function Landing({ locale }) {
   return (
     <div
       className="landingWrapper"
-      onClick={() => setHidden(true)}
+      // onClick={() => setHidden(true)}
       style={hidden ? invisible : visible}
     >
       <div>
@@ -28,14 +28,14 @@ export default function Landing({ locale }) {
           <h3>
             Deutscher Pavillon 2024
             <br />
-            60<sup>th</sup> International Art Exhibition –<br />
+            60<sup style={{lineHeight: "10px"}}>th</sup> International Art Exhibition –<br />
             La Biennale di Venezia
           </h3>
         ) : (
           <h3>
             German Pavillon 2024
             <br />
-            60<sup>th</sup> International Art Exhibition –<br />
+            60<sup style={{lineHeight: "10px"}}>th</sup> International Art Exhibition –<br />
             La Biennale di Venezia
           </h3>
         )}
