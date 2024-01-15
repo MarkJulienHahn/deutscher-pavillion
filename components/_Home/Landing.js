@@ -4,11 +4,20 @@ import { useState } from "react";
 import { useLottie } from "lottie-react";
 import animation from "../../public/animation/thresholds-animation.json";
 
+import { use100vh } from "react-div-100vh";
+
 export default function Landing({ locale }) {
   const [hidden, setHidden] = useState(false);
 
-  const visible = { opacity: "1", pointerEvents: "auto", cursor: "default" };
-  const invisible = { opacity: "0", pointerEvents: "none" };
+  const height = use100vh();
+
+  const visible = {
+    opacity: "1",
+    pointerEvents: "auto",
+    cursor: "default",
+    height: height,
+  };
+  const invisible = { opacity: "0", pointerEvents: "none", height: height };
 
   const options = {
     animationData: animation,
@@ -29,15 +38,17 @@ export default function Landing({ locale }) {
           <h3>
             Deutscher Pavillon 2024
             <br />
-            60<sup style={{lineHeight: "10px"}}>th</sup> International Art Exhibition –<br />
+            60<sup style={{ lineHeight: "10px" }}>th</sup> International Art
+            Exhibition –<br />
             La Biennale di Venezia
           </h3>
         ) : (
           <h3>
             German Pavillon 2024
             <br />
-            60<sup style={{lineHeight: "10px"}}>th</sup> International Art Exhibition –<br />
-            La Biennale di Venezia 
+            60<sup style={{ lineHeight: "10px" }}>th</sup> International Art
+            Exhibition –<br />
+            La Biennale di Venezia
           </h3>
         )}
       </div>
