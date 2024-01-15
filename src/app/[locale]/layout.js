@@ -5,18 +5,19 @@ import "../globals.css";
 
 export default function LocaleLayout({ children, params: { locale } }) {
   return (
-    <html lang={locale}>
-      <Head>
-        {/* <script
+    <>
+      {/* <Head>
+        <script
+          async
           type="text/javascript"
           data-cmp-ab="1"
           src="https://cdn.consentmanager.net/delivery/autoblocking/04ba2a2631d12.js"
           data-cmp-host="d.delivery.consentmanager.net"
           data-cmp-cdn="cdn.consentmanager.net"
           data-cmp-codesrc="1"
-        ></script> */}
+        ></script>
       </Head>
-      {/* <Script
+      <Script
         async
         strategy="beforeInteractive"
         src="https://cdn.consentmanager.net/delivery/autoblocking/04ba2a2631d12.js"
@@ -25,10 +26,10 @@ export default function LocaleLayout({ children, params: { locale } }) {
         data-cmp-cdn="cdn.consentmanager.net"
         data-cmp-codesrc="1"
       /> */}
-      <body>
+      <>
         {/* <Nav locale={locale} /> */}
         {children}
-      </body>
-    </html>
+      </>
+    </>
   );
 }
