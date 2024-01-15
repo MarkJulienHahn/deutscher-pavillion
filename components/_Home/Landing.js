@@ -36,7 +36,7 @@ export default function Landing({ locale }) {
             German Pavillon 2024
             <br />
             60<sup>th</sup> International Art Exhibition –<br />
-            La Biennale di Venezia
+            La Biennale di Venezia 
           </h3>
         )}
       </div>
