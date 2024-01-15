@@ -7,7 +7,7 @@ import animation from "../../public/animation/thresholds-animation.json";
 export default function Landing({ locale }) {
   const [hidden, setHidden] = useState(false);
 
-  const visible = { opacity: "1", pointerEvents: "auto" };
+  const visible = { opacity: "1", pointerEvents: "auto", cursor: "default" };
   const invisible = { opacity: "0", pointerEvents: "none" };
 
   const options = {
@@ -20,8 +20,9 @@ export default function Landing({ locale }) {
   return (
     <div
       className="landingWrapper"
-      onClick={() => setHidden(true)}
-      style={hidden ? invisible : visible}
+      // onClick={() => setHidden(true)}
+      // style={hidden ? invisible : visible}
+      style={visible}
     >
       <div>
         {locale == "de" ? (
