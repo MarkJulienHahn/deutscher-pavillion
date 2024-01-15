@@ -28,14 +28,14 @@ export default function Landing({ locale }) {
           <h3>
             Deutscher Pavillon 2024
             <br />
-            60th International Art Exhibition –<br />
+            60<sup>th</sup> International Art Exhibition –<br />
             La Biennale di Venezia
           </h3>
         ) : (
           <h3>
             German Pavillon 2024
             <br />
-            60th International Art Exhibition –<br />
+            60<sup>th</sup> International Art Exhibition –<br />
             La Biennale di Venezia
           </h3>
         )}
@@ -46,13 +46,13 @@ export default function Landing({ locale }) {
       <div>
         {locale == "de" ? (
           <h3>
-            20.April – 24.November
+            20. April – 24. November
             <br />
             2024
           </h3>
         ) : (
           <h3>
-            April 20–November24
+            April 20 – November 24
             <br />
             2024
           </h3>
