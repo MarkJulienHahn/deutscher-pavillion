@@ -26,7 +26,7 @@ export default function LocaleLayout({ children, params: { locale } }) {
         data-cmp-codesrc="1"
       /> */}
       <body>
-        <Nav locale={locale} />
+        {/* <Nav locale={locale} /> */}
         {children}
       </body>
     </html>
