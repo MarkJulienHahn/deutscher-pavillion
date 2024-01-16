@@ -38,7 +38,7 @@ export default function Landing({ locale }) {
           </h3>
         ) : (
           <h3>
-            German Pavillon 2024
+            German Pavilion 2024
             <br />
             60<sup style={{ lineHeight: "10px" }}>th</sup> International Art
             Exhibition
