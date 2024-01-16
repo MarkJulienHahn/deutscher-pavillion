@@ -41,7 +41,11 @@ export default defineType({
               name: "name",
               title: "Name",
               type: "string",
-              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "nameEnglish",
+              title: "Name English",
+              type: "string",
             },
             { name: "url", title: "Url", type: "url" },
           ],

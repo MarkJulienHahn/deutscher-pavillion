@@ -1,7 +1,7 @@
 import React from "react";
 import Artists from "../../../../components/Artists/Artists";
 
-import { getArtists, getArtistImages } from "../../../../public/sanity/sanity-utils";
+import { getArtists, getArtistImages } from "../../../../sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
   const artists = await getArtists();

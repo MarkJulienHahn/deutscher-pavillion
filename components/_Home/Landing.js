@@ -2,12 +2,12 @@
 
 import { use100vh } from "react-div-100vh";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLottie } from "lottie-react";
 import animation from "../../public/animation/thresholds-animation.json";
 
 export default function Landing({ locale }) {
-  const [delay, setDelay] = useState(true)
+  const [delay, setDelay] = useState(true);
   const [hidden, setHidden] = useState(false);
 
   const height = use100vh();
@@ -20,11 +20,13 @@ export default function Landing({ locale }) {
     loop: true,
   };
 
+  const ref = useRef();
+
   const { View } = useLottie(options);
 
-  // useEffect(() => {
-  //   setTimeout(setDelay(false), 500)
-  // })
+  useEffect(() => {
+    ref.current?.scrollIntoView();
+  }, []);
 
   return (
     <div
@@ -60,7 +62,7 @@ export default function Landing({ locale }) {
         {View}
       </div>
 
-      <div>
+      <div ref={ref}>
         {locale == "de" ? (
           <h3>
             20. April – 24. November

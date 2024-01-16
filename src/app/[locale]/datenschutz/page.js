@@ -1,6 +1,6 @@
 import Privacy from "../../../../components/Privacy/Privacy";
 
-import { getPrivacy } from "../../../../public/sanity/sanity-utils";
+import { getPrivacy } from "../../../../sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
   const privacy = await getPrivacy();

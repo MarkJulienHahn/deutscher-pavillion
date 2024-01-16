@@ -10,7 +10,13 @@ export default function TeamEntry({ entry, locale }) {
       <div className="teamWrapper">
         {entry.names.map((name, i) =>
           !name.url ? (
-            <p key={i}>{name.name}</p>
+            !name.nameEnglish ? (
+              <p key={i}>{name.name}</p>
+            ) : locale == "de" ? (
+              <p key={i}>{name.name}</p>
+            ) : (
+              <p key={i}>{name.nameEnglish}</p>
+            )
           ) : (
             <a key={i} href={name.url} target="_blank" rel="noreferrer">
               <p>{name.name}</p>

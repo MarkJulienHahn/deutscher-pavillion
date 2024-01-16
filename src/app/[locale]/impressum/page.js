@@ -1,6 +1,6 @@
 import Imprint from "../../../../components/Imprint/Imprint";
 
-import { getImprint } from "../../../../public/sanity/sanity-utils";
+import { getImprint } from "../../../../sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
   const imprint = await getImprint();
