@@ -32,8 +32,7 @@ export default function Landing({ locale }) {
           <h3>
             Deutscher Pavillon 2024
             <br />
-            60<sup style={{ lineHeight: "10px" }}>th</sup> International Art
-            Exhibition –<br />
+            60. Internationale Kunstausstellung<br />
             La Biennale di Venezia
           </h3>
         ) : (
@@ -41,7 +40,7 @@ export default function Landing({ locale }) {
             German Pavillon 2024
             <br />
             60<sup style={{ lineHeight: "10px" }}>th</sup> International Art
-            Exhibition –<br />
+            Exhibition<br />
             La Biennale di Venezia
           </h3>
         )}
