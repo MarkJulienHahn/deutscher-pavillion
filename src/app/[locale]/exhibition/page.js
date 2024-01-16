@@ -6,11 +6,12 @@ export default async function page({ params: { locale } }) {
   const exhibitionPavillon = await getExhibitionPavillon();
   const exhibitionCertosa = await getExhibitionCertosa();
   return (
-    <Exhibition
-      exhibitionPavillon={exhibitionPavillon}
-      exhibitionCertosa={exhibitionCertosa}
-      locale={locale}
-    />
+    <></>
+    // <Exhibition
+    //   exhibitionPavillon={exhibitionPavillon}
+    //   exhibitionCertosa={exhibitionCertosa}
+    //   locale={locale}
+    // />
   );
 }
 

@@ -7,11 +7,12 @@ export default async function page({ params: { locale } }) {
   const programPavillon = await getProgramPavillon();
   const programCertosa = await getProgramCertosa();
   return (
-    <Program
-      programPavillon={programPavillon}
-      programCertosa={programCertosa}
-      locale={locale}
-    />
+    <></>
+    // <Program
+    //   programPavillon={programPavillon}
+    //   programCertosa={programCertosa}
+    //   locale={locale}
+    // />
   );
 }
 
