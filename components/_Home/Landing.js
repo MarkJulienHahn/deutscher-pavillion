@@ -7,7 +7,7 @@ import { useLottie } from "lottie-react";
 import animation from "../../public/animation/thresholds-animation.json";
 
 export default function Landing({ locale }) {
-  const [delay, setDelay] = useState(true);
+  const [delay, setDelay] = useState(true)
   const [hidden, setHidden] = useState(false);
 
   const height = use100vh();
@@ -22,9 +22,9 @@ export default function Landing({ locale }) {
 
   const { View } = useLottie(options);
 
-  useEffect(() => {
-    setTimeout(setDelay(false), 500);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(setDelay(false), 500)
+  // })
 
   return (
     <div
@@ -53,14 +53,12 @@ export default function Landing({ locale }) {
         )}
       </div>
 
-      {!delay && (
-        <div
-          className="animationWrapper"
-          style={{ height: "100vh", width: "100vw" }}
-        >
-          {View}
-        </div>
-      )}
+      <div
+        className="animationWrapper"
+        style={{ height: height, width: "100vw" }}
+      >
+        {View}
+      </div>
 
       <div>
         {locale == "de" ? (

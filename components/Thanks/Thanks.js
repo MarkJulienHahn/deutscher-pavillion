@@ -31,20 +31,16 @@ export default function Thanks({ thanks, locale }) {
           />
           <div className="dankLogos">
             <Image
-              src={logo1}
-              alt="logo"
-              style={{ width: "250px", height: "100px" }}
-            />
-            <Image
-              src={logo2}
-              alt="logo"
-              style={{ width: "250px", height: "100px" }}
-            />
-            <Image
               src={logo3}
               alt="logo"
               style={{ width: "250px", height: "100px" }}
             />
+            <Image
+              src={logo1}
+              alt="logo"
+              style={{ width: "250px", height: "100px" }}
+            />
+
           </div>
           {/* <div className="dankLogos">
             {thanks.logos.map((logo, i) => (
@@ -68,8 +64,19 @@ export default function Thanks({ thanks, locale }) {
             ))}
           </div> */}
           <div>
-            <h2>{partnerHeadline}</h2>
+            <p>{partnerHeadline}</p>
             <PortableText value={partnerText} />
+          </div>
+
+          <div style={{paddingTop: "var(--space-L)"}}>
+            <p>{locale == "de" ? "Unterstützt von" : "Supported by"}</p>
+            <div className="dankLogos">
+              <Image
+                src={logo2}
+                alt="logo"
+                style={{ width: "250px", height: "100px" }}
+              />
+            </div>
           </div>
         </div>
       </div>
