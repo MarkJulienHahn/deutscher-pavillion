@@ -10,12 +10,12 @@ export default function Press({ press, locale }) {
     <>
       <div className="singlePageWrapper introText centered">
         <h1>{locale == "de" ? "Presse" : "Press"}</h1>
-        <div className="sectionWrapper">
+        {/* <div className="sectionWrapper">
           <h2>Downloads</h2>
           {press.downloads.map((download, i) => (
             <Download download={download} locale={locale} key={i} />
           ))}
-        </div>
+        </div> */}
 
         <div className="sectionWrapper">
           <h2>
