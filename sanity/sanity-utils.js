@@ -40,7 +40,7 @@ export async function getVisit() {
 
 export async function getPress() {
   return client.fetch(
-    groq`*[_type == "press"]|order(orderRank){..., "downloads": downloads[]{..., file{..., "asset": asset->{...}}}}`
+    groq`*[_type == "press"]|order(orderRank){..., "downloads": downloads[]{..., file{..., "asset": asset->{...}}, fileEnglish{..., "asset": asset->{...}}}}`
   );
 }
 

@@ -143,7 +143,7 @@ input:focus {
 }
 
 .columnWrapper {
-  padding: 500px var(--space-S) var(--space-S) var(--space-S);
+  padding: 40vh var(--space-S) var(--space-S) var(--space-S);
   width: 50%;
 }
 
@@ -432,8 +432,12 @@ input:focus {
     --fontSize-L: 70px;
     --lineHeight-L: 70px;
   }
+  .imageCentered span {
+    width: 1000px;
+    height: 666px;
+  }
   .artistSelector h2 {
-    line-height: 60px;
+    line-height: 90px;
   }
 }
 
@@ -450,6 +454,9 @@ input:focus {
     padding-top: 100px;
     width: 100vw;
     height: auto;
+  }
+  .artistSelector h2 {
+    line-height: 80px;
   }
 }
 
@@ -497,5 +504,8 @@ input:focus {
   }
   .artistSelector {
     padding-top: 60px;
+  }
+  .artistSelector h2 {
+    line-height: 50px;
   }
 }

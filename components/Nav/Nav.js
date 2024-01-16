@@ -22,6 +22,7 @@ const hidden = { opacity: "0", pointerEvents: "none" };
 export default function Nav({ locale }) {
   const [active, setActive] = useState(false);
   const [showButton, setShowButton] = useState(true);
+  const [onlyNoButton, setOnlyNoButton] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [twoColors, setTwoColors] = useState(false);
 
@@ -80,9 +81,9 @@ export default function Nav({ locale }) {
 
     windowWidth < 1000 && setTwoColors(false);
 
-    pathname == "/en" || pathname == "de"
-      ? setShowButton(false)
-      : setShowButton(true);
+    pathname == "/en" || pathname == "/de"
+      ? setOnlyNoButton(true)
+      : setOnlyNoButton(false);
   }, [pathname]);
 
   return (
@@ -106,7 +107,7 @@ export default function Nav({ locale }) {
           <h3
             className={styles.button}
             onClick={() => setActive(true)}
-            // style={showButton ? visible : hidden}
+            style={onlyNoButton ? hidden : visible}
           >
             {locale == "de" ? "Menü" : "Menu"}
           </h3>

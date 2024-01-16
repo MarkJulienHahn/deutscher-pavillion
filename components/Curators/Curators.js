@@ -9,9 +9,7 @@ export default function Curators({ curators, locale }) {
   return (
     <main>
       <div className="singlePageWrapper">
-        <h1>
-          {locale == "de" ? "Kuratorische Leitung" : "Curatorial Direction"}
-        </h1>
+        <h1>{locale == "de" ? "Kuratorin" : "Curator"}</h1>
         <h1>{curators[0].name}</h1>
 
         <div className="imageCentered">

@@ -74,8 +74,6 @@ const Artists = ({ artists, artistImages, locale }) => {
     );
   }, [left, right]);
 
-  console.log(heightLeft);
-
   return (
     <main>
       <div className="columnPageWrapper">
@@ -149,7 +147,11 @@ const Artists = ({ artists, artistImages, locale }) => {
           )}
         </div>
 
-        <div className="columnWrapper bgBlue" ref={right}>
+        <div
+          className="columnWrapper bgBlue"
+          ref={right}
+          style={{ paddingTop: windowWidth < 1300 ? "30px" : "40vh" }}
+        >
           <div className="artistSelector">
             <h3>La Certosa</h3>
             {artists.map((artist, i) =>
@@ -201,7 +203,9 @@ const Artists = ({ artists, artistImages, locale }) => {
           )}
         </div>
       </div>
-      <NavMenu locale={locale} />
+      <div style={{ zIndex: "1000", position: "relative" }}>
+        <NavMenu locale={locale} />
+      </div>
     </main>
   );
 };

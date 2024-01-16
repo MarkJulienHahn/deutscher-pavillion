@@ -24,9 +24,35 @@ export default function Download({ download, locale }) {
           </p>
         </span>
       </div>
-      <a href={download.file.asset.url} download>
-        <p className="button downloadButton">{download.file.asset.extension}</p>
-      </a>
+      {locale == "de" && download.file?.asset?.url ? (
+        <a
+          href={download.file.asset.url}
+          download
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p className="button downloadButton">
+            {download.file.asset.extension}
+          </p>
+        </a>
+      ) : (
+        ""
+      )}
+
+      {locale !== "de" && download.fileEnglish?.asset?.url ? (
+        <a
+          href={download.fileEnglish.asset.url}
+          download
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p className="button downloadButton">
+            {download.fileEnglish.asset.extension}
+          </p>
+        </a>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

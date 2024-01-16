@@ -41,7 +41,11 @@ export default defineType({
               name: "file",
               title: "File",
               type: "file",
-              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "fileEnglish",
+              title: "File English",
+              type: "file",
             },
           ],
           preview: {
