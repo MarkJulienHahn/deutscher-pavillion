@@ -150,7 +150,6 @@ const Artists = ({ artists, artistImages, locale }) => {
         <div
           className="columnWrapper bgBlue"
           ref={right}
-          style={{ paddingTop: windowWidth < 1300 ? "30px" : "40vh" }}
         >
           <div className="artistSelector">
             <h3>La Certosa</h3>
