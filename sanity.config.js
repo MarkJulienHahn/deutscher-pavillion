@@ -1,7 +1,7 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
-import schemaTypes from "./sanity/schemas/index";
+import schemaTypes from "./public/sanity/schemas/index";
 import { myStructure } from "./deskStructure";
 
 // Define the actions that should be available for singleton documents

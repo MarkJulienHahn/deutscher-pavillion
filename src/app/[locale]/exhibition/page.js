@@ -1,6 +1,6 @@
 import Exhibition from "../../../../components/Exhibition/Exhibition";
 
-import { getExhibitionPavillon, getExhibitionCertosa } from "../../../../sanity/sanity-utils";
+import { getExhibitionPavillon, getExhibitionCertosa } from "../../../../public/sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
   const exhibitionPavillon = await getExhibitionPavillon();
