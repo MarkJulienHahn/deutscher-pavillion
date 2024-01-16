@@ -7,7 +7,7 @@ export const menuEN = [
   { name: "Visit", slug: "visit" },
   { name: "Press", slug: "press" },
   { name: "Team", slug: "team" },
-  { name: "Thanks To", slug: "thanks-to" },
+  { name: "Acknowledgements", slug: "acknowledgements" },
 ];
 
 export const menuDE = [
