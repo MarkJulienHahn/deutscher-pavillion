@@ -2,6 +2,12 @@ import Nav from "../../../components/Nav/Nav";
 import Script from "next/script";
 import "../globals.css";
 
+export const metadata = {
+  title: "German Pavilion 2024",
+  description:
+    "The German Pavilion 2024 at the 60th International Art Exhibition — La Biennale di Venezia",
+};
+
 export default function LocaleLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
