@@ -28,6 +28,17 @@ export default function Curators({ curators, locale }) {
                 objectFit: "cover",
               }}
             />
+            {locale == "de"
+              ? curators[0].image.captions?.german && (
+                  <p className="imageCaptionCurator">
+                    {curators[0].image.captions.german}
+                  </p>
+                )
+              : curators[0].image.captions?.english && (
+                  <p className="imageCaptionCurator">
+                    {curators[0].image.captions.english}
+                  </p>
+                )}
           </span>
         </div>
 

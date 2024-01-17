@@ -175,7 +175,7 @@ input:focus {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: var(--space-S) 0;
+  padding: var(--space-S) 0 var(--space-M);
 }
 
 .imageCentered span {
@@ -434,6 +434,23 @@ input:focus {
 
 .animationInner {
   width: 100vw;
+}
+
+.artistWrapper h2 {
+  padding-bottom: var(--space-XS);
+}
+
+.imageCaption {
+  position: relative;
+  transform: translateY(44px);
+  font-size: var(--fontSize-XS);
+}
+
+.imageCaptionCurator {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(34px);
+  font-size: var(--fontSize-XS);
 }
 
 @keyframes fadeIn {

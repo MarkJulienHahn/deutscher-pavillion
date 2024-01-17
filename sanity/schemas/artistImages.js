@@ -20,6 +20,16 @@ export default defineType({
       type: "image",
       fields: [
         {
+          title: "Captions",
+          name: "captions",
+          type: "object",
+          fields: [
+            { title: "German", name: "german", type: "string" },
+            { title: "English", name: "english", type: "string" },
+          ],
+        },
+
+        {
           title: "Alternative Text",
           name: "alt",
           type: "string",
@@ -39,6 +49,15 @@ export default defineType({
       title: "Image Right",
       type: "image",
       fields: [
+        {
+          title: "Captions",
+          name: "captions",
+          type: "object",
+          fields: [
+            { title: "German", name: "german", type: "string" },
+            { title: "English", name: "english", type: "string" },
+          ],
+        },
         {
           title: "Alternative Text",
           name: "alt",

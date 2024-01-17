@@ -74,6 +74,8 @@ const Artists = ({ artists, artistImages, locale }) => {
     );
   }, [left, right]);
 
+  console.log(artistImages.imageRight.captions?.german);
+
   return (
     <main>
       <div className="columnPageWrapper">
@@ -136,6 +138,17 @@ const Artists = ({ artists, artistImages, locale }) => {
                 />
               </div>
             )}
+            {locale == "de"
+              ? artistImages.imageLeft.captions?.german && (
+                  <p className="imageCaption">
+                    {artistImages.imageLeft.captions.german}
+                  </p>
+                )
+              : artistImages.imageLeft.captions?.english && (
+                  <p className="imageCaption">
+                    {artistImages.imageLeft.captions.english}
+                  </p>
+                )}
           </div>
 
           {artists.map((artist, i) =>
@@ -147,10 +160,7 @@ const Artists = ({ artists, artistImages, locale }) => {
           )}
         </div>
 
-        <div
-          className="columnWrapper bgBlue"
-          ref={right}
-        >
+        <div className="columnWrapper bgBlue" ref={right}>
           <div className="artistSelector">
             <h3>La Certosa</h3>
             {artists.map((artist, i) =>
@@ -191,6 +201,17 @@ const Artists = ({ artists, artistImages, locale }) => {
                 />
               </div>
             )}
+            {locale == "de"
+              ? artistImages.imageRight.captions?.german && (
+                  <p className="imageCaption">
+                    {artistImages.imageRight.captions.german}
+                  </p>
+                )
+              : artistImages.imageRight.captions?.english && (
+                  <p className="imageCaption">
+                    {artistImages.imageRight.captions.english}
+                  </p>
+                )}
           </div>
 
           {artists.map((artist, i) =>
