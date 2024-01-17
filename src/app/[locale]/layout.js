@@ -21,6 +21,7 @@ export default function LocaleLayout({ children, params: { locale } }) {
       />
       <Script
         strategy="afterInteractive"
+        id="gtm-script"
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){
