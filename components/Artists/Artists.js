@@ -5,7 +5,9 @@ import Image from "next/image";
 
 import Artist from "./Artist";
 import ArtistOverviewEntry from "./ArtistsOverviewEntry";
+import ArtistsMobile from "./AristsMobile"
 import NavMenu from "../Nav/NavMenu";
+
 import useWindowDimensions from "../useWindowDimensions";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
@@ -74,11 +76,9 @@ const Artists = ({ artists, artistImages, locale }) => {
     );
   }, [left, right]);
 
-  console.log(artistImages.imageRight.captions?.german);
-
   return (
     <main>
-      <div className="columnPageWrapper">
+      <div className="columnPageWrapper artistsDesktop">
         {windowWidth > 1300 && !delay && (
           <img
             className="columnPageHeadline"
@@ -138,7 +138,6 @@ const Artists = ({ artists, artistImages, locale }) => {
                 />
               </div>
             )}
-
           </div>
 
           {artists.map((artist, i) =>
@@ -213,6 +212,15 @@ const Artists = ({ artists, artistImages, locale }) => {
           )}
         </div>
       </div>
+
+      {windowWidth < 1300 && (
+        <ArtistsMobile
+          locale={locale}
+          artists={artists}
+          artistImages={artistImages}
+        />
+      )}
+
       <div style={{ zIndex: "1000", position: "relative" }}>
         <NavMenu locale={locale} />
       </div>
