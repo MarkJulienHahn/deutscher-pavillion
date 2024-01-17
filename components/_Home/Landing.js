@@ -59,7 +59,7 @@ export default function Landing({ locale }) {
         className="animationWrapper"
         style={{ height: height, width: "100vw" }}
       >
-        {View}
+        <div className="animationInner">{View}</div>
       </div>
 
       <div ref={ref}>

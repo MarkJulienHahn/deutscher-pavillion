@@ -412,17 +412,22 @@ input:focus {
 }
 
 .animationWrapper {
-  display: flex;
-  /* height: 100vh; */
   width: 100vw;
   justify-content: center;
   align-items: center;
   position: absolute;
+  top: 0;
   left: 0;
   opacity: 0;
   animation: fadeIn 0.5s ease;
   animation-delay: 1s;
   animation-fill-mode: forwards;
+  display: flex;
+  align-items: center;
+}
+
+.animationInner {
+  width: 100vw;
 }
 
 @keyframes fadeIn {
@@ -487,8 +492,8 @@ input:focus {
     --fontSize-S: 17px;
     --lineHeight-S: 21.25px;
 
-    --fontSize-M: 20px;
-    --lineHeight-M: 28px;
+    --fontSize-M: 19px;
+    --lineHeight-M: 23px;
 
     --fontSize-L: 40px;
     --lineHeight-L: 42px;
