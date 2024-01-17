@@ -336,6 +336,7 @@ input:focus {
   /* padding-bottom: 1350px */
 }
 
+
 .artistSelector h3 {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);
@@ -517,6 +518,7 @@ input:focus {
   }
   .artistSelector h2 {
     line-height: 80px;
+    font-size: 40px
   }
   .artistsDesktop {
     display: none;
@@ -528,14 +530,15 @@ input:focus {
   }
 
   .switchWrapper {
-    position: absolute;
+    position: fixed;
     top: 75px;
     left: calc(50% - 35vw);
     width: 70vw;
     border: 2px solid var(--blue);
     border-radius: 50px;
     height: 60px;
-    z-index: 100;
+    z-index: 10;
+    transition: opacity 0.5s ease;
   }
   .switchNamesWrapper {
     display: flex;

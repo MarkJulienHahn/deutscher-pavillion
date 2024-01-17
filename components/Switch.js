@@ -19,17 +19,20 @@ export default function Switch({
     >
       <div className="switchNamesWrapper">
         <span>
-          <p
-            style={{
-              zIndex: "1000",
-              color: "var(--red)",
-            }}
-          >
-            {(locale = "de" ? "Deutscher Pavillon" : "German Pavilion")}
-          </p>
+          {locale == "de" ? (
+            <p style={{ zIndex: "10", color: "var(--red)" }}>
+              Deutscher <br />
+              Pavillon
+            </p>
+          ) : (
+            <p style={{ zIndex: "10", color: "var(--red)" }}>
+              German <br />
+              Pavilion
+            </p>
+          )}
         </span>
         <span>
-          <p style={{ zIndex: "1000", color: "var(--blue)" }}>
+          <p style={{ zIndex: "10", color: "var(--blue)" }}>
             La <br />
             Certosa
           </p>
@@ -40,7 +43,7 @@ export default function Switch({
         style={
           !trigger
             ? { left: "32vw", background: "var(--red)" }
-            : { left: "0vw", background: "var(--blue)" }
+            : { left: "-2vw", background: "var(--blue)" }
         }
       ></div>
     </div>
