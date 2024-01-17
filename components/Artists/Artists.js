@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import Artist from "./Artist";
 import ArtistOverviewEntry from "./ArtistsOverviewEntry";
-import ArtistsMobile from "./AristsMobile"
+import ArtistsMobile from "./AristsMobile";
 import NavMenu from "../Nav/NavMenu";
 
 import useWindowDimensions from "../useWindowDimensions";
@@ -213,15 +213,15 @@ const Artists = ({ artists, artistImages, locale }) => {
         </div>
       </div>
 
-      {windowWidth < 1300 && (
+      <div className="artistsMobile">
         <ArtistsMobile
           locale={locale}
           artists={artists}
           artistImages={artistImages}
         />
-      )}
+      </div>
 
-      <div style={{ zIndex: "1000", position: "relative" }}>
+      <div style={{ zIndex: "11", position: "relative" }}>
         <NavMenu locale={locale} />
       </div>
     </main>

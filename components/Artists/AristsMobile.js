@@ -5,27 +5,23 @@ import Image from "next/image";
 
 import Artist from "./Artist";
 import ArtistOverviewEntry from "./ArtistsOverviewEntry";
+import Nav from "../Nav/Nav";
+import Switch from "../Switch";
 
 import useWindowDimensions from "../useWindowDimensions";
+import { use100vh } from "react-div-100vh";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
-
-const visible = {
-  opacity: "1",
-  height: "81.6px",
-  transform: "translateX(2px)",
-};
-const invisible = {
-  opacity: "0",
-  height: "81.6px",
-  transform: "translateX(2px)",
-};
 
 export default function AristsMobile({ locale, artists, artistImages }) {
   const [anchor, setAnchor] = useState(null);
   const [delay, setDelay] = useState(true);
   const [heightLeft, setHeightLeft] = useState(null);
   const [heightRight, setHeightRight] = useState(null);
+
+  const [focusLeft, setFocusLeft] = useState(true);
+
+  const height = use100vh();
 
   const anchorFunction = (slug) => {
     setAnchor(slug);
@@ -36,11 +32,11 @@ export default function AristsMobile({ locale, artists, artistImages }) {
 
   const [scrollPositionLeft, setScrollPositionLeft] = useState("");
   const left = useRef();
+  const leftHeadline = useRef();
 
   const [scrollPositionRight, setScrollPositionRight] = useState("");
   const right = useRef();
-
-  const { windowWidth } = useWindowDimensions();
+  const rightHeadline = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,11 +49,11 @@ export default function AristsMobile({ locale, artists, artistImages }) {
   });
 
   useEffect(() => {
-    (scrollPositionLeft > 240 || scrollPositionRight > 240) &&
-      setShowHeadline(false);
-    scrollPositionLeft < 240 &&
-      scrollPositionRight < 240 &&
-      setShowHeadline(true);
+    scrollPositionLeft > 50 && focusLeft && setShowHeadline(false);
+    scrollPositionLeft < 50 && focusLeft && setShowHeadline(true);
+
+    scrollPositionRight > 50 && !focusLeft && setShowHeadline(false);
+    scrollPositionRight < 50 && !focusLeft && setShowHeadline(true);
   }, [scrollPositionLeft, scrollPositionRight]);
 
   useEffect(() => {
@@ -74,129 +70,173 @@ export default function AristsMobile({ locale, artists, artistImages }) {
         artistImages.imageRight.asset.metadata.dimensions.aspectRatio
     );
   }, [left, right]);
+
+  useEffect(() => {
+    !focusLeft &&
+      setTimeout(() => {
+        leftHeadline.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 500);
+    focusLeft &&
+      setTimeout(
+        rightHeadline.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        }),
+        500
+      );
+  }, [focusLeft]);
+
   return (
-    <div className="columnPageWrapper">
-      <div className="columnWrapper bgRed" ref={left}>
-        {windowWidth < 1300 && !delay && (
-          <h1 className="mobileHeadline">
-            {locale == "de" ? "Künstler:innen" : "Artists"}
-          </h1>
-        )}
+    <>
+      <Nav locale={locale} color={focusLeft ? "normal" : "orange"} />
 
-        <div className="artistSelector">
-          <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h3>
+      <Switch
+        locale={locale}
+        trigger={focusLeft}
+        showHeadline={showHeadline}
+        setFocusLeft={setFocusLeft}
+        focusLeft={focusLeft}
+      />
 
+      <div
+        className="columnPageWrapper"
+        style={{
+          height: height,
+          transform: focusLeft ? "" : "translateX(-80vw)",
+        }}
+      >
+        <div
+          className="columnWrapper bgRed active"
+          ref={left}
+          onClick={!focusLeft ? () => setFocusLeft(true) : () => {}}
+        >
+          <div className={"top"} ref={leftHeadline}></div>
+
+          <div
+            className="artistSelector"
+            style={{ pointerEvents: focusLeft ? "auto" : "none" }}
+          >
+            <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h3>
+
+            {artists.map((artist, i) =>
+              !artist.certosa ? (
+                <ArtistOverviewEntry
+                  key={i}
+                  artist={artist}
+                  anchorFunction={anchorFunction}
+                />
+              ) : (
+                ""
+              )
+            )}
+          </div>
+          <div className="imageFullwidth groupPicture">
+            {heightLeft && (
+              <div style={{ width: "100%", height: `${heightLeft}px` }}>
+                <Image
+                  src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
+                    artistImages.imageLeft?.filename.current
+                      ? artistImages.imageLeft?.filename.current
+                      : "german-pavillon-2024-vernice-biennale"
+                  }`}
+                  alt={
+                    artistImages.imageLeft?.alt ||
+                    "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                  }
+                  loading="lazy"
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    aspectRatio:
+                      artistImages.imageLeft.asset.metadata.dimensions
+                        .aspectRatio,
+                  }}
+                />
+              </div>
+            )}
+          </div>
           {artists.map((artist, i) =>
             !artist.certosa ? (
-              <ArtistOverviewEntry
-                key={i}
-                artist={artist}
-                anchorFunction={anchorFunction}
-              />
+              <Artist artist={artist} locale={locale} key={i} anchor={anchor} />
             ) : (
               ""
             )
           )}
         </div>
 
-        <div className="imageFullwidth groupPicture">
-          {heightLeft && (
-            <div style={{ width: "100%", height: `${heightLeft}px` }}>
-              <Image
-                src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
-                  artistImages.imageLeft?.filename.current
-                    ? artistImages.imageLeft?.filename.current
-                    : "german-pavillon-2024-vernice-biennale"
-                }`}
-                alt={
-                  artistImages.imageLeft?.alt ||
-                  "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
-                }
-                loading="lazy"
-                fill
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                  aspectRatio:
-                    artistImages.imageLeft.asset.metadata.dimensions
-                      .aspectRatio,
-                }}
-              />
-            </div>
-          )}
-        </div>
-
-        {artists.map((artist, i) =>
-          !artist.certosa ? (
-            <Artist artist={artist} locale={locale} key={i} anchor={anchor} />
-          ) : (
-            ""
-          )
-        )}
-      </div>
-
-      <div className="columnWrapper bgBlue" ref={right}>
-        <div className="artistSelector">
-          <h3>La Certosa</h3>
+        <div
+          className="columnWrapper bgBlue"
+          ref={right}
+          onClick={focusLeft ? () => setFocusLeft(false) : () => {}}
+        >
+          <div className={"top"} ref={rightHeadline}></div>
+          <div
+            className="artistSelector"
+            style={{ pointerEvents: !focusLeft ? "auto" : "none" }}
+          >
+            <h3>La Certosa</h3>
+            {artists.map((artist, i) =>
+              artist.certosa ? (
+                <ArtistOverviewEntry
+                  key={i}
+                  artist={artist}
+                  anchorFunction={anchorFunction}
+                />
+              ) : (
+                ""
+              )
+            )}
+          </div>
+          <div className="imageFullwidth groupPicture">
+            {heightRight && (
+              <div style={{ width: "100%", height: `${heightRight}px` }}>
+                <Image
+                  src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
+                    artistImages.imageRight?.filename.current
+                      ? artistImages.imageRight?.filename.current
+                      : "german-pavillon-2024-vernice-biennale"
+                  }`}
+                  alt={
+                    artistImages.imageRight?.alt ||
+                    "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                  }
+                  loading="lazy"
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    aspectRatio:
+                      artistImages.imageRight.asset.metadata.dimensions
+                        .aspectRatio,
+                  }}
+                />
+              </div>
+            )}
+            {locale == "de"
+              ? artistImages.imageRight.captions?.german && (
+                  <p className="imageCaption">
+                    {artistImages.imageRight.captions.german}
+                  </p>
+                )
+              : artistImages.imageRight.captions?.english && (
+                  <p className="imageCaption">
+                    {artistImages.imageRight.captions.english}
+                  </p>
+                )}
+          </div>
           {artists.map((artist, i) =>
             artist.certosa ? (
-              <ArtistOverviewEntry
-                key={i}
-                artist={artist}
-                anchorFunction={anchorFunction}
-              />
+              <Artist artist={artist} locale={locale} key={i} anchor={anchor} />
             ) : (
               ""
             )
           )}
         </div>
-
-        <div className="imageFullwidth groupPicture">
-          {heightRight && (
-            <div style={{ width: "100%", height: `${heightRight}px` }}>
-              <Image
-                src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
-                  artistImages.imageRight?.filename.current
-                    ? artistImages.imageRight?.filename.current
-                    : "german-pavillon-2024-vernice-biennale"
-                }`}
-                alt={
-                  artistImages.imageRight?.alt ||
-                  "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
-                }
-                loading="lazy"
-                fill
-                style={{
-                  objectFit: "cover",
-                  width: "100%",
-                  aspectRatio:
-                    artistImages.imageRight.asset.metadata.dimensions
-                      .aspectRatio,
-                }}
-              />
-            </div>
-          )}
-          {locale == "de"
-            ? artistImages.imageRight.captions?.german && (
-                <p className="imageCaption">
-                  {artistImages.imageRight.captions.german}
-                </p>
-              )
-            : artistImages.imageRight.captions?.english && (
-                <p className="imageCaption">
-                  {artistImages.imageRight.captions.english}
-                </p>
-              )}
-        </div>
-
-        {artists.map((artist, i) =>
-          artist.certosa ? (
-            <Artist artist={artist} locale={locale} key={i} anchor={anchor} />
-          ) : (
-            ""
-          )
-        )}
       </div>
-    </div>
+    </>
   );
 }

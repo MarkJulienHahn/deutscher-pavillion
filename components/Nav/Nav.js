@@ -18,13 +18,15 @@ function removeFirstThreeCharacters(str) {
 
 const visible = { opacity: "1", pointerEvents: "auto" };
 const hidden = { opacity: "0", pointerEvents: "none" };
+const orangeMode = { color: "var(--red)", borderColor: "var(--red)" };
 
-export default function Nav({ locale }) {
+export default function Nav({ locale, color }) {
   const [active, setActive] = useState(false);
   const [showButton, setShowButton] = useState(true);
   const [onlyNoButton, setOnlyNoButton] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [twoColors, setTwoColors] = useState(false);
+  const [menuHidden, setMenuHidden] = useState(false);
 
   const pathname = usePathname();
   const neutralPath = removeFirstThreeCharacters(pathname);
@@ -86,6 +88,31 @@ export default function Nav({ locale }) {
       : setOnlyNoButton(false);
   }, [pathname]);
 
+  useEffect(() => {
+    pathname.includes("kuenstlerinnen") &&
+      !color &&
+      windowWidth < 1300 &&
+      setOnlyNoButton(true);
+    return () => {
+      setOnlyNoButton(false);
+    };
+  }, []);
+
+  useEffect(() => {
+    pathname.includes("artists") &&
+      !color &&
+      windowWidth < 1300 &&
+      setOnlyNoButton(true);
+    return () => {
+      setOnlyNoButton(false);
+    };
+  }, []);
+
+  console.log(
+    pathname.includes("kuenstlerinnen") && windowWidth < 1300,
+    onlyNoButton
+  );
+
   return (
     <>
       <div className={styles.header} style={showButton ? visible : hidden}>
@@ -107,7 +134,9 @@ export default function Nav({ locale }) {
           <h3
             className={styles.button}
             onClick={() => setActive(true)}
-            style={onlyNoButton ? hidden : visible}
+            style={
+              onlyNoButton ? hidden : color == "orange" ? orangeMode : visible
+            }
           >
             {locale == "de" ? "Menü" : "Menu"}
           </h3>
