@@ -249,6 +249,12 @@ input:focus {
   margin: var(--space-S);
 }
 
+.registrationForm form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .pressDisclaimer p {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);
@@ -527,5 +533,38 @@ input:focus {
   }
   .artistSelector h2 {
     line-height: 50px;
+  }
+  .downloadRow,
+  .downloadLeft {
+    flex-direction: column;
+  }
+  .downloadLeft p {
+    text-align: center;
+    width: 100%;
+  }
+  .downloadTitle,
+  .downloadDate {
+    padding-top: var(--space-S);
+    padding-right: 0;
+  }
+  .downloadTitle {
+    padding-bottom: var(--space-S);
+  }
+  .registrationForm form {
+    padding-top: var(--space-M);
+    flex-direction: column;
+  }
+  .formButton {
+    height: 34px;
+    margin: var(--space-XS) 0 var(--space-M);
+    width: 100%;
+  }
+  .pressDisclaimer {
+    text-align: left;
+  }
+  .pressDisclaimer p a,
+  .sectionWrapper p a {
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
   }
 }

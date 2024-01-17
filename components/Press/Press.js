@@ -34,11 +34,6 @@ export default function Press({ press, locale }) {
               action="https://seu2.cleverreach.com/f/360026-377546/wcs/"
               method="post"
               target="_blank"
-              style={{
-                display: "flex",
-                width: "100%",
-                justifyContent: "center",
-              }}
             >
               <input
                 name="email"
