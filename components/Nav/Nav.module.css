@@ -72,7 +72,6 @@
 }
 
 .menuList {
-  /* width: 100%;s */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -80,18 +79,28 @@
   align-items: center;
 }
 
-.menuList span {
+.menuItem,
+.firstMenuItem,
+.lastMenuItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 20px;
+  height: 55px;
   transition: all 0.2s ease;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
   cursor: pointer;
 }
 
-.menuList span:hover {
-  height: 200px;
+.firstMenuItem:hover {
+  margin-bottom: 120px;
+}
+
+.menuItem:hover {
+  margin: 75px 0;
+}
+
+.lastMenuItem:hover {
+  margin-top: 120px;
 }
 
 .menuBottom {
@@ -119,8 +128,28 @@
   .menuListWrapper {
     height: 380px;
   }
-  .menuList span:hover {
-    height: 150px;
+  .menuItem,
+  .firstMenuItem,
+  .lastMenuItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30px;
+    transition: all 0.2s ease;
+    transition-delay: 0.1s;
+    cursor: pointer;
+  }
+
+  .firstMenuItem:hover {
+    margin-bottom: 80px;
+  }
+
+  .menuItem:hover {
+    margin: 50px 0;
+  }
+
+  .lastMenuItem:hover {
+    margin-top: 80px;
   }
 }
 
@@ -130,9 +159,6 @@
     padding: 2px 20px 4px;
     border: 2px solid var(--blue);
     border-radius: 50px;
-  }
-  .menuList span:hover {
-    height: 20px;
   }
   .menuListWrapper {
     margin-top: 16vh;
@@ -179,5 +205,10 @@
   .closeButton {
     width: 160px;
     left: calc(50% - 80px);
+  }
+  .firstMenuItem:hover,
+  .menuItem:hover,
+  .lastMenuItem:hover {
+    margin: 0;
   }
 }

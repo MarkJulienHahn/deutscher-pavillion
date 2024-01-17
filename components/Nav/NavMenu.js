@@ -19,7 +19,15 @@ export default function NavMenu({ locale }) {
         <div className={styles.menuList}>
           {menu.map((entry, i) => (
             <Link key={i} href={`/${entry.slug}`}>
-              <span>
+              <span
+                className={
+                  i === 0
+                    ? styles.firstMenuItem
+                    : i === menu.length - 1
+                    ? styles.lastMenuItem
+                    : styles.menuItem
+                }
+              >
                 <h1>{entry.name}</h1>
               </span>
             </Link>

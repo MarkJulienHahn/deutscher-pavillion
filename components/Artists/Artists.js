@@ -138,17 +138,7 @@ const Artists = ({ artists, artistImages, locale }) => {
                 />
               </div>
             )}
-            {locale == "de"
-              ? artistImages.imageLeft.captions?.german && (
-                  <p className="imageCaption">
-                    {artistImages.imageLeft.captions.german}
-                  </p>
-                )
-              : artistImages.imageLeft.captions?.english && (
-                  <p className="imageCaption">
-                    {artistImages.imageLeft.captions.english}
-                  </p>
-                )}
+
           </div>
 
           {artists.map((artist, i) =>
