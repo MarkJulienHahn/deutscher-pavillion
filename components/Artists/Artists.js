@@ -138,7 +138,6 @@ const Artists = ({ artists, artistImages, locale }) => {
                 />
               </div>
             )}
-
           </div>
 
           {artists.map((artist, i) =>
@@ -213,7 +212,7 @@ const Artists = ({ artists, artistImages, locale }) => {
           )}
         </div>
       </div>
-      <div style={{ zIndex: "1000", position: "relative" }}>
+      <div style={{ zIndex: "11", position: "relative" }}>
         <NavMenu locale={locale} />
       </div>
     </main>
