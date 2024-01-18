@@ -455,7 +455,7 @@ input:focus {
 }
 
 .imageCaption {
-  position: relative;
+  position: absolute;
   transform: translateY(44px);
   font-size: var(--fontSize-XS);
   line-height: var(--lineHeight-XS)
@@ -500,8 +500,7 @@ input:focus {
     line-height: 80px;
   }
   .imageCaption {
-    position: relative;
-    transform: translateY(64px);
+    /* transform: translateY(64px); */
     font-size: var(--fontSize-XS);
   }
 }
@@ -569,8 +568,7 @@ input:focus {
     transition: left 0.2s ease;
   }
   .imageCaption {
-    position: relative;
-    transform: translateY(55px);
+    transform: translateY(40px);
     font-size: var(--fontSize-XS);
   }
 }
@@ -657,5 +655,8 @@ input:focus {
   .sectionWrapper p a {
     text-underline-offset: 3px;
     text-decoration-thickness: 1.5px;
+  }
+  .imageCaption {
+    transform: translateY(35px)
   }
 }

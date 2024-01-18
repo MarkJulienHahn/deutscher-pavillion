@@ -137,7 +137,24 @@ const Artists = ({ artists, artistImages, locale }) => {
                   }}
                 />
               </div>
-            )}
+            )}{" "}
+            {locale == "de"
+              ? artistImages.imageLeft.captions?.german && (
+                  <p
+                    className="imageCaption"
+                    style={{ top: `${heightLeft - 20}px` }}
+                  >
+                    {artistImages.imageLeft.captions.german}
+                  </p>
+                )
+              : artistImages.imageLeft.captions?.english && (
+                  <p
+                    className="imageCaption"
+                    style={{ top: `${heightLeft - 20}px` }}
+                  >
+                    {artistImages.imageLeft.captions.english}
+                  </p>
+                )}
           </div>
 
           {artists.map((artist, i) =>
@@ -192,12 +209,18 @@ const Artists = ({ artists, artistImages, locale }) => {
             )}
             {locale == "de"
               ? artistImages.imageRight.captions?.german && (
-                  <p className="imageCaption">
+                  <p
+                    className="imageCaption"
+                    style={{ top: `${heightLeft - 20}px` }}
+                  >
                     {artistImages.imageRight.captions.german}
                   </p>
                 )
               : artistImages.imageRight.captions?.english && (
-                  <p className="imageCaption">
+                  <p
+                    className="imageCaption"
+                    style={{ top: `${heightLeft - 20}px` }}
+                  >
                     {artistImages.imageRight.captions.english}
                   </p>
                 )}
