@@ -17,5 +17,5 @@ export const viewport = {
 };
 
 export default function StudioPage() {
-  return <Studio />;
+  return <Studio />; 
 }
