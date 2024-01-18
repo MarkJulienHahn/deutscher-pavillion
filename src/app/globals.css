@@ -499,8 +499,10 @@ input:focus {
   .artistSelector h2 {
     line-height: 80px;
   }
+  .imageCaptionCurator{
+    transform: translateY(30px)
+  }
   .imageCaption {
-    /* transform: translateY(64px); */
     font-size: var(--fontSize-XS);
   }
 }
@@ -561,6 +563,9 @@ input:focus {
     border-radius: 50px;
     height: 60px;
     transition: left 0.2s ease;
+  }
+  .imageCaptionCurator{
+    transform: translateY(30px)
   }
   .imageCaption {
     transform: translateY(35px);
@@ -669,6 +674,16 @@ input:focus {
   }
 
   .imageCaption {
-    transform: translateY(35px);
+    transform: translateY(30px);
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .imageCaptionCurator {
+    transform: translateY(20px);
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .textCurator {
+    margin-top: var(--space-S);
   }
 }

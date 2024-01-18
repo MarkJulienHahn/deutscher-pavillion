@@ -42,7 +42,7 @@ export default function Curators({ curators, locale }) {
           </span>
         </div>
 
-        <div className="introText">
+        <div className="introText textCurator">
           <PortableText
             value={
               locale == "de"
