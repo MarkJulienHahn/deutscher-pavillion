@@ -336,7 +336,6 @@ input:focus {
   /* padding-bottom: 1350px */
 }
 
-
 .artistSelector h3 {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);
@@ -456,9 +455,10 @@ input:focus {
 }
 
 .imageCaption {
-  position: relative;
-  transform: translateY(44px);
+  position: absolute;
+  transform: translateY(65px);
   font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
 }
 
 .imageCaptionCurator {
@@ -466,6 +466,7 @@ input:focus {
   bottom: 0;
   transform: translateY(34px);
   font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
 }
 
 .artistsMobile {
@@ -499,6 +500,9 @@ input:focus {
   .artistSelector h2 {
     line-height: 80px;
   }
+  .imageCaption {
+    transform: translateY(65px);
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -508,17 +512,20 @@ input:focus {
   }
   .columnWrapper {
     padding-top: 160px;
+    height: auto;
+    width: 100%;
   }
   .columnPageWrapper {
-    width: 180vw;
+    /* width: 180vw; */
     transition: transform 0.2s ease;
+    flex-direction: column;
   }
   .artistsMobile {
     display: block;
   }
   .artistSelector h2 {
     line-height: 80px;
-    font-size: 40px
+    font-size: 40px;
   }
   .artistsDesktop {
     display: none;
@@ -527,6 +534,10 @@ input:focus {
     width: 10px;
     height: 10px;
     transform: translateY(-200px);
+  }
+
+  .imageCaption {
+    transform: translateY(64px);
   }
 
   .switchWrapper {
