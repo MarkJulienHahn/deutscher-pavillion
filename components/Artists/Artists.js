@@ -79,7 +79,7 @@ const Artists = ({ artists, artistImages, locale }) => {
   return (
     <main>
       <div className="columnPageWrapper artistsDesktop">
-        {windowWidth > 1300 && !delay && (
+        {windowWidth > 1000 && !delay && (
           <img
             className="columnPageHeadline"
             style={showHeadline ? visible : invisible}
@@ -91,7 +91,7 @@ const Artists = ({ artists, artistImages, locale }) => {
         )}
 
         <div className="columnWrapper bgRed" ref={left}>
-          {windowWidth < 1300 && !delay && (
+          {windowWidth < 1000 && !delay && (
             <h1 className="mobileHeadline">
               {locale == "de" ? "Künstler:innen" : "Artists"}
             </h1>
