@@ -361,7 +361,7 @@ input:focus {
 
 .columnWrapper {
   height: 101vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -622,6 +622,8 @@ input:focus {
   }
   .artistSelector h2 {
     line-height: 50px;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
   .downloadRow,
   .downloadLeft {
