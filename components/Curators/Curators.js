@@ -14,6 +14,7 @@ export default function Curators({ curators, locale }) {
 
         <div className="imageCentered">
           <span>
+            
             <Image
               src={`${urlFor(curators[0].image.asset.url).url()}/${
                 curators[0].image.filename.current ||
