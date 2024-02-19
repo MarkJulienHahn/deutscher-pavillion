@@ -82,6 +82,40 @@ const Artists = ({ artists, artistImages, locale }) => {
     );
   }, [left, right, rightMobile, windowWidth]);
 
+  useEffect(() => {
+    let isProgrammaticScroll = false; // Flag to indicate if the scroll is programmatic
+
+    const handleScroll = (e) => {
+      if (isProgrammaticScroll) {
+        // Reset the flag and exit if the scroll was programmatic
+        isProgrammaticScroll = false;
+        return;
+      }
+
+      const isLeftScrolling = e.target === left.current;
+      const scrollableElement = isLeftScrolling ? left.current : right.current;
+      const otherElement = isLeftScrolling ? right.current : left.current;
+
+      const scrollRatio =
+        scrollableElement.scrollTop /
+        (scrollableElement.scrollHeight - scrollableElement.clientHeight);
+
+      // Set the flag before programmatically setting scrollTop
+      isProgrammaticScroll = true;
+      otherElement.scrollTop =
+        scrollRatio * (otherElement.scrollHeight - otherElement.clientHeight);
+    };
+
+    left.current?.addEventListener("scroll", handleScroll);
+    right.current?.addEventListener("scroll", handleScroll);
+    handleScroll;
+    // Clean up
+    return () => {
+      left.current?.removeEventListener("scroll", handleScroll);
+      right.current?.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Dependencies array remains empty for component mount effect
+
   return (
     <main>
       <div className="columnPageWrapper artistsDesktop">
@@ -231,6 +265,7 @@ const Artists = ({ artists, artistImages, locale }) => {
               )
             )}
           </div>
+
           <div>
             <div className="imageFullwidth groupPicture">
               {heightRight && (
