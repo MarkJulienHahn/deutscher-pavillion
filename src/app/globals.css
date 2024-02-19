@@ -352,7 +352,7 @@ input:focus {
 
 .artistSelector h2 {
   line-height: 100px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .artistSelector h3 {
