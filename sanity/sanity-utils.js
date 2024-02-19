@@ -22,8 +22,7 @@ export async function getArtists() {
 export async function getArtistImages() {
   return client.fetch(
     groq`*[_type == "artistImages"]{..., "imageLeft": imageLeft{..., "asset": asset->{...}
-  }, "imageRight": imageRight{..., "asset": asset->{...}
-}}`
+  }, "imageRight": imageRight{..., "asset": asset->{...}}, "imageRightMobile": imageRightMobile{..., "asset": asset->{...}}}`
   );
 }
 

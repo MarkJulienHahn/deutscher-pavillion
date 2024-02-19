@@ -27,6 +27,7 @@ const Artists = ({ artists, artistImages, locale }) => {
   const [delay, setDelay] = useState(true);
   const [heightLeft, setHeightLeft] = useState(null);
   const [heightRight, setHeightRight] = useState(null);
+  const [heightRightMobile, setHeightRightMobile] = useState(null);
 
   const anchorFunction = (slug) => {
     setAnchor(slug);
@@ -40,6 +41,7 @@ const Artists = ({ artists, artistImages, locale }) => {
 
   const [scrollPositionRight, setScrollPositionRight] = useState("");
   const right = useRef();
+  const rightMobile = useRef();
 
   const { windowWidth } = useWindowDimensions();
 
@@ -74,7 +76,11 @@ const Artists = ({ artists, artistImages, locale }) => {
       right.current?.clientWidth /
         artistImages.imageRight.asset.metadata.dimensions.aspectRatio
     );
-  }, [left, right]);
+    setHeightRightMobile(
+      rightMobile.current?.clientWidth /
+        artistImages.imageRightMobile.asset.metadata.dimensions.aspectRatio
+    );
+  }, [left, right, rightMobile, windowWidth]);
 
   return (
     <main>
@@ -120,7 +126,51 @@ const Artists = ({ artists, artistImages, locale }) => {
                   src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
                     artistImages.imageLeft?.filename.current
                       ? artistImages.imageLeft?.filename.current
-                      : "german-pavillon-2024-vernice-biennale"
+                      : "german-pavillon-2024-venice-biennale"
+                  }`}
+                  alt={
+                    artistImages.imageLeft?.alt ||
+                    "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                  }
+                  loading="lazy"
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    aspectRatio:
+                      artistImages.imageLeft.asset.metadata.dimensions
+                        .aspectRatio,
+                  }}
+                />
+              </div>
+            )}{" "}
+            {locale == "de"
+              ? artistImages.imageLeft.captions?.german && (
+                  <p
+                    className="imageCaption"
+                    style={{ top: `${heightLeft - 20}px` }}
+                  >
+                    {artistImages.imageLeft.captions.german}
+                  </p>
+                )
+              : artistImages.imageLeft.captions?.english && (
+                  <p
+                    className="imageCaption"
+                    style={{ top: `${heightLeft - 20}px` }}
+                  >
+                    {artistImages.imageLeft.captions.english}
+                  </p>
+                )}
+          </div>
+
+          <div className="imageFullwidth groupPictureMobile">
+            {heightLeft && (
+              <div style={{ width: "100%", height: `${heightLeft}px` }}>
+                <Image
+                  src={`${urlFor(artistImages.imageLeft?.asset.url).url()}/${
+                    artistImages.imageLeft?.filename.current
+                      ? artistImages.imageLeft?.filename.current
+                      : "german-pavillon-2024-venice-biennale"
                   }`}
                   alt={
                     artistImages.imageLeft?.alt ||
@@ -181,18 +231,65 @@ const Artists = ({ artists, artistImages, locale }) => {
               )
             )}
           </div>
+          <div>
+            <div className="imageFullwidth groupPicture">
+              {heightRight && (
+                <div style={{ width: "100%", height: `${heightRight}px` }}>
+                  <Image
+                    src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
+                      artistImages.imageRight?.filename.current
+                        ? artistImages.imageRight?.filename.current
+                        : "german-pavillon-2024-venice-biennale"
+                    }`}
+                    alt={
+                      artistImages.imageRight?.alt ||
+                      "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                    }
+                    loading="lazy"
+                    fill
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      aspectRatio:
+                        artistImages.imageRight.asset.metadata.dimensions
+                          .aspectRatio,
+                    }}
+                  />
+                </div>
+              )}
+              {locale == "de"
+                ? artistImages.imageRight.captions?.german && (
+                    <p
+                      className="imageCaption"
+                      style={{ top: `${heightRight - 20}px` }}
+                    >
+                      {artistImages.imageRight.captions.german}
+                    </p>
+                  )
+                : artistImages.imageRight.captions?.english && (
+                    <p
+                      className="imageCaption"
+                      style={{ top: `${heightRight - 20}px` }}
+                    >
+                      {artistImages.imageRight.captions.english}
+                    </p>
+                  )}
+            </div>
+          </div>
 
-          <div className="imageFullwidth groupPicture">
-            {heightRight && (
-              <div style={{ width: "100%", height: `${heightRight}px` }}>
+          <div className="imageFullwidth groupPictureMobile" ref={rightMobile}>
+            {heightRightMobile && (
+              <div style={{ width: "100%", height: `${heightRightMobile}px` }}>
                 <Image
-                  src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
-                    artistImages.imageRight?.filename.current
+                  src={`${urlFor(
+                    artistImages.imageRightMobile?.asset.url
+                  ).url()}/${
+                    artistImages.imageRightMobile?.filename.current
                       ? artistImages.imageRight?.filename.current
-                      : "german-pavillon-2024-vernice-biennale"
+                      : "german-pavillon-2024-venice-biennale"
                   }`}
                   alt={
-                    artistImages.imageRight?.alt ||
+                    artistImages.imageRightMobile?.alt ||
                     "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
                   }
                   loading="lazy"
@@ -201,27 +298,27 @@ const Artists = ({ artists, artistImages, locale }) => {
                     objectFit: "cover",
                     width: "100%",
                     aspectRatio:
-                      artistImages.imageRight.asset.metadata.dimensions
+                      artistImages.imageRightMobile.asset.metadata.dimensions
                         .aspectRatio,
                   }}
                 />
               </div>
             )}
             {locale == "de"
-              ? artistImages.imageRight.captions?.german && (
+              ? artistImages.imageRightMobile.captions?.german && (
                   <p
                     className="imageCaption"
-                    style={{ top: `${heightLeft - 20}px` }}
+                    style={{ top: `${heightRightMobile - 20}px` }}
                   >
-                    {artistImages.imageRight.captions.german}
+                    {artistImages.imageRightMobile.captions.german}
                   </p>
                 )
-              : artistImages.imageRight.captions?.english && (
+              : artistImages.imageRightMobile.captions?.english && (
                   <p
                     className="imageCaption"
-                    style={{ top: `${heightLeft - 20}px` }}
+                    style={{ top: `${heightRightMobile - 20}px` }}
                   >
-                    {artistImages.imageRight.captions.english}
+                    {artistImages.imageRightMobile.captions.english}
                   </p>
                 )}
           </div>

@@ -72,5 +72,33 @@ export default defineType({
         },
       ],
     },
+    {
+      name: "imageRightMobile",
+      title: "Image Right Mobile",
+      type: "image",
+      fields: [
+        {
+          title: "Captions",
+          name: "captions",
+          type: "object",
+          fields: [
+            { title: "German", name: "german", type: "string" },
+            { title: "English", name: "english", type: "string" },
+          ],
+        },
+        {
+          title: "Alternative Text",
+          name: "alt",
+          type: "string",
+        },
+        {
+          title: "SEO friendly file-name",
+          name: "filename",
+          type: "slug",
+          isUnique: false,
+          description: "Example: yael-bartana-deutscher-pavillon-2024",
+        },
+      ],
+    },
   ],
 });

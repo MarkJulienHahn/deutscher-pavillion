@@ -38,6 +38,8 @@ export default function AristsMobile({ locale, artists, artistImages }) {
   const right = useRef();
   const rightHeadline = useRef();
 
+  const { windowWidth } = useWindowDimensions();
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollPositionLeft(left.current.scrollTop);
@@ -67,9 +69,9 @@ export default function AristsMobile({ locale, artists, artistImages }) {
     );
     setHeightRight(
       right.current?.clientWidth /
-        artistImages.imageRight.asset.metadata.dimensions.aspectRatio
+        artistImages.imageRightMobile.asset.metadata.dimensions.aspectRatio
     );
-  }, [left, right]);
+  }, [left, right, windowWidth]);
 
   useEffect(() => {
     !focusLeft &&
@@ -133,7 +135,7 @@ export default function AristsMobile({ locale, artists, artistImages }) {
               )
             )}
           </div>
-          <div className="imageFullwidth groupPicture">
+          <div className="imageFullwidth groupPictureMobile">
             {heightLeft && (
               <div style={{ width: "100%", height: `${heightLeft}px` }}>
                 <Image
@@ -208,17 +210,19 @@ export default function AristsMobile({ locale, artists, artistImages }) {
               )
             )}
           </div>
-          <div className="imageFullwidth groupPicture">
+          <div className="imageFullwidth groupPictureMobile">
             {heightRight && (
               <div style={{ width: "100%", height: `${heightRight}px` }}>
                 <Image
-                  src={`${urlFor(artistImages.imageRight?.asset.url).url()}/${
-                    artistImages.imageRight?.filename.current
-                      ? artistImages.imageRight?.filename.current
+                  src={`${urlFor(
+                    artistImages.imageRightMobile?.asset.url
+                  ).url()}/${
+                    artistImages.imageRightMobile?.filename.current
+                      ? artistImages.imageRightMobile?.filename.current
                       : "german-pavillon-2024-vernice-biennale"
                   }`}
                   alt={
-                    artistImages.imageRight?.alt ||
+                    artistImages.imageRightMobile?.alt ||
                     "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
                   }
                   loading="lazy"
@@ -227,27 +231,27 @@ export default function AristsMobile({ locale, artists, artistImages }) {
                     objectFit: "cover",
                     width: "100%",
                     aspectRatio:
-                      artistImages.imageRight.asset.metadata.dimensions
+                      artistImages.imageRightMobile.asset.metadata.dimensions
                         .aspectRatio,
                   }}
                 />
               </div>
             )}
             {locale == "de"
-              ? artistImages.imageRight.captions?.german && (
+              ? artistImages.imageRightMobile.captions?.german && (
                   <p
                     className="imageCaption"
-                    style={{ top: `${heightLeft - 20}px` }}
+                    style={{ top: `${heightRight - 20}px` }}
                   >
-                    {artistImages.imageRight.captions.german}
+                    {artistImages.imageRightMobile.captions.german}
                   </p>
                 )
-              : artistImages.imageRight.captions?.english && (
+              : artistImages.imageRightMobile.captions?.english && (
                   <p
                     className="imageCaption"
-                    style={{ top: `${heightLeft - 20}px` }}
+                    style={{ top: `${heightRight - 20}px` }}
                   >
-                    {artistImages.imageRight.captions.english}
+                    {artistImages.imageRightMobile.captions.english}
                   </p>
                 )}
           </div>

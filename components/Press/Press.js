@@ -21,7 +21,7 @@ export default function Press({ press, locale }) {
           <h2>
             {locale == "de"
               ? "Anmeldung Presseverteiler"
-              : "Registration Presslist"}
+              : "Registration Press Mailing List"}
           </h2>
           <p>
             {locale == "de"
@@ -62,11 +62,6 @@ export default function Press({ press, locale }) {
               }
             />
           </div>
-          <p>
-            {locale == "de"
-              ? "Wir bitten um Übersendung eines digitalen Belegexemplars."
-              : "We kindly ask you to send us a digital specimen copy."}
-          </p>
         </div>
 
         {press.pressContact && (

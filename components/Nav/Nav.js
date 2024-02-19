@@ -108,11 +108,6 @@ export default function Nav({ locale, color }) {
     };
   }, []);
 
-  console.log(
-    pathname.includes("kuenstlerinnen") && windowWidth < 1300,
-    onlyNoButton
-  );
-
   return (
     <>
       <div className={styles.header} style={showButton ? visible : hidden}>
