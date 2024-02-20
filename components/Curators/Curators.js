@@ -1,6 +1,6 @@
 import NavMenu from "../Nav/NavMenu";
 
-import Image from "next/image";
+import Image from "next/image"; 
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 import { PortableText } from "@portabletext/react";
