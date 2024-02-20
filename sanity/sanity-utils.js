@@ -33,6 +33,13 @@ export async function getCurators() {
   );
 }
 
+export async function getChronicles() {
+  return client.fetch(
+    groq`*[_type == "chronicles"]|order(orderRank){..., "image": image{..., "asset": asset->{...}
+  }}`
+  );
+}
+
 export async function getVisit() {
   return client.fetch(groq`*[_type == "visit"]|order(orderRank){...}`);
 }

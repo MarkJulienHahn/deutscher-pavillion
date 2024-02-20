@@ -344,12 +344,17 @@ input:focus {
 }
 
 .groupPicture,
-.groupPictureMobile {
+.groupPictureMobile,
+.chroniclePicture {
   position: relative;
   width: 100%;
 }
 .groupPictureMobile {
   display: none;
+}
+
+.chroniclePicture {
+  margin-bottom: 50px;
 }
 
 .artistSelector h3 {
@@ -486,6 +491,33 @@ input:focus {
 
 .artistsMobile {
   display: none;
+}
+
+.chronicleEntryWrapper {
+  width: 100%;
+  display: flex;
+}
+.chronicleRight {
+  justify-content: flex-end;
+}
+
+.chronicleEntryInner {
+  width: 50%;
+}
+
+.chronicleEntryInner h2 {
+  padding-bottom: var(--space-S);
+}
+
+.textChronicles {
+  font-size: var(--fontSize-S);
+  line-height: var(--lineHeight-S);
+}
+
+.imageChronicles {
+  width: 100%;
+  display: flex;
+  padding: var(--space-S) 0 var(--space-M);
 }
 
 @keyframes fadeIn {
@@ -710,5 +742,9 @@ input:focus {
   }
   .introTextBottom span {
     width: 100%;
+  }
+  .chronicleEntryInner {
+    width: 100%;
+    padding-bottom: var(--space-M)
   }
 }

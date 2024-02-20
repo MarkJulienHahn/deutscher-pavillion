@@ -47,6 +47,13 @@ export const myStructure = (S, context) =>
         context,
       }),
 
+      orderableDocumentListDeskItem({
+        type: "chronicles",
+        title: "Chronicles",
+        S,
+        context,
+      }),
+
       S.divider(),
 
       orderableDocumentListDeskItem({
