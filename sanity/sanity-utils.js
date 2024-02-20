@@ -12,6 +12,10 @@ export async function getAbout() {
   return client.fetch(groq`*[_type == "about"]{...}`);
 }
 
+export async function getLivestream() {
+  return client.fetch(groq`*[_type == "livestream"]{...}`);
+}
+
 export async function getArtists() {
   return client.fetch(
     groq`*[_type == "artists"]|order(orderRank){..., "image": image{..., "asset": asset->{...}

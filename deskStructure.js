@@ -8,6 +8,11 @@ export const myStructure = (S, context) =>
         .title("About")
         .id("about")
         .child(S.document().schemaType("about").documentId("about")),
+        
+      S.listItem()
+        .title("Livestream")
+        .id("livestream")
+        .child(S.document().schemaType("livestream").documentId("livestream")),
 
       S.divider(),
 
