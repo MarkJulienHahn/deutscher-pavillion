@@ -14,7 +14,6 @@ export default function Curators({ curators, locale }) {
 
         <div className="imageCentered">
           <span>
-            
             <Image
               src={`${urlFor(curators[0].image.asset.url).url()}/${
                 curators[0].image.filename.current ||
@@ -43,15 +42,35 @@ export default function Curators({ curators, locale }) {
           </span>
         </div>
 
-        <div className="introText textCurator">
-          <PortableText
-            value={
-              locale == "de"
-                ? curators[0].text.textGerman
-                : curators[0].text.textEnglish
-            }
-          />
-        </div>
+        {curators[0].text ? (
+          <div className="introText textCurator">
+            <PortableText
+              value={
+                locale == "de"
+                  ? curators[0].text.textGerman
+                  : curators[0].text.textEnglish
+              }
+            />
+          </div>
+        ) : (
+          ""
+        )}
+
+        {curators[0].textBottom ? (
+          <div className="introTextBottom textCurator">
+            <span>
+              <PortableText
+                value={
+                  locale == "de"
+                    ? curators[0].textBottom.textGerman
+                    : curators[0].textBottom.textEnglish
+                }
+              />
+            </span>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <NavMenu locale={locale} />
     </main>

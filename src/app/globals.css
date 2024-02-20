@@ -176,8 +176,20 @@ input:focus {
   line-height: var(--lineHeight-M);
 }
 
-.introText {
-  padding-bottom: var(--space-S);
+.introTextBottom p {
+  font-size: var(--fontSize-S);
+  line-height: var(--lineHeight-S);
+}
+
+.introTextBottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-S);
+}
+
+.introTextBottom span {
+  width: clamp(1000px, 50%, 100vw);
 }
 
 .twoColumns p {
@@ -695,5 +707,8 @@ input:focus {
   }
   .textCurator {
     margin-top: var(--space-S);
+  }
+  .introTextBottom span {
+    width: 100%;
   }
 }
