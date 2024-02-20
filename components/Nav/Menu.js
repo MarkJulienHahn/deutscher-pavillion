@@ -21,5 +21,5 @@ export const menuDE = [
   { name: "Besuch", slug: "besuch" },
   { name: "Presse", slug: "presse" },
   { name: "Team", slug: "team" },
-  { name: "Dank", slug: "dank" },
+  { name: "Dank", slug: "dank" }, 
 ];
