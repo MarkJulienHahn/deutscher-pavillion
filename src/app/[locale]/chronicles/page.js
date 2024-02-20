@@ -8,6 +8,7 @@ export default async function page({ params: { locale } }) {
 
   return (
     <></>
+
     // <Chronicles locale={locale} chronicles={chronicles} />
   );
 }

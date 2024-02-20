@@ -529,6 +529,49 @@ input:focus {
   }
 }
 
+.liveStreamWrapper {
+  padding: 400px var(--space-S);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.liveStreamWrapper h1 {
+  padding: 0 200px;
+}
+
+.liveStreamInfo {
+  position: absolute;
+  left: var(--space-S);
+  font-size: var(--fontSize-S);
+}
+
+.videoWrapper {
+  width: 60%;
+  max-width: 2000px;
+  min-width: 1000px;
+  margin-top: var(--space-S);
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.videoDescription {
+  padding-top: var(--space-S);
+}
+
 @media screen and (max-width: 1700px) {
   :root {
     --fontSize-S: 25px;
@@ -624,6 +667,13 @@ input:focus {
   }
   .groupPictureMobile {
     display: block;
+  }
+  .videoWrapper {
+    width: 100%;
+    min-width: 0;
+  }
+  .liveStreamWrapper h1 {
+    padding: 0 50px;
   }
 }
 
@@ -745,6 +795,6 @@ input:focus {
   }
   .chronicleEntryInner {
     width: 100%;
-    padding-bottom: var(--space-M)
+    padding-bottom: var(--space-M);
   }
 }

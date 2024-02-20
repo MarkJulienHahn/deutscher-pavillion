@@ -7,7 +7,6 @@ import { useLottie } from "lottie-react";
 import animation from "../../public/animation/thresholds-animation.json";
 
 export default function Landing({ locale }) {
-  const [delay, setDelay] = useState(true);
   const [hidden, setHidden] = useState(false);
 
   const height = use100vh();
