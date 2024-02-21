@@ -1,19 +1,39 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
 import NavMenu from "../Nav/NavMenu";
 
-import Image from "next/image"; 
+import Image from "next/image";
+import useWindowDimensions from "../useWindowDimensions";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 import { PortableText } from "@portabletext/react";
 
 export default function Curators({ curators, locale }) {
+  const [imgWidth, setImgWidth] = useState(null);
+  const ref = useRef();
+  const { windowWidth } = useWindowDimensions();
+
+  useEffect(() => {
+    setImgWidth(ref.current?.clientWidth);
+  }, [windowWidth]);
+
   return (
     <main>
       <div className="singlePageWrapper">
         <h1>{locale == "de" ? "Kuratorin" : "Curator"}</h1>
         <h1>{curators[0].name}</h1>
-
-        <div className="imageCentered">
-          <span>
+        <div className="imageCuratorOuter">
+          <div
+            className="imageCurator"
+            style={{
+              height:
+                imgWidth /
+                curators[0].image.asset.metadata.dimensions.aspectRatio,
+            }}
+            ref={ref}
+          >
             <Image
               src={`${urlFor(curators[0].image.asset.url).url()}/${
                 curators[0].image.filename.current ||
@@ -26,6 +46,10 @@ export default function Curators({ curators, locale }) {
               fill
               style={{
                 objectFit: "cover",
+                width: "100%",
+                height: "100%",
+                aspectRatio:
+                  curators[0].image.asset.metadata.dimensions.aspectRatio,
               }}
             />
             {locale == "de"
@@ -39,7 +63,7 @@ export default function Curators({ curators, locale }) {
                     {curators[0].image.captions.english}
                   </p>
                 )}
-          </span>
+          </div>
         </div>
 
         {curators[0].text ? (
