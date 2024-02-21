@@ -15,8 +15,8 @@
   --fontSize-S: 29.75px;
   --lineHeight-S: 31.45px;
 
-  --fontSize-M: 42.5px;
-  --lineHeight-M: 43.85px;
+  --fontSize-M: 38.25px;
+  --lineHeight-M: 39.5px;
 
   --fontSize-L: 85px;
   --lineHeight-L: 85.85px;
@@ -214,6 +214,18 @@ input:focus {
 .imageFullwidth {
   width: 100%;
   padding-bottom: var(--space-XS);
+}
+
+.imageCurator {
+  position: relative;
+  width: 50vw;
+  margin: var(--space-S) 0 var(--space-M) 0;
+}
+
+.imageCuratorOuter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .centered {
@@ -577,9 +589,6 @@ input:focus {
     --fontSize-S: 25px;
     --lineHeight-S: 28px;
 
-    --fontSize-M: 42.5px;
-    --lineHeight-M: 43.85px;
-
     --fontSize-L: 70px;
     --lineHeight-L: 70px;
   }
@@ -674,6 +683,9 @@ input:focus {
   }
   .liveStreamWrapper h1 {
     padding: 0 50px;
+  }
+  .imageCurator {
+    width: 66%;
   }
 }
 
@@ -796,5 +808,8 @@ input:focus {
   .chronicleEntryInner {
     width: 100%;
     padding-bottom: var(--space-M);
+  }
+  .imageCurator {
+    width: 100%;
   }
 }
