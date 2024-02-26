@@ -1,6 +1,8 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
 
+import { serializers } from "../../hooks/portableTextSerializer";
+
 export default function Entry({ entry, locale }) {
   const content = locale === "de" ? entry.german : entry.english;
 
@@ -20,7 +22,7 @@ export default function Entry({ entry, locale }) {
         <h2>{headline}</h2>
       )}
       <div className="sectionWrapper">
-        <PortableText value={text} />
+        <PortableText value={text} components={serializers} />
       </div>
     </div>
   );

@@ -2,8 +2,7 @@ import Download from "./Download";
 import NavMenu from "../Nav/NavMenu";
 
 import { PortableText } from "@portabletext/react";
-
-import Link from "next/link";
+import { serializers } from "../../hooks/portableTextSerializer";
 
 export default function Press({ press, locale }) {
   return (
@@ -60,6 +59,7 @@ export default function Press({ press, locale }) {
                   ? press.disclaimer.german
                   : press.disclaimer.english
               }
+              components={serializers}
             />
           </div>
         </div>
@@ -69,12 +69,18 @@ export default function Press({ press, locale }) {
             {locale == "de" ? (
               <>
                 <h2>Pressekontakt</h2>
-                <PortableText value={press.pressContact.german} />
+                <PortableText
+                  value={press.pressContact.german}
+                  components={serializers}
+                />
               </>
             ) : (
               <>
                 <h2>Press Contact</h2>
-                <PortableText value={press.pressContact.english} />
+                <PortableText
+                  value={press.pressContact.english}
+                  components={serializers}
+                />
               </>
             )}
           </div>
@@ -85,12 +91,18 @@ export default function Press({ press, locale }) {
             {locale == "de" ? (
               <>
                 <h2>Pressetermine</h2>
-                <PortableText value={press.pressDates.german} />
+                <PortableText
+                  value={press.pressDates.german}
+                  components={serializers}
+                />
               </>
             ) : (
               <>
                 <h2>Press Dates</h2>
-                <PortableText value={press.pressDates.english} />
+                <PortableText
+                  value={press.pressDates.english}
+                  components={serializers}
+                />
               </>
             )}
           </div>
@@ -101,12 +113,18 @@ export default function Press({ press, locale }) {
             {locale == "de" ? (
               <>
                 <h2>Akkreditierung</h2>
-                <PortableText value={press.accreditation.german} />
+                <PortableText
+                  value={press.accreditation.german}
+                  components={serializers}
+                />
               </>
             ) : (
               <>
                 <h2>Accreditation</h2>
-                <PortableText value={press.accreditation.english} />
+                <PortableText
+                  value={press.accreditation.english}
+                  components={serializers}
+                />
               </>
             )}
           </div>

@@ -64,6 +64,8 @@ export default function Curators({ curators, locale }) {
                   </p>
                 )}
           </div>
+
+
         </div>
 
         {curators[0].text ? (

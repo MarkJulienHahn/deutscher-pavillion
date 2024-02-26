@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 import { PortableText } from "@portabletext/react";
+import { serializers } from "../../hooks/portableTextSerializer";
 
 import useWindowDimensions from "../useWindowDimensions";
 
@@ -72,7 +73,7 @@ export default function Entry({ locale, entry, i }) {
             <PortableText
               value={
                 locale == "de" ? entry.text.textGerman : entry.text.textEnglish
-              }
+              }  components={serializers}
             />
           </div>
         ) : (
