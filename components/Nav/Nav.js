@@ -108,6 +108,26 @@ export default function Nav({ locale, color }) {
     };
   }, []);
 
+  useEffect(() => {
+    pathname.includes("exhibition") &&
+      !color &&
+      windowWidth < 1300 &&
+      setOnlyNoButton(true);
+    return () => {
+      setOnlyNoButton(false);
+    };
+  }, []);
+
+  useEffect(() => {
+    pathname.includes("ausstellung") &&
+      !color &&
+      windowWidth < 1300 &&
+      setOnlyNoButton(true);
+    return () => {
+      setOnlyNoButton(false);
+    };
+  }, []);
+
   return (
     <>
       <div className={styles.header} style={showButton ? visible : hidden}>

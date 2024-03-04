@@ -6,11 +6,7 @@ import { getChronicles } from "../../../../sanity/sanity-utils";
 export default async function page({ params: { locale } }) {
   const chronicles = await getChronicles();
 
-  return (
-    <></>
-
-    // <Chronicles locale={locale} chronicles={chronicles} />
-  );
+  return <Chronicles locale={locale} chronicles={chronicles} />;
 }
 
 export const revalidate = 10;
