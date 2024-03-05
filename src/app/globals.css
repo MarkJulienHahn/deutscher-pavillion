@@ -512,6 +512,9 @@ input:focus {
 .chronicleRight {
   justify-content: flex-end;
 }
+.chronicleLeft {
+  padding-right: var(--space-S);
+}
 
 .chronicleEntryInner {
   width: 50%;
@@ -530,6 +533,15 @@ input:focus {
   width: 100%;
   display: flex;
   padding: var(--space-S) 0 var(--space-M);
+}
+
+.offsetTop {
+  transform: translateY(-500px);
+}
+
+.chroniclesPage {
+  padding-bottom: 0;
+  margin-bottom: -500px;
 }
 
 @keyframes fadeIn {
@@ -834,5 +846,15 @@ input:focus {
   }
   .columnPageHeadline {
     display: none;
+  }
+  .chronicleLeft {
+    padding-right: 0;
+  }
+  .offsetTop {
+    transform: translateY(0);
+  }
+  .chroniclesPage {
+    padding-bottom: inherit;
+    margin-bottom: 0;
   }
 }

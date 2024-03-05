@@ -3,7 +3,7 @@ import Entry from "../Chronicles/Entry";
 export default function Chronicles({ locale, chronicles }) {
   return (
     <main>
-      <div className="singlePageWrapper">
+      <div className="singlePageWrapper chroniclesPage">
         <h1>Chronicles</h1>
         {chronicles.map((entry, i) => (
           <Entry key={i} i={i} entry={entry} locale={locale} />

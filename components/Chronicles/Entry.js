@@ -28,7 +28,7 @@ export default function Entry({ locale, entry, i }) {
 
   return (
     <div
-      className={`chronicleEntryWrapper ${isEven(i) ? "" : "chronicleRight"}`}
+      className={`chronicleEntryWrapper ${isEven(i) ? "chronicleLeft" : "chronicleRight"} ${i > 0 ? "offsetTop" : ""}`}
     >
       <div className="chronicleEntryInner" ref={ref}>
         <h2>{entry.name}</h2>
