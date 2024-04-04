@@ -3,7 +3,7 @@ import { orderRankField } from "@sanity/orderable-document-list";
 
 export default defineType({
   name: "chronicles",
-  title: "Chronicles",
+  title: "Chroniclers",
   type: "document",
 
   fields: [
@@ -37,6 +37,42 @@ export default defineType({
           name: "filename",
           type: "slug",
           description: "Example: yael-bartana-deutscher-pavillon-2024",
+        },
+      ],
+    },    {
+      name: "introText",
+      title: "Intro Text",
+      type: "object",
+      fields: [
+        {
+          name: "textGerman",
+          title: "German",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+        {
+          name: "textEnglish",
+          title: "English",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
         },
       ],
     },

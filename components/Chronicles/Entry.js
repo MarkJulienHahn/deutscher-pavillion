@@ -68,6 +68,18 @@ export default function Entry({ locale, entry, i }) {
               )}
         </div>
 
+        {entry?.introText ? (
+          <div className="textChronicles">
+            <PortableText
+              value={
+                locale == "de" ? entry?.introText.textGerman : entry?.introText.textEnglish
+              }  components={serializers}
+            />
+          </div>
+        ) : (
+          ""
+        )}
+
         {entry.text ? (
           <div className="textChronicles">
             <PortableText
