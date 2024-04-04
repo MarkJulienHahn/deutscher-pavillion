@@ -4,7 +4,7 @@ export default function Chronicles({ locale, chronicles }) {
   return (
     <main>
       <div className="singlePageWrapper chroniclesPage">
-        <h1>{locale == "de" ? "Chroniclsten" : "Chroniclers"}</h1>
+        <h1>{locale == "de" ? "Chronisten" : "Chroniclers"}</h1>
         {chronicles.map((entry, i) => (
           <Entry key={i} i={i} entry={entry} locale={locale} />
         ))}
