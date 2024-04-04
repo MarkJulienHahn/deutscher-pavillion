@@ -521,6 +521,15 @@ input:focus {
   padding-bottom: var(--space-S);
 }
 
+.introTextChronicles p{
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+}
+
+.introTextChronicles {
+  padding-bottom: var(--space-S)
+}
+
 .textChronicles {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);

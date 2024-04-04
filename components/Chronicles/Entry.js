@@ -69,7 +69,7 @@ export default function Entry({ locale, entry, i }) {
         </div>
 
         {entry?.introText ? (
-          <div className="textChronicles">
+          <div className="introTextChronicles">
             <PortableText
               value={
                 locale == "de" ? entry?.introText.textGerman : entry?.introText.textEnglish
