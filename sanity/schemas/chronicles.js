@@ -39,7 +39,8 @@ export default defineType({
           description: "Example: yael-bartana-deutscher-pavillon-2024",
         },
       ],
-    },    {
+    },
+    {
       name: "introText",
       title: "Intro Text",
       type: "object",
