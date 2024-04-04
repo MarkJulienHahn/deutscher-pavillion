@@ -509,6 +509,7 @@ input:focus {
   width: 100%;
   display: flex;
 }
+
 .chronicleRight {
   justify-content: flex-end;
 }
@@ -524,6 +525,15 @@ input:focus {
   padding-bottom: var(--space-S);
 }
 
+.introTextChronicles p {
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+}
+
+.introTextChronicles {
+  padding-bottom: var(--space-S);
+}
+
 .textChronicles {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);
@@ -536,12 +546,7 @@ input:focus {
 }
 
 .offsetTop {
-  transform: translateY(-500px);
-}
-
-.chroniclesPage {
-  padding-bottom: 0;
-  margin-bottom: -500px;
+  transform: translateY(-100vh);
 }
 
 @keyframes fadeIn {
