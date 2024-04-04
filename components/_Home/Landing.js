@@ -53,6 +53,7 @@ export default function Landing({ locale }) {
           </h3>
         )}
       </div>
+    
 
       <div
         className="animationWrapper"
