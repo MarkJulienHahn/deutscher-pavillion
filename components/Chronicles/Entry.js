@@ -28,7 +28,9 @@ export default function Entry({ locale, entry, i }) {
 
   return (
     <div
-      className={`chronicleEntryWrapper ${isEven(i) ? "" : "chronicleRight"}`}
+      className={`chronicleEntryWrapper ${
+        isEven(i) ? "chronicleLeft" : "chronicleRight"
+      } ${i > 0 ? "offsetTop" : ""}`}
     >
       <div className="chronicleEntryInner" ref={ref}>
         <h2>{entry.name}</h2>
@@ -72,8 +74,11 @@ export default function Entry({ locale, entry, i }) {
           <div className="introTextChronicles">
             <PortableText
               value={
-                locale == "de" ? entry?.introText.textGerman : entry?.introText.textEnglish
-              }  components={serializers}
+                locale == "de"
+                  ? entry?.introText.textGerman
+                  : entry?.introText.textEnglish
+              }
+              components={serializers}
             />
           </div>
         ) : (
@@ -85,7 +90,8 @@ export default function Entry({ locale, entry, i }) {
             <PortableText
               value={
                 locale == "de" ? entry.text.textGerman : entry.text.textEnglish
-              }  components={serializers}
+              }
+              components={serializers}
             />
           </div>
         ) : (
