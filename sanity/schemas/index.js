@@ -16,6 +16,8 @@ import newsletter from "./newsletter";
 import team from "./team";
 import dank from "./dank";
 
+import special from "./special";
+
 import privacy from "./privacy";
 import imprint from "./imprint";
 
@@ -40,6 +42,8 @@ const schemaTypes = [
   newsletter,
   team,
   dank,
+
+  special,
 
   privacy,
   imprint,
