@@ -45,7 +45,7 @@ export default function Curators({ special, locale }) {
         {special.images.length && (
           <div className="imageArray">
             {special.images.map((image, i) => (
-              <div className="imageCuratorOuter">
+              <div className="imageCuratorOuter" key={i}>
                 <div
                   className="imageCurator"
                   style={{
