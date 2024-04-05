@@ -550,6 +550,10 @@ input:focus {
   transform: translateY(-50vh);
 }
 
+.imageArray {
+  padding-top: var(--space-M)
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
