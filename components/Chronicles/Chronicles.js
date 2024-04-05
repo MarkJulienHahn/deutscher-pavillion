@@ -24,9 +24,11 @@ export default function Chronicles({ locale, chroniclesIntro, chronicles }) {
           ""
         )}
 
-        {chronicles.map((entry, i) => (
-          <Entry key={i} i={i} entry={entry} locale={locale} />
-        ))}
+        <div className="chroniclesTextWrapper">
+          {chronicles.map((entry, i) => (
+            <Entry key={i} i={i} entry={entry} locale={locale} />
+          ))}
+        </div>
       </div>
       <NavMenu locale={locale} />
     </main>
