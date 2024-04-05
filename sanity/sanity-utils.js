@@ -105,3 +105,7 @@ export async function getImprint() {
 export async function getPrivacy() {
   return client.fetch(groq`*[_type == "privacy"]{...}`);
 }
+
+export async function getSpecial() {
+  return client.fetch(groq`*[_type == "special"]{..., "images": images[]{..., "asset": asset->{...}}}`);
+}
