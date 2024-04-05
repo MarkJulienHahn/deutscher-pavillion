@@ -52,9 +52,16 @@ export const myStructure = (S, context) =>
         context,
       }),
 
+      S.listItem()
+      .title("Chroniclers Intro")
+      .id("chroniclesIntro")
+      .child(
+        S.document().schemaType("chroniclesIntro").documentId("chroniclesIntro")
+      ),
+
       orderableDocumentListDeskItem({
         type: "chronicles",
-        title: "Chronicles",
+        title: "Chroniclers",
         S,
         context,
       }),

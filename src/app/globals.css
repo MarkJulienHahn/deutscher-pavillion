@@ -532,7 +532,7 @@ input:focus {
 }
 
 .introTextChronicles {
-  padding-bottom: var(--space-S);
+  padding-bottom: var(--space-L);
 }
 
 .textChronicles {
@@ -547,7 +547,7 @@ input:focus {
 }
 
 .offsetTop {
-  transform: translateY(-100vh);
+  transform: translateY(-50vh);
 }
 
 @keyframes fadeIn {

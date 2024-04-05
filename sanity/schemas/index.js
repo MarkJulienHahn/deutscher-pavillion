@@ -8,6 +8,7 @@ import about from "./about"
 import artists from "./artists";
 import artistImages from "./artistImages"
 import curators from "./curators";
+import chroniclesIntro from "./chroniclesIntro";
 import chronicles from "./chronicles";
 import visit from "./visit";
 import livestream from "./livestream";
@@ -35,6 +36,7 @@ const schemaTypes = [
   artists,
   artistImages,
   curators,
+  chroniclesIntro,
   chronicles,
   livestream,
   visit,
