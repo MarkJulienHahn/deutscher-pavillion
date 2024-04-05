@@ -63,6 +63,7 @@ export default function Curators({ special, locale }) {
                       image.alt ||
                       "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
                     }
+                    
                     fill
                     style={{
                       objectFit: "cover",
