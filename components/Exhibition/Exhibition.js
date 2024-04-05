@@ -21,6 +21,7 @@ export default function Exhibition({
   exhibitionPavillon,
   exhibitionCertosa,
   locale,
+  switched
 }) {
   const [showHeadline, setShowHeadline] = useState(true);
 
@@ -124,6 +125,7 @@ export default function Exhibition({
             locale={locale}
             exhibitionPavillon={exhibitionPavillon}
             exhibitionCertosa={exhibitionCertosa}
+            switched={switched}
           />
         </div>
       </div>

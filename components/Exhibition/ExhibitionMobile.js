@@ -15,6 +15,7 @@ export default function AristsMobile({
   locale,
   exhibitionPavillon,
   exhibitionCertosa,
+  switched,
 }) {
   const [anchor, setAnchor] = useState(null);
   const [delay, setDelay] = useState(true);
@@ -40,8 +41,6 @@ export default function AristsMobile({
   const right = useRef();
   const rightHeadline = useRef();
 
-
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollPositionLeft(left.current.scrollTop);
@@ -62,6 +61,7 @@ export default function AristsMobile({
 
   useEffect(() => {
     setTimeout(setDelay(false), 500);
+    switched && setFocusLeft(false);
   }, []);
 
   //   useEffect(() => {
@@ -92,9 +92,6 @@ export default function AristsMobile({
         500
       );
   }, [focusLeft]);
-
-console.log(scrollPositionLeft, focusLeft, showHeadline)
-
 
   return (
     <>
