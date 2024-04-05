@@ -40,43 +40,43 @@ export default defineType({
         },
       ],
     },
-    {
-      name: "introText",
-      title: "Intro Text",
-      type: "object",
-      fields: [
-        {
-          name: "textGerman",
-          title: "German",
-          type: "array",
-          of: [
-            {
-              type: "block",
-              styles: [{ title: "Normal", value: "normal" }],
-              lists: [],
-              marks: {
-                decorators: [{ title: "Emphasis", value: "em" }],
-              },
-            },
-          ],
-        },
-        {
-          name: "textEnglish",
-          title: "English",
-          type: "array",
-          of: [
-            {
-              type: "block",
-              styles: [{ title: "Normal", value: "normal" }],
-              lists: [],
-              marks: {
-                decorators: [{ title: "Emphasis", value: "em" }],
-              },
-            },
-          ],
-        },
-      ],
-    },
+    // {
+    //   name: "introText",
+    //   title: "Intro Text",
+    //   type: "object",
+    //   fields: [
+    //     {
+    //       name: "textGerman",
+    //       title: "German",
+    //       type: "array",
+    //       of: [
+    //         {
+    //           type: "block",
+    //           styles: [{ title: "Normal", value: "normal" }],
+    //           lists: [],
+    //           marks: {
+    //             decorators: [{ title: "Emphasis", value: "em" }],
+    //           },
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "textEnglish",
+    //       title: "English",
+    //       type: "array",
+    //       of: [
+    //         {
+    //           type: "block",
+    //           styles: [{ title: "Normal", value: "normal" }],
+    //           lists: [],
+    //           marks: {
+    //             decorators: [{ title: "Emphasis", value: "em" }],
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       name: "text",
       title: "Text",

@@ -37,6 +37,12 @@ export async function getCurators() {
   );
 }
 
+export async function getChroniclesIntro() {
+  return client.fetch(
+    groq`*[_type == "chroniclesIntro"]{...}`
+  );
+}
+
 export async function getChronicles() {
   return client.fetch(
     groq`*[_type == "chronicles"]|order(orderRank){..., "image": image{..., "asset": asset->{...}
