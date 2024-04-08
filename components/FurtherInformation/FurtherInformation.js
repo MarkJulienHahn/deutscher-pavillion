@@ -56,7 +56,7 @@ export default function Curators({ special, locale }) {
                 >
                   <Image
                     src={`${urlFor(image.asset.url).url()}/${
-                      image.filename.current ||
+                      image.filename?.current ||
                       "german-pavillon-2024-vernice-biennale"
                     }`}
                     alt={
