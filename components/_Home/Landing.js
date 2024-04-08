@@ -36,7 +36,7 @@ export default function Landing({ locale }) {
       <div>
         {locale == "de" ? (
           <h3>
-            Deutscher Beitrag 2024
+            Deutscher Pavillon 2024
             <br />
             60. Internationale Kunstausstellung
             <br />
@@ -44,7 +44,7 @@ export default function Landing({ locale }) {
           </h3>
         ) : (
           <h3>
-            German Contribution 2024
+            German Pavilion 2024
             <br />
             60<sup style={{ lineHeight: "10px" }}>th</sup> International Art
             Exhibition
