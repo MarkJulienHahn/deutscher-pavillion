@@ -875,6 +875,7 @@ input:focus {
   .artistSelector {
     padding-top: 60px;
   }
+  
   .artistSelector h2 {
     line-height: 50px;
     hyphens: none;
