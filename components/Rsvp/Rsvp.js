@@ -20,7 +20,7 @@ export default function Rsvp({ locale }) {
             <span className="checkmark"></span>
             <label for="Offizielle Eröffnung Thresholds — La Certosa8737371">
               Yes, I would like to attend the exclusive reception at La Certosa
-              at 20:30 'clock.
+              at 20:30 &apos;clock.
             </label>
           </div>
 
