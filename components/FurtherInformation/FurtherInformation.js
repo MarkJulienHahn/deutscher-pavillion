@@ -19,14 +19,14 @@ export default function Curators({ special, locale }) {
     setImgWidth(ref.current?.clientWidth);
   }, [windowWidth]);
 
-  console.log(special);
-
   return (
     <main>
       <div className="singlePageWrapper">
         <h1>
           {locale == "de" ? "Weitere Informationen" : "Further Information"}
         </h1>
+
+
 
         {special.text ? (
           <div className="introText">
@@ -63,7 +63,6 @@ export default function Curators({ special, locale }) {
                       image.alt ||
                       "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
                     }
-                    
                     fill
                     style={{
                       objectFit: "cover",

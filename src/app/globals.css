@@ -610,6 +610,111 @@ input:focus {
   padding-bottom: 43px !important;
 }
 
+.rsvpForm form {
+  height: auto;
+  padding-bottom: var(--space-L);
+}
+
+.checkboxWrapper {
+  padding-bottom: var(--space-M);
+}
+
+.inputRow {
+  padding-bottom: var(--space-XS);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputRow label {
+  width: 700px;
+}
+
+.inputRow input {
+  width: 100%;
+  transform: translateY(-10px);
+}
+
+/* Customize the label (the container) */
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 55px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-bottom: var(--space-S);
+}
+
+.checkboxContainer label {
+  cursor: pointer;
+}
+
+/* Hide the browser's default checkbox */
+.checkboxContainer input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 35px;
+  width: 35px;
+  background-color: none;
+  border-radius: 5px;
+  border: 3px solid var(--blue);
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: #cccccc9b;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxContainer input:checked ~ .checkmark {
+  /* background-color: var(--blue); */
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxContainer .checkmark:after {
+  left: 9px;
+  top: 3px;
+  width: 8px;
+  height: 16px;
+  border: solid var(--blue);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.submitButton {
+  margin-top: var(--space-M);
+}
+
 @media screen and (max-width: 1700px) {
   :root {
     --fontSize-S: 25px;
@@ -631,7 +736,6 @@ input:focus {
   .imageCaption {
     font-size: var(--fontSize-XS);
   }
-
 }
 
 @media screen and (max-width: 1300px) {
@@ -718,8 +822,12 @@ input:focus {
     display: block;
   }
   .chroniclesLeft {
-    padding-bottom: var(--space-L)
+    padding-bottom: var(--space-L);
   }
+  .inputRow input {
+    height: unset;
+  }
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -749,7 +857,7 @@ input:focus {
   }
   .button,
   .closeButton {
-    padding: 2px 20px 7px;
+    padding: 4px 20px 5px;
     border: 1px solid var(--blue);
     border-radius: 50px;
   }
@@ -863,6 +971,12 @@ input:focus {
   }
   .columnPageHeadline {
     display: none;
+  }
+  .checkmark {
+    border: 1px solid var(--blue);
+    height: 25px;
+    width: 25px;
+    border-radius: 3px;
   }
   .chronicleLeft {
     padding-right: 0;
