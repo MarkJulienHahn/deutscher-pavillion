@@ -614,14 +614,23 @@ input:focus {
 }
 
 .checkboxWrapper {
-  padding: var(--space-S) 0;
+  padding-bottom: var(--space-M);
 }
 
 .inputRow {
-  padding-bottom: var(--space-S);
-  width: clamp(1000px, 50vw, 2000px);
+  padding-bottom: var(--space-XS);
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.inputRow label {
+  width: 700px;
+}
+
+.inputRow input {
+  width: 100%;
+  transform: translateY(-10px);
 }
 
 /* Customize the label (the container) */
@@ -634,6 +643,7 @@ input:focus {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding-bottom: var(--space-S);
 }
 
 .checkboxContainer label {
@@ -697,6 +707,10 @@ input:focus {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.submitButton {
+  margin-top: var(--space-M);
 }
 
 @media screen and (max-width: 1700px) {
@@ -808,6 +822,10 @@ input:focus {
   .chroniclesLeft {
     padding-bottom: var(--space-L);
   }
+  .inputRow input {
+    height: unset;
+  }
+
 }
 
 @media screen and (max-width: 1000px) {
@@ -837,7 +855,7 @@ input:focus {
   }
   .button,
   .closeButton {
-    padding: 2px 20px 7px;
+    padding: 4px 20px 5px;
     border: 1px solid var(--blue);
     border-radius: 50px;
   }
@@ -951,5 +969,11 @@ input:focus {
   }
   .columnPageHeadline {
     display: none;
+  }
+  .checkmark {
+    border: 1px solid var(--blue);
+    height: 25px;
+    width: 25px;
+    border-radius: 3px;
   }
 }
