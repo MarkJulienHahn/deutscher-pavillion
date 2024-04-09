@@ -864,10 +864,14 @@ input:focus {
 
   .dankLogos {
     padding-top: 50px;
-    flex-direction: column;
-    align-items: center;
-    height: 430px;
-    justify-content: space-between;
+    width: 100vw;
+    padding: var(--space-M);
+    flex-direction: row;
+    justify-content: space-evenly;  
+  }
+
+  .dankLogos span {
+    width: 100px;
   }
 
   .mobileHeadline {
