@@ -7,6 +7,7 @@ export default defineType({
 
   fields: [
     { name: "title", title: "Title", type: "string", hidden: true },
+    {name: "biennaleLogo", title: "Biennale Logo", type: "image" },
     {
       name: "text",
       title: "Text",
@@ -51,6 +52,35 @@ export default defineType({
       of: [{ name: "logo", title: "Logo", type: "image" }],
     },
     {
+      name: "initialPartner",
+      title: "Initialpartner",
+      type: "object",
+      fields: [
+        {
+          name: "german",
+          title: "German",
+          type: "object",
+          fields: [
+            { name: "headline", title: "Headline", type: "string" },
+          ],
+        },
+        {
+          name: "english",
+          title: "English",
+          type: "object",
+          fields: [
+            { name: "headline", title: "Headline", type: "string" },
+          ],
+        },
+        {
+          name: "logos",
+          title: "Logos",
+          type: "array",
+          of: [{ name: "logo", title: "Logo", type: "image" }],
+        },
+      ],
+    },
+    {
       name: "partner",
       title: "Partner",
       type: "object",
@@ -61,21 +91,6 @@ export default defineType({
           type: "object",
           fields: [
             { name: "headline", title: "Headline", type: "string" },
-            {
-              name: "text",
-              title: "Text",
-              type: "array",
-              of: [
-                {
-                  type: "block",
-                  styles: [{ title: "Normal", value: "normal" }],
-                  lists: [],
-                  marks: {
-                    decorators: [{ title: "Emphasis", value: "em" }],
-                  },
-                },
-              ],
-            },
           ],
         },
         {
@@ -84,22 +99,71 @@ export default defineType({
           type: "object",
           fields: [
             { name: "headline", title: "Headline", type: "string" },
-            {
-              name: "text",
-              title: "Text",
-              type: "array",
-              of: [
-                {
-                  type: "block",
-                  styles: [{ title: "Normal", value: "normal" }],
-                  lists: [],
-                  marks: {
-                    decorators: [{ title: "Emphasis", value: "em" }],
-                  },
-                },
-              ],
-            },
           ],
+        },
+        {
+          name: "logos",
+          title: "Logos",
+          type: "array",
+          of: [{ name: "logo", title: "Logo", type: "image" }],
+        },
+      ],
+    },
+    {
+      name: "supporter",
+      title: "Supporter",
+      type: "object",
+      fields: [
+        {
+          name: "german",
+          title: "German",
+          type: "object",
+          fields: [
+            { name: "headline", title: "Headline", type: "string" },
+          ],
+        },
+        {
+          name: "english",
+          title: "English",
+          type: "object",
+          fields: [
+            { name: "headline", title: "Headline", type: "string" },
+          ],
+        },
+        {
+          name: "logos",
+          title: "Logos",
+          type: "array",
+          of: [{ name: "logo", title: "Logo", type: "image" }],
+        },
+      ],
+    },
+    {
+      name: "cooperation",
+      title: "Cooperation",
+      type: "object",
+      fields: [
+        {
+          name: "german",
+          title: "German",
+          type: "object",
+          fields: [
+            { name: "headline", title: "Headline", type: "string" },
+          ],
+        },
+        {
+          name: "english",
+          title: "English",
+          type: "object",
+          fields: [
+            { name: "headline", title: "Headline", type: "string" },
+          ],
+        },
+        {
+          name: "logos",
+          title: "Logos",
+          type: "array",
+          of: [{ name: "logo", title: "Logo", type: "image" }],
         },
       ],
     },

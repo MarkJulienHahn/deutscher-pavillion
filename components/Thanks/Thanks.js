@@ -21,63 +21,171 @@ export default function Thanks({ thanks, locale }) {
     setTimeout(setDelay(false), 500);
   }, []);
 
+  console.log(thanks);
+
   return (
     <main>
       <div className="singlePageWrapper">
         <div className="dankWrapper">
           <h1>{locale == "de" ? "Dank" : "Thanks"}</h1>
+          {thanks.biennaleLogo && (
+            <div className="dankLogos" style={{ paddingTop: "0" }}>
+              <span
+                style={{
+                  width: "250px",
+                  height: "200px",
+                  position: "relative",
+                }}
+              >
+                <Image
+                  fill
+                  src={thanks.biennaleLogo.asset.url}
+                  alt={"German Pavillon 2024 Venice Biennale Supporter Logo"}
+                  loading="lazy"
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </span>
+            </div>
+          )}
           <PortableText
             value={locale == "de" ? thanks.text.german : thanks.text.english}
           />
-          <div className="dankLogos">
-            <Image
-              src={logo3}
-              alt="logo"
-              style={{ width: "250px", height: "100px" }}
-            />
-            <Image
-              src={logo1}
-              alt="logo"
-              style={{ width: "250px", height: "100px" }}
-            />
-
-          </div>
-          {/* <div className="dankLogos">
+          <div className="dankLogos" >
             {thanks.logos.map((logo, i) => (
               <span
                 key={i}
                 style={{
                   width: "250px",
-                  height: "100px",
+                  height: "120px",
                   position: "relative",
                 }}
               >
-                {!delay && (
-                  <Image
-                    fill
-                    src={logo.asset.url}
-                    alt={"logo"}
-                    loading="lazy"
-                  />
-                )}
+                <Image
+                  fill
+                  src={logo.asset.url}
+                  alt={"German Pavillon 2024 Venice Biennale Supporter Logo"}
+                  loading="lazy"
+                  style={{
+                    objectFit: "contain",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
               </span>
             ))}
-          </div> */}
-          <div>
-            <p>{partnerHeadline}</p>
-            <PortableText value={partnerText} />
           </div>
 
-          <div style={{paddingTop: "var(--space-L)"}}>
-            <p>{locale == "de" ? "Unterstützt von" : "Supported by"}</p>
-            <div className="dankLogos">
-              <Image
-                src={logo2}
-                alt="logo"
-                style={{ width: "250px", height: "100px" }}
-              />
+          {thanks.partner && (
+            <div>
+              <p>
+                {locale == "de"
+                  ? thanks.partner.german.headline
+                  : thanks.partner.english.headline}
+              </p>
+              <div className="dankLogos">
+                {thanks.partner?.logos.map((logo, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      width: "250px",
+                      height: "80px",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      fill
+                      src={logo.asset.url}
+                      alt={
+                        "German Pavillon 2024 Venice Biennale Supporter Logo"
+                      }
+                      loading="lazy"
+                      style={{
+                        objectFit: "contain",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {thanks.supporter && (
+            <div>
+              <p>
+                {locale == "de"
+                  ? thanks.supporter.german.headline
+                  : thanks.supporter.english.headline}
+              </p>
+              <div className="dankLogos">
+                {thanks.supporter?.logos.map((logo, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      width: "100%",
+                      height: "100px",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      fill
+                      src={logo.asset.url}
+                      alt={
+                        "German Pavillon 2024 Venice Biennale Supporter Logo"
+                      }
+                      loading="lazy"
+                      style={{
+                        objectFit: "contain",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {thanks.cooperation && (
+            <div>
+              <p>
+                {locale == "de"
+                  ? thanks.cooperation.german.headline
+                  : thanks.cooperation.english.headline}
+              </p>
+              <div className="dankLogos">
+                {thanks.cooperation?.logos.map((logo, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      width: "250px",
+                      height: "100px",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      fill
+                      src={logo.asset.url}
+                      alt={
+                        "German Pavillon 2024 Venice Biennale Supporter Logo"
+                      }
+                      loading="lazy"
+                      style={{
+                        objectFit: "contain",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <NavMenu locale={locale} />

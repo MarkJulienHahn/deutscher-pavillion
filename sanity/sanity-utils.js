@@ -38,9 +38,7 @@ export async function getCurators() {
 }
 
 export async function getChroniclesIntro() {
-  return client.fetch(
-    groq`*[_type == "chroniclesIntro"]{...}`
-  );
+  return client.fetch(groq`*[_type == "chroniclesIntro"]{...}`);
 }
 
 export async function getChronicles() {
@@ -70,7 +68,7 @@ export async function getTeam() {
 
 export async function getThanks() {
   return client.fetch(
-    groq`*[_type == "dank"]|order(orderRank){..., "logos": logos[]{..., "asset": asset->{...}}}`
+    groq`*[_type == "dank"]{..., biennaleLogo{..., asset->{url}}, initialPartner{..., "logos": logos[]{..., asset->{url}}}, partner{..., "logos": logos[]{..., asset->{url}}}, "logos": logos[]{..., "asset": asset->{...}}, supporter{..., "logos": logos[]{..., asset->{url}}}, cooperation{..., "logos": logos[]{..., asset->{url}}}}`
   );
 }
 
@@ -107,5 +105,7 @@ export async function getPrivacy() {
 }
 
 export async function getSpecial() {
-  return client.fetch(groq`*[_type == "special"]{..., "images": images[]{..., "asset": asset->{...}}}`);
+  return client.fetch(
+    groq`*[_type == "special"]{..., "images": images[]{..., "asset": asset->{...}}}`
+  );
 }
