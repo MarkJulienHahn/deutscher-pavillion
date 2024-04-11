@@ -35,7 +35,7 @@ export default function Rsvp({ locale }) {
             <span className="checkmark"></span>
             <label for="Offizielle Eröffnung Thresholds — Deutscher Pavillon8730203">
               Yes, I will also take part in the other events of the German
-              Pavilion on Thursday, 18 April (not necessary)
+              Pavilion on Thursday, 18 April.
             </label>
           </div>
         </div>
