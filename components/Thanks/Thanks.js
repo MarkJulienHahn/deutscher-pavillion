@@ -194,7 +194,7 @@ export default function Thanks({ thanks, locale }) {
               </p>
               <div className="dankListe">
                 {thanks.thanks?.entry.map((entry, i) => (
-                    <p>{entry}</p>
+                    <p key={i}>{entry}</p>
                 ))}
               </div>
             </div>
