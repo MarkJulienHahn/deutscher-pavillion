@@ -713,6 +713,15 @@ input:focus {
   margin-top: var(--space-M);
 }
 
+.dankListe {
+  padding-top: var(--space-M)
+}
+
+.dankListe p{
+  font-size: var(--fontSize-S);
+  line-height: 8px;
+}
+
 @media screen and (max-width: 1700px) {
   :root {
     --fontSize-S: 25px;
