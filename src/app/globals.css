@@ -721,7 +721,8 @@ input:focus {
 
 .dankListe p{
   font-size: var(--fontSize-S);
-  line-height: 8px;
+  line-height: calc(var(--lineHeight-S)/2);
+  padding-bottom: 0px;
 }
 
 @media screen and (max-width: 1700px) {
@@ -1001,5 +1002,8 @@ input:focus {
   .chroniclesPage {
     padding-bottom: inherit;
     margin-bottom: 0;
+  }
+  .dankListe p{
+    line-height: var(--lineHeight-S)
   }
 }
