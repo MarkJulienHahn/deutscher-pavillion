@@ -7,7 +7,7 @@ export default defineType({
 
   fields: [
     { name: "title", title: "Title", type: "string", hidden: true },
-    {name: "biennaleLogo", title: "Biennale Logo", type: "image" },
+    // {name: "biennaleLogo", title: "Biennale Logo", type: "image" },
     {
       name: "text",
       title: "Text",
@@ -60,17 +60,13 @@ export default defineType({
           name: "german",
           title: "German",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "english",
           title: "English",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "logos",
@@ -89,17 +85,13 @@ export default defineType({
           name: "german",
           title: "German",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "english",
           title: "English",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "logos",
@@ -118,17 +110,13 @@ export default defineType({
           name: "german",
           title: "German",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "english",
           title: "English",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "logos",
@@ -147,23 +135,48 @@ export default defineType({
           name: "german",
           title: "German",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "english",
           title: "English",
           type: "object",
-          fields: [
-            { name: "headline", title: "Headline", type: "string" },
-          ],
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
         },
         {
           name: "logos",
           title: "Logos",
           type: "array",
           of: [{ name: "logo", title: "Logo", type: "image" }],
+        },
+      ],
+    },
+    {
+      name: "thanks",
+      title: "Thanks",
+      type: "object",
+      fields: [
+        {
+          name: "german",
+          title: "German",
+          type: "object",
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
+        },
+        {
+          name: "english",
+          title: "English",
+          type: "object",
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
+        },
+        {
+          name: "entry",
+          title: "Eintrag",
+          type: "array",
+          of: [
+            {
+              type: "string",
+            },
+          ],
         },
       ],
     },

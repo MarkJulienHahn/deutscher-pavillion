@@ -21,14 +21,12 @@ export default function Thanks({ thanks, locale }) {
     setTimeout(setDelay(false), 500);
   }, []);
 
-  console.log(thanks);
-
   return (
     <main>
       <div className="singlePageWrapper">
         <div className="dankWrapper">
           <h1>{locale == "de" ? "Dank" : "Thanks"}</h1>
-          {thanks.biennaleLogo && (
+          {/* {thanks.biennaleLogo && (
             <div className="dankLogos" style={{ paddingTop: "0" }}>
               <span
                 style={{
@@ -50,11 +48,11 @@ export default function Thanks({ thanks, locale }) {
                 />
               </span>
             </div>
-          )}
+          )} */}
           <PortableText
             value={locale == "de" ? thanks.text.german : thanks.text.english}
           />
-          <div className="dankLogos" >
+          <div className="dankLogos">
             {thanks.logos.map((logo, i) => (
               <span
                 key={i}
@@ -182,6 +180,21 @@ export default function Thanks({ thanks, locale }) {
                       }}
                     />
                   </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {thanks.thanks && (
+            <div>
+              <p>
+                {locale == "de"
+                  ? thanks.thanks.german.headline
+                  : thanks.thanks.english.headline}
+              </p>
+              <div className="dankListe">
+                {thanks.thanks?.entry.map((entry, i) => (
+                    <p>{entry}</p>
                 ))}
               </div>
             </div>
