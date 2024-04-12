@@ -14,7 +14,8 @@ export default async function page({ params: { locale } }) {
       </Head>
       <div className="singlePageWrapper">
         <h1>RSVP</h1>
-        <Rsvp locale={locale} />
+        {/* <p>RSVP is closed at the Moment</p> */}
+        {/* <Rsvp locale={locale} /> */}
       </div>
     </>
   );
