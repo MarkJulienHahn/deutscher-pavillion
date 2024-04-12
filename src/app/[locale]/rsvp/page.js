@@ -14,7 +14,10 @@ export default async function page({ params: { locale } }) {
       </Head>
       <div className="singlePageWrapper">
         <h1>RSVP</h1>
-        {/* <p>RSVP is closed at the Moment</p> */}
+        <p style={{ textAlign: "center" }}>
+          RSVP switched off. For further inquiries please contact:{" "}
+          <a href="mailto:kl@luz-communication.de">kl@luz-communication.de</a>
+        </p>
         {/* <Rsvp locale={locale} /> */}
       </div>
     </>
