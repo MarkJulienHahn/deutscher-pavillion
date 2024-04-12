@@ -194,7 +194,22 @@ export default function Thanks({ thanks, locale }) {
               </p>
               <div className="dankListe">
                 {thanks.thanks?.entry.map((entry, i) => (
-                    <p key={i}>{entry}</p>
+                  <p key={i}>{entry}</p>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {thanks.lenders && (
+            <div style={{marginTop: "var(--space-L)"}}>
+              <p>
+                {locale == "de"
+                  ? thanks.lenders.german.headline
+                  : thanks.lenders.english.headline}
+              </p>
+              <div className="dankListe">
+                {thanks.lenders?.entry.map((entry, i) => (
+                  <p key={i}>{entry}</p>
                 ))}
               </div>
             </div>

@@ -180,5 +180,34 @@ export default defineType({
         },
       ],
     },
+    {
+      name: "lenders",
+      title: "Lenders",
+      type: "object",
+      fields: [
+        {
+          name: "german",
+          title: "German",
+          type: "object",
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
+        },
+        {
+          name: "english",
+          title: "English",
+          type: "object",
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
+        },
+        {
+          name: "entry",
+          title: "Eintrag",
+          type: "array",
+          of: [
+            {
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
   ],
 });
