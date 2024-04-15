@@ -1,12 +1,25 @@
+import { PortableText } from "@portabletext/react";
 import React from "react";
 
 export default function TeamEntry({ entry, locale }) {
   const headline =
-    locale == "de" ? entry.headline.german : entry.headline.english;
+    entry.headline?.textGerman || entry.headline?.textEnglish
+      ? locale == "de"
+        ? entry.headline.textGerman
+        : entry.headline.textEnglish
+      : locale == "de"
+      ? entry.headline.german
+      : entry.headline.english;
 
   return (
     <div className="sectionWrapper">
-      <h2>{headline}</h2>
+      <h2 className="teamHeadline">
+        {entry.headline?.textGerman || entry.headline?.textEnglish ? (
+          <PortableText value={headline} />
+        ) : (
+          headline
+        )}
+      </h2>
       <div className="teamWrapper">
         {entry.names.map((name, i) =>
           !name.url ? (
