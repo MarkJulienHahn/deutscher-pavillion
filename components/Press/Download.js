@@ -13,11 +13,14 @@ export default function Download({ download, locale }) {
   return (
     <div className="downloadRow">
       <div className="downloadLeft">
-        <p className="downloadDate">
-          {locale == "de"
-            ? convertDateFormatDE(download.date)
-            : convertDateFormatEN(download.date)}
-        </p>
+        {download?.date && (
+          <p className="downloadDate">
+            {locale == "de"
+              ? convertDateFormatDE(download.date)
+              : convertDateFormatEN(download.date)}
+          </p>
+        )}
+
         <span>
           <p className="downloadTitle">
             {locale == "de" ? download.title.german : download.title.english}
