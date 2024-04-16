@@ -77,6 +77,55 @@ export default defineType({
         },
       ],
     },
+    {
+      name: "downloads",
+      title: "Downloads",
+      type: "array",
+      of: [
+        {
+          name: "item",
+          title: "Item",
+          type: "object",
+          fields: [
+            { name: "date", title: "date", type: "date" },
+            {
+              name: "title",
+              title: "Title",
+              type: "object",
+              fields: [
+                {
+                  name: "german",
+                  title: "German",
+                  type: "string",
+                  validation: (Rule) => Rule.required().min(3).max(80),
+                },
+                {
+                  name: "english",
+                  title: "English",
+                  type: "string",
+                  validation: (Rule) => Rule.required().min(3).max(80),
+                },
+              ],
+            },
+            {
+              name: "file",
+              title: "File German",
+              type: "file",
+            },
+            {
+              name: "fileEnglish",
+              title: "File English",
+              type: "file",
+            },
+          ],
+          preview: {
+            select: {
+              title: "title.german",
+            },
+          },
+        },
+      ],
+    },
 
     orderRankField({ type: "team" }),
   ],
