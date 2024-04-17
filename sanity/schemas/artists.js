@@ -13,6 +13,7 @@ export default defineType({
       type: "string",
       validation: (Rule) => Rule.required().min(3).max(80),
     },
+
     {
       name: "slug",
       title: "Slug",
@@ -48,6 +49,73 @@ export default defineType({
     {
       name: "text",
       title: "Text",
+      type: "object",
+      fields: [
+        {
+          name: "textGerman",
+          title: "German",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+        {
+          name: "textEnglish",
+          title: "English",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "artworkTitle",
+      title: "Artwork Title",
+      type: "string",
+    },
+
+    {
+      name: "medium",
+      title: "Medium",
+      type: "object",
+      fields: [
+        {
+          name: "text",
+          title: "Text",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "artworkText",
+      title: "Artwork Text",
       type: "object",
       fields: [
         {
