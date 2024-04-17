@@ -1,11 +1,11 @@
-import { getArtists, getArtistImages } from "../../../../sanity/sanity-utils";
+import ArtistSingle from "../../../../components/Artists/ArtistSingle";
+import { getArtists } from "../../../../sanity/sanity-utils";
 
-export default async function page({ params: { locale } }) {
+export default async function page() {
   const artists = await getArtists();
-  const artistImages = await getArtistImages();
   return (
     <>
-      <h1>Michael Akstaller</h1>
+      <ArtistSingle slug={"michael-akstaller"} artists={artists} />
     </>
   );
 }

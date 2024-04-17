@@ -19,10 +19,40 @@ export default defineType({
           validation: (Rule) => Rule.required(),
         },
         {
+          name: "textGerman",
+          title: "German",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+        {
           name: "english",
           title: "English",
           type: "string",
           validation: (Rule) => Rule.required(),
+        },
+        {
+          name: "textEnglish",
+          title: "English",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
         },
       ],
     },

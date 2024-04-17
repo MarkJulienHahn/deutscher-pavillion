@@ -725,6 +725,23 @@ input:focus {
   padding-bottom: 0px;
 }
 
+.teamHeadline p {
+  font-size: var(--fontSize-L);
+  line-height: var(--lineHeight-L);
+}
+
+.artistMedium {
+  padding: var(--space-M) var(--space-L);
+  text-align: center;
+}
+
+.artistText {
+  padding-bottom: var(--space-M)
+}
+.artistText h2 {
+  padding-bottom: var(--space-XS)
+}
+
 @media screen and (max-width: 1700px) {
   :root {
     --fontSize-S: 25px;

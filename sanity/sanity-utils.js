@@ -49,7 +49,9 @@ export async function getChronicles() {
 }
 
 export async function getVisit() {
-  return client.fetch(groq`*[_type == "visit"]|order(orderRank){...}`);
+  return client.fetch(
+    groq`*[_type == "visit"]|order(orderRank){..., "downloads": downloads[]{..., file{..., "asset": asset->{...}}, fileEnglish{..., "asset": asset->{...}}}}`
+  );
 }
 
 export async function getPress() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
-
+import Download from "../Press/Download";
 import { serializers } from "../../hooks/portableTextSerializer";
 
 export default function Entry({ entry, locale }) {
@@ -23,6 +23,9 @@ export default function Entry({ entry, locale }) {
       )}
       <div className="sectionWrapper">
         <PortableText value={text} components={serializers} />
+        {entry?.downloads?.map((download, i) => (
+          <Download download={download} locale={locale} key={i} />
+        ))}
       </div>
     </div>
   );
