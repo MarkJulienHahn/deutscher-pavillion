@@ -157,7 +157,7 @@ input:focus {
 }
 
 .columnWrapper {
-  padding: 40vh var(--space-S) var(--space-S) var(--space-S);
+  padding: 350px var(--space-S) var(--space-S) var(--space-S);
   width: 50%;
 }
 
@@ -421,13 +421,22 @@ input:focus {
 }
 
 .exhibitionArtists {
-  padding-bottom: var(--space-S);
+  text-align: center;
+  padding-bottom: var(--space-M);
 }
 
 .exhibitionArtists h3 {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 5px;
+  padding-bottom: var(--space-XS);
+}
+
+.exhibitionEntryWrapper {
+  padding: 0 var(--space-L) var(--space-XL);
+}
+.exhibitionImageWrapper {
+  padding-top: var(--space-M);
 }
 
 .sliderWrapper {
@@ -490,6 +499,11 @@ input:focus {
 .imageCaption {
   position: absolute;
   transform: translateY(35px);
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+}
+
+.imageCaption p {
   font-size: var(--fontSize-XS);
   line-height: var(--lineHeight-XS);
 }
@@ -716,12 +730,12 @@ input:focus {
 }
 
 .dankListe {
-  padding-top: var(--space-M)
+  padding-top: var(--space-M);
 }
 
-.dankListe p{
+.dankListe p {
   font-size: var(--fontSize-S);
-  line-height: calc(var(--lineHeight-S)/2);
+  line-height: calc(var(--lineHeight-S) / 2);
   padding-bottom: 0px;
 }
 
@@ -736,10 +750,105 @@ input:focus {
 }
 
 .artistText {
-  padding-bottom: var(--space-M)
+  padding-bottom: var(--space-M);
 }
 .artistText h2 {
-  padding-bottom: var(--space-XS)
+  padding-bottom: var(--space-XS);
+}
+
+.switchWrapper {
+  position: fixed;
+  top: 105px;
+  left: calc(50% - 250px);
+  width: 450px;
+  border: 3px solid var(--blue);
+  border-radius: 50px;
+  height: 70px;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+.switchNamesWrapper {
+  display: flex;
+  height: 60px;
+}
+
+.switchNamesWrapper span {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 2px;
+  height: 60px;
+}
+
+.switchNamesWrapper p {
+  line-height: 24px;
+}
+
+.switchButton {
+  width: 225px;
+  position: absolute;
+  top: -2px;
+  border-radius: 50px;
+  height: 66px;
+  transition: left 0.2s ease;
+}
+
+.switchButtonMobile {
+  display: none;
+  width: 38vw;
+  position: absolute;
+  top: -2px;
+  border-radius: 50px;
+  height: 60px;
+  transition: left 0.2s ease;
+}
+
+.columnPageWrapperSwitch {
+  width: 190vw;
+  transition: transform 0.2s ease;
+  display: flex;
+}
+
+.artistSingleWrapper {
+  padding: var(--space-XL);
+}
+
+.artistSingleHeadline h2 {
+  line-height: 46px;
+}
+
+.medium {
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+  text-align: center;
+  padding-top: var(--space-S);
+}
+
+.worksWrapper {
+  width: 90vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 150px var(--space-L) var(--space-M);
+}
+
+.worksInner {
+  width: 50%;
+  min-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  hyphens: none;
+}
+
+.worksInner h2 {
+  hyphens: none;
 }
 
 @media screen and (max-width: 1700px) {
@@ -763,6 +872,10 @@ input:focus {
   .imageCaption {
     font-size: var(--fontSize-XS);
   }
+
+  .artistSingleHeadline h2 {
+    line-height: 39px;
+  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -782,46 +895,6 @@ input:focus {
     transform: translateY(-200px);
   }
 
-  .switchWrapper {
-    position: fixed;
-    top: 75px;
-    left: calc(50% - 35vw);
-    width: 70vw;
-    border: 2px solid var(--blue);
-    border-radius: 50px;
-    height: 60px;
-    z-index: 10;
-    transition: opacity 0.5s ease;
-    cursor: pointer;
-  }
-  .switchNamesWrapper {
-    display: flex;
-    height: 60px;
-  }
-
-  .switchNamesWrapper span {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    line-height: 2px;
-    height: 55px;
-  }
-
-  .switchNamesWrapper p {
-    line-height: 18px;
-  }
-
-  .switchButton {
-    background: var(--blue);
-    width: 38vw;
-    position: absolute;
-    top: -2px;
-    border-radius: 50px;
-    height: 60px;
-    transition: left 0.2s ease;
-  }
   .imageCaptionCurator {
     transform: translateY(30px);
   }
@@ -854,7 +927,9 @@ input:focus {
   .inputRow input {
     height: unset;
   }
-
+  .artistSingleWrapper {
+    padding: var(--space-L) var(--space-L);
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -894,7 +969,7 @@ input:focus {
     width: 100vw;
     padding: var(--space-M);
     flex-direction: row;
-    justify-content: space-evenly;  
+    justify-content: space-evenly;
   }
 
   .dankLogos span {
@@ -908,7 +983,7 @@ input:focus {
   .artistSelector {
     padding-top: 60px;
   }
-  
+
   .artistSelector h2 {
     line-height: 50px;
     hyphens: none;
@@ -952,7 +1027,6 @@ input:focus {
     padding-top: 160px;
   }
   .columnPageWrapper {
-    width: 180vw;
     transition: transform 0.2s ease;
   }
   .artistsDesktop {
@@ -960,6 +1034,7 @@ input:focus {
   }
   .artistsMobile {
     display: block;
+    width: 190vw;
   }
 
   .imageCaption {
@@ -997,6 +1072,10 @@ input:focus {
     line-height: 30px;
     text-decoration-thickness: 2px;
     text-underline-offset: 5px;
+    padding-bottom: 0;
+  }
+  .exhibitionEntryWrapper {
+    padding: 0;
   }
   .artistSelector {
     margin-bottom: 50px;
@@ -1020,8 +1099,52 @@ input:focus {
     padding-bottom: inherit;
     margin-bottom: 0;
   }
-  .dankListe p{
-    line-height: var(--lineHeight-S)
+  .dankListe p {
+    line-height: var(--lineHeight-S);
   }
-  
+  .switchWrapper {
+    top: 75px;
+    width: 70vw;
+    left: calc(50% - 35vw);
+    height: 60px;
+    border-width: 2px;
+  }
+  .switchNamesWrapper {
+    display: flex;
+    height: 60px;
+  }
+
+  .switchNamesWrapper span {
+    height: 55px;
+  }
+
+  .switchNamesWrapper p {
+    line-height: 18px;
+  }
+
+  .switchButton {
+    display: none;
+  }
+
+  .switchButtonMobile {
+    display: block;
+  }
+  .artistSingleHeadline h2 {
+    line-height: 20px;
+  }
+  .artistSingleWrapper {
+    padding: var(--space-L) var(--space-S);
+  }
+
+  .worksWrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .worksInner {
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    min-height: unset;
+  }
 }

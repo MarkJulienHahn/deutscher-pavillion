@@ -7,11 +7,11 @@ export default defineType({
   type: "document",
 
   fields: [
-    {
-      name: "name",
-      title: "Name",
-      type: "string",
-    },
+    // {
+    //   name: "name",
+    //   title: "Name",
+    //   type: "string",
+    // },
 
     {
       name: "artists",

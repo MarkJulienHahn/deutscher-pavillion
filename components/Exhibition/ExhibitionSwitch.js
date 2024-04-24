@@ -11,7 +11,7 @@ import { use100vh } from "react-div-100vh";
 
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 
-export default function AristsMobile({
+export default function ExhibitionSwitch({
   locale,
   exhibitionPavillon,
   exhibitionCertosa,
@@ -64,34 +64,24 @@ export default function AristsMobile({
     switched && setFocusLeft(false);
   }, []);
 
-  //   useEffect(() => {
-  //     setHeightLeft(
-  //       left.current?.clientWidth /
-  //         artistImages.imageLeft.asset.metadata.dimensions.aspectRatio
-  //     );
-  //     setHeightRight(
-  //       right.current?.clientWidth /
-  //         artistImages.imageRightMobile.asset.metadata.dimensions.aspectRatio
-  //     );
-  //   }, [left, right, windowWidth]);
 
-  useEffect(() => {
-    !focusLeft &&
-      setTimeout(() => {
-        leftHeadline.current.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }, 500);
-    focusLeft &&
-      setTimeout(
-        rightHeadline.current.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        }),
-        500
-      );
-  }, [focusLeft]);
+  // useEffect(() => {
+  //   !focusLeft &&
+  //     setTimeout(() => {
+  //       leftHeadline.current.scrollIntoView({
+  //         behavior: "smooth",
+  //         block: "start",
+  //       });
+  //     }, 500);
+  //   focusLeft &&
+  //     setTimeout(
+  //       rightHeadline.current.scrollIntoView({
+  //         behavior: "smooth",
+  //         block: "start",
+  //       }),
+  //       500
+  //     );
+  // }, [focusLeft]);
 
   return (
     <>
@@ -106,10 +96,10 @@ export default function AristsMobile({
       />
 
       <div
-        className="columnPageWrapper"
+        className="columnPageWrapperSwitch"
         style={{
           height: height,
-          transform: focusLeft ? "" : "translateX(-80vw)",
+          transform: focusLeft ? "" : "translateX(-90vw)",
         }}
       >
         <div
@@ -121,7 +111,7 @@ export default function AristsMobile({
 
           <div
             className="artistSelector"
-            style={{ pointerEvents: focusLeft ? "auto" : "none" }}
+            style={{ pointerEvents: focusLeft ? "auto" : "none", marginBottom: "var(--space-M)" }}
           >
             <h2>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h2>
           </div>
@@ -131,7 +121,6 @@ export default function AristsMobile({
               entry={entry}
               locale={locale}
               key={i}
-              anchor={anchor}
               certosa={false}
             />
           ))}

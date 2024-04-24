@@ -18,8 +18,7 @@ export async function getLivestream() {
 
 export async function getArtists() {
   return client.fetch(
-    groq`*[_type == "artists"]|order(orderRank){..., "image": image{..., "asset": asset->{...}
-  }}`
+    groq`*[_type == "artists"]|order(orderRank){..., "works": works[]{..., "images": images[]{..., asset->{...}}}}`
   );
 }
 

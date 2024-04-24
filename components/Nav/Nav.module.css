@@ -124,6 +124,11 @@
   display: none;
 }
 
+.orange {
+  color: var(--red);
+  border-color: var(--red);
+}
+
 @media screen and (max-width: 1700px) {
   .menuListWrapper {
     height: 420px;
@@ -211,5 +216,4 @@
   .lastMenuItem:hover {
     margin: 0;
   }
-
 }

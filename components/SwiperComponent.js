@@ -6,8 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import SwiperInner from "./SwiperInner";
+import SwiperInnerArtists from "./SwiperInnerArtists";
 
-export default function SwiperComponent({ entry, locale }) {
+export default function SwiperComponent({ entry, locale, artists }) {
   const [index, setIndex] = useState(1);
   const [trigger, setTrigger] = useState(null);
 
@@ -29,14 +30,25 @@ export default function SwiperComponent({ entry, locale }) {
         <Swiper spaceBetween={0}>
           {entry.images.map((image, i) => (
             <SwiperSlide key={i}>
-              <SwiperInner
-                image={image}
-                locale={locale}
-                key={i}
-                i={i}
-                setIndex={setIndex}
-                trigger={trigger}
-              />
+              {artists ? (
+                <SwiperInnerArtists
+                  image={image}
+                  locale={locale}
+                  key={i}
+                  i={i}
+                  setIndex={setIndex}
+                  trigger={trigger}
+                />
+              ) : (
+                <SwiperInner
+                  image={image}
+                  locale={locale}
+                  key={i}
+                  i={i}
+                  setIndex={setIndex}
+                  trigger={trigger}
+                />
+              )}
             </SwiperSlide>
           ))}
         </Swiper>

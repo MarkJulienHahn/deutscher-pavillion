@@ -1,10 +1,9 @@
 export const menuEN = [
-  // { name: "About", slug: "about" },
   { name: "Exhibition", slug: "exhibition" },
-  { name: "Curator", slug: "curator" },
   { name: "Artists", slug: "artists" },
-  { name: "Chroniclers", slug: "chroniclers" },
-  // { name: "Program", slug: "program" },
+  { name: "Works", slug: "works" },
+  { name: "Curator", slug: "curator" },
+  // { name: "Chroniclers", slug: "chroniclers" },
   { name: "Visit", slug: "visit" },
   { name: "Press", slug: "press" },
   { name: "Team", slug: "team" },
@@ -12,14 +11,13 @@ export const menuEN = [
 ];
 
 export const menuDE = [
-  // { name: "About", slug: "about" },
   { name: "Ausstellung", slug: "ausstellung" },
-  { name: "Kuratorin", slug: "kuratorin" },
   { name: "Künstler:innen", slug: "kuenstlerinnen" },
-  { name: "Chronisten", slug: "chronisten" },
-  // { name: "Programm", slug: "programm" },
+  { name: "Kuratorin", slug: "kuratorin" },
+  { name: "Arbeiten", slug: "arbeiten" },
+  // { name: "Chronisten", slug: "chronisten" },
   { name: "Besuch", slug: "besuch" },
   { name: "Presse", slug: "presse" },
   { name: "Team", slug: "team" },
-  { name: "Dank", slug: "dank" }, 
+  { name: "Dank", slug: "dank" },
 ];

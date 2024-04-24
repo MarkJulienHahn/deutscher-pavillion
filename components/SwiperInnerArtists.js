@@ -3,12 +3,19 @@ import { useState, useEffect, useRef } from "react";
 import { urlFor } from "../hooks/useImageUrlBuilder";
 import { useSwiperSlide } from "swiper/react";
 import useWindowDimensions from "./useWindowDimensions";
+import { PortableText } from "@portabletext/react";
 
 import Image from "next/image";
 
 import { useSwiper } from "swiper/react";
 
-export default function SwiperInner({ image, locale, trigger, setIndex, i }) {
+export default function SwiperInnerArtists({
+  image,
+  locale,
+  trigger,
+  setIndex,
+  i,
+}) {
   const [imgWidth, setImgWidth] = useState();
   const [imgHeight, setImgHeight] = useState();
 
@@ -70,8 +77,8 @@ export default function SwiperInner({ image, locale, trigger, setIndex, i }) {
       </div>
 
       {locale == "de"
-        ? image.caption?.german && (
-            <p
+        ? image.caption?.de && (
+            <span
               className="imageCaption"
               style={{
                 top: `${
@@ -79,11 +86,12 @@ export default function SwiperInner({ image, locale, trigger, setIndex, i }) {
                 }px`,
               }}
             >
-              <PortableText value={image.caption.german}/>
-            </p>
+              <PortableText value={image.caption.de} />
+            </span>
           )
-        : image.caption?.english && (
-            <p
+        : 
+        image.caption?.en && (
+            <span
               className="imageCaption"
               style={{
                 top: `${
@@ -91,8 +99,8 @@ export default function SwiperInner({ image, locale, trigger, setIndex, i }) {
                 }px`,
               }}
             >
-              {image.caption.english}
-            </p>
+              <PortableText value={image.caption.en} />
+            </span>
           )}
     </>
   );

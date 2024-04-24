@@ -1,32 +1,30 @@
 import SwiperComponent from "../SwiperComponent";
 
 import { PortableText } from "@portabletext/react";
+import { Link } from "../../src/navigation";
 
 export default function ExhibitionEntry({ entry, certosa, locale }) {
+
   return (
-    <div>
-      <div className="headlineWrapper">
-        <h3
-          className="button"
-          style={{ borderColor: certosa ? "var(--red)" : "inherit" }}
-        >
-          {entry.name}
-        </h3>
-      </div>
+    <div className="exhibitionEntryWrapper">
       <div className="exhibitionArtists">
         {entry.artists.map((artist, i) => (
-          <h3 key={i}>{artist.name}</h3>
+          <h3 key={i}>
+            <Link href={`/${artist?.slug?.current}`}>{artist.name}</Link>
+          </h3>
         ))}
       </div>
       <PortableText
         value={locale == "de" ? entry.text.german : entry.text.english}
       />
 
-      {entry.images.length ? (
-        <SwiperComponent entry={entry} locale={locale} />
-      ) : (
-        ""
-      )}
+      <div className="exhibitionImageWrapper">
+        {entry.images.length ? (
+          <SwiperComponent entry={entry} locale={locale} />
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }

@@ -107,7 +107,7 @@ export default function AristsMobile({ locale, artists, artistImages }) {
         className="columnPageWrapper"
         style={{
           height: height,
-          transform: focusLeft ? "" : "translateX(-80vw)",
+          transform: focusLeft ? "" : "translateX(-90vw)",
         }}
       >
         <div

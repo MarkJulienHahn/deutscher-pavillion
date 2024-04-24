@@ -27,6 +27,7 @@ export default function Nav({ locale, color }) {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [twoColors, setTwoColors] = useState(false);
   const [menuHidden, setMenuHidden] = useState(false);
+  const [orange, setOrange] = useState(false);
 
   const pathname = usePathname();
   const neutralPath = removeFirstThreeCharacters(pathname);
@@ -72,8 +73,8 @@ export default function Nav({ locale, color }) {
   }, [lastScrollY]);
 
   useEffect(() => {
-    pathname.includes("exhibition") ||
-    pathname.includes("ausstellung") ||
+    // pathname.includes("exhibition") ||
+    // pathname.includes("ausstellung") ||
     pathname.includes("artists") ||
     pathname.includes("kuenstlerinnen") ||
     pathname.includes("program") ||
@@ -128,9 +129,21 @@ export default function Nav({ locale, color }) {
     };
   }, []);
 
+  useEffect(() => {
+    pathname.includes("robert-lippok") ||
+    pathname.includes("jan-st-werner") ||
+    pathname.includes("nicole-l-huillier") ||
+    pathname.includes("michael-akstaller")
+      ? setOrange(true)
+      : setOrange(false);
+  }, [pathname]);
+
   return (
     <>
-      <div className={styles.header} style={showButton ? visible : hidden}>
+      <div
+        className={`${styles.header} ${orange && styles.orange}`}
+        style={showButton ? visible : hidden}
+      >
         <Link className={styles.hideMobile} href="/">
           <h3>Thresholds</h3>
         </Link>
@@ -138,7 +151,6 @@ export default function Nav({ locale, color }) {
         {twoColors ? (
           <img
             className={styles.twoColorButton}
-            // style={showButton ? visible : hidden}
             alt="headline"
             onClick={() => setActive(true)}
             src={
@@ -150,7 +162,11 @@ export default function Nav({ locale, color }) {
             className={styles.button}
             onClick={() => setActive(true)}
             style={
-              onlyNoButton ? hidden : color == "orange" ? orangeMode : visible
+              onlyNoButton
+                ? hidden
+                : color == "orange" || orange
+                ? orangeMode
+                : visible
             }
           >
             {locale == "de" ? "Menü" : "Menu"}
@@ -159,7 +175,12 @@ export default function Nav({ locale, color }) {
 
         <h3
           className={`${styles.localePicker} ${styles.hideMobile}`}
-          style={{ color: twoColors ? "var(--red)" : "var(--blue)" }}
+          style={{
+            color:
+              twoColors || color == "orange" || orange
+                ? "var(--red)"
+                : "var(--blue)",
+          }}
         >
           <Link href={`/${neutralPath}`} locale="de">
             <span
@@ -168,14 +189,26 @@ export default function Nav({ locale, color }) {
               De
             </span>
           </Link>
-          /
-          <Link href={`/${neutralPath}`} locale="en">
-            <span
-              className={locale !== "de" ? styles.selected : styles.unselected}
-            >
-              En
-            </span>
-          </Link>
+          <span
+            style={{
+              color:
+                pathname.includes("exhibition") ||
+                pathname.includes("ausstellung")
+                  ? "var(--red)"
+                  : "inherit",
+            }}
+          >
+            /
+            <Link href={`/${neutralPath}`} locale="en">
+              <span
+                className={
+                  locale !== "de" ? styles.selected : styles.unselected
+                }
+              >
+                En
+              </span>
+            </Link>
+          </span>
         </h3>
       </div>
 

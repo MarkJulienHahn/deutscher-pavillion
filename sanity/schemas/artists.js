@@ -27,25 +27,6 @@ export default defineType({
       },
     },
     { name: "certosa", title: "La Certosa", type: "boolean" },
-    // {
-    //   name: "image",
-    //   title: "Image",
-    //   type: "image",
-    //   fields: [
-    //     {
-    //       title: "Alternative Text",
-    //       name: "alt",
-    //       type: "string",
-    //     },
-    //     {
-    //       title: "SEO friendly file-name",
-    //       name: "filename",
-    //       type: "slug",
-    //       isUnique: false,
-    //       description: "Example: yael-bartana-deutscher-pavillon-2024",
-    //     },
-    //   ],
-    // },
     {
       name: "text",
       title: "Text",
@@ -84,72 +65,207 @@ export default defineType({
       ],
     },
 
-    {
-      name: "artworkTitle",
-      title: "Artwork Title",
-      type: "string",
-    },
 
     {
-      name: "medium",
-      title: "Medium",
-      type: "object",
-      fields: [
+      name: "works",
+      title: "Works",
+      type: "array",
+      of: [
         {
-          name: "text",
-          title: "Text",
-          type: "array",
-          of: [
+          name: "work",
+          title: "Work",
+          type: "object",
+          fields: [
             {
-              type: "block",
-              styles: [{ title: "Normal", value: "normal" }],
-              lists: [],
-              marks: {
-                decorators: [{ title: "Emphasis", value: "em" }],
-              },
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "medium",
+              title: "Medium",
+              type: "object",
+              fields: [
+                { name: "en", title: "English", type: "string" },
+                { name: "de", title: "German", type: "string" },
+              ],
+            },
+            {
+              name: "images",
+              title: "Images",
+              type: "array",
+              of: [
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  fields: [
+                    {
+                      title: "Caption",
+                      name: "caption",
+                      type: "object",
+                      fields: [
+                        {
+                          name: "en",
+                          title: "English",
+                          type: "array",
+                          of: [
+                            {
+                              type: "block",
+                              styles: [{ title: "Normal", value: "normal" }],
+                              lists: [],
+                              marks: {
+                                decorators: [{ title: "Emphasis", value: "em" }],
+                              },
+                            },
+                          ],
+                        },
+                        {
+                          name: "de",
+                          title: "German",
+                          type: "array",
+                          of: [
+                            {
+                              type: "block",
+                              styles: [{ title: "Normal", value: "normal" }],
+                              lists: [],
+                              marks: {
+                                decorators: [{ title: "Emphasis", value: "em" }],
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                    {
+                      title: "Alternative Text",
+                      name: "alt",
+                      type: "string",
+                    },
+                    {
+                      title: "SEO friendly file-name",
+                      name: "filename",
+                      type: "slug",
+                      isUnique: false,
+                      description:
+                        "Example: yael-bartana-deutscher-pavillon-2024",
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              name: "text",
+              title: "Text",
+              type: "object",
+              fields: [
+                {
+                  name: "de",
+                  title: "German",
+                  type: "array",
+                  of: [
+                    {
+                      type: "block",
+                      styles: [{ title: "Normal", value: "normal" }],
+                      lists: [],
+                      marks: {
+                        decorators: [{ title: "Emphasis", value: "em" }],
+                      },
+                    },
+                  ],
+                },
+
+                {
+                  name: "en",
+                  title: "English",
+                  type: "array",
+                  of: [
+                    {
+                      type: "block",
+                      styles: [{ title: "Normal", value: "normal" }],
+                      lists: [],
+                      marks: {
+                        decorators: [{ title: "Emphasis", value: "em" }],
+                      },
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },
       ],
     },
 
-    {
-      name: "artworkText",
-      title: "Artwork Text",
-      type: "object",
-      fields: [
-        {
-          name: "textGerman",
-          title: "German",
-          type: "array",
-          of: [
-            {
-              type: "block",
-              styles: [{ title: "Normal", value: "normal" }],
-              lists: [],
-              marks: {
-                decorators: [{ title: "Emphasis", value: "em" }],
-              },
-            },
-          ],
-        },
-        {
-          name: "textEnglish",
-          title: "English",
-          type: "array",
-          of: [
-            {
-              type: "block",
-              styles: [{ title: "Normal", value: "normal" }],
-              lists: [],
-              marks: {
-                decorators: [{ title: "Emphasis", value: "em" }],
-              },
-            },
-          ],
-        },
-      ],
-    },
+
+
+
+    // {
+    //   name: "artworkTitle",
+    //   title: "Artwork Title",
+    //   type: "string",
+    // },
+
+    // {
+    //   name: "medium",
+    //   title: "Medium",
+    //   type: "object",
+    //   fields: [
+    //     {
+    //       name: "text",
+    //       title: "Text",
+    //       type: "array",
+    //       of: [
+    //         {
+    //           type: "block",
+    //           styles: [{ title: "Normal", value: "normal" }],
+    //           lists: [],
+    //           marks: {
+    //             decorators: [{ title: "Emphasis", value: "em" }],
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
+
+    // {
+    //   name: "artworkText",
+    //   title: "Artwork Text",
+    //   type: "object",
+    //   fields: [
+    //     {
+    //       name: "textGerman",
+    //       title: "German",
+    //       type: "array",
+    //       of: [
+    //         {
+    //           type: "block",
+    //           styles: [{ title: "Normal", value: "normal" }],
+    //           lists: [],
+    //           marks: {
+    //             decorators: [{ title: "Emphasis", value: "em" }],
+    //           },
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "textEnglish",
+    //       title: "English",
+    //       type: "array",
+    //       of: [
+    //         {
+    //           type: "block",
+    //           styles: [{ title: "Normal", value: "normal" }],
+    //           lists: [],
+    //           marks: {
+    //             decorators: [{ title: "Emphasis", value: "em" }],
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // },
 
     orderRankField({ type: "artists" }),
   ],
