@@ -40,7 +40,7 @@ export default function SwiperInnerArtists({
     setImgHeight(ref.current.clientHeight);
   }, [windowWidth]);
 
-  console.log(image);
+  console.log(image.asset.metadata.dimensions.aspectRatio);
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function SwiperInnerArtists({
         className="imageFullwidth"
         ref={ref}
         style={{
-          height: imgWidth / image.asset.metadata.dimensions.aspectRatio,
+          height: imgWidth / 1.5,
         }}
       >
         <Image
@@ -64,7 +64,7 @@ export default function SwiperInnerArtists({
           style={{
             objectFit: "cover",
             width: "100%",
-            aspectRatio: image.asset.metadata.dimensions.aspectRatio,
+            aspectRatio: 1.5
           }}
         />
         {image.caption ? (
@@ -82,7 +82,7 @@ export default function SwiperInnerArtists({
               className="imageCaption"
               style={{
                 top: `${
-                  imgWidth / image.asset.metadata.dimensions.aspectRatio - 20
+                  (imgWidth / 1.5) - 30
                 }px`,
               }}
             >
@@ -95,7 +95,7 @@ export default function SwiperInnerArtists({
               className="imageCaption"
               style={{
                 top: `${
-                  imgWidth / image.asset.metadata.dimensions.aspectRatio - 30
+                  (imgWidth / 1.5) - 30
                 }px`,
               }}
             >
