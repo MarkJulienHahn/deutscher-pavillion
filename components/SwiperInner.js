@@ -79,7 +79,7 @@ export default function SwiperInner({ image, locale, trigger, setIndex, i }) {
                 }px`,
               }}
             >
-              <PortableText value={image.caption.german}/>
+              {image.caption.german}
             </p>
           )
         : image.caption?.english && (
