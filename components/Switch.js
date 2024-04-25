@@ -42,6 +42,14 @@ export default function Switch({
         className="switchButton"
         style={
           !trigger
+            ? { left: "225px", background: "var(--red)" }
+            : { left: "0", background: "var(--blue)" }
+        }
+      ></div>
+            <div
+        className="switchButtonMobile"
+        style={
+          !trigger
             ? { left: "32vw", background: "var(--red)" }
             : { left: "-2vw", background: "var(--blue)" }
         }
