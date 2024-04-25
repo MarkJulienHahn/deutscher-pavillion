@@ -11,16 +11,21 @@ export default function TeamEntry({ entry, locale }) {
       ? entry.headline.german
       : entry.headline.english;
 
+  const text = { de: entry.text?.textGerman, en: entry.text?.textEnglish };
+
+  console.log(text);
+
   return (
     <div className="sectionWrapper">
-      <h2 className="teamHeadline">
+      <h3 className="teamHeadline">
         {entry.headline?.textGerman || entry.headline?.textEnglish ? (
           <PortableText value={headline} />
         ) : (
           headline
         )}
-      </h2>
+      </h3>
       <div className="teamWrapper">
+        <PortableText value={locale == "de" ? text.de : text.en} />
         {entry.names.map((name, i) =>
           !name.url ? (
             !name.nameEnglish ? (

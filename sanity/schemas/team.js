@@ -16,7 +16,6 @@ export default defineType({
           name: "german",
           title: "German",
           type: "string",
-          validation: (Rule) => Rule.required(),
         },
         {
           name: "textGerman",
@@ -37,8 +36,46 @@ export default defineType({
           name: "english",
           title: "English",
           type: "string",
-          validation: (Rule) => Rule.required(),
         },
+        {
+          name: "textEnglish",
+          title: "English",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "text",
+      title: "Text Formatiert",
+      type: "object",
+      fields: [
+        {
+          name: "textGerman",
+          title: "German",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+
         {
           name: "textEnglish",
           title: "English",
