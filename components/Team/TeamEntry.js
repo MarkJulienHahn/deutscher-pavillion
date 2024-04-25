@@ -24,7 +24,7 @@ export default function TeamEntry({ entry, locale }) {
       </h3>
       <div className="teamWrapper">
         <PortableText value={locale == "de" ? text.de : text.en} />
-        {entry.names.map((name, i) =>
+        {entry.names?.map((name, i) =>
           !name.url ? (
             !name.nameEnglish ? (
               <p key={i}>{name.name}</p>
