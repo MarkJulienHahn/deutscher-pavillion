@@ -13,8 +13,6 @@ export default function TeamEntry({ entry, locale }) {
 
   const text = { de: entry.text?.textGerman, en: entry.text?.textEnglish };
 
-  console.log(text);
-
   return (
     <div className="sectionWrapper">
       <h3 className="teamHeadline">
