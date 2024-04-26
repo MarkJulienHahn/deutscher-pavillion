@@ -730,7 +730,7 @@ input:focus {
 }
 
 .dankListe {
-  padding-top: var(--space-M);
+  padding-top: var(--space-M)
 }
 
 .dankListe p {
@@ -739,10 +739,9 @@ input:focus {
   padding-bottom: 0px;
 }
 
-.teamHeadline p, .teamHeadline h3, .teamHeadline {
-  font-size: var(--fontSize-M);
-  line-height: var(--lineHeight-M);
-  text-align: center;
+.teamHeadline p {
+  font-size: var(--fontSize-L);
+  line-height: var(--lineHeight-L);
 }
 
 .artistMedium {

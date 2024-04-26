@@ -201,7 +201,7 @@ export default function Thanks({ thanks, locale }) {
           )}
 
           {thanks.lenders && (
-            <div style={{marginTop: "var(--space-L)"}}>
+            <div style={{ marginTop: "var(--space-L)" }}>
               <p>
                 {locale == "de"
                   ? thanks.lenders.german.headline
@@ -211,6 +211,27 @@ export default function Thanks({ thanks, locale }) {
                 {thanks.lenders?.entry.map((entry, i) => (
                   <p key={i}>{entry}</p>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {thanks.special && (
+            <div style={{ marginTop: "var(--space-L)" }}>
+              <p>
+                {locale == "de"
+                  ? thanks.special.german.headline
+                  : thanks.special.english.headline}
+              </p>
+              <div
+                className="dankText"
+              >
+                <PortableText
+                  value={
+                    locale == "de"
+                      ? thanks.special?.textGerman
+                      : thanks.special?.textEnglish
+                  }
+                />
               </div>
             </div>
           )}

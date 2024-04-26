@@ -209,5 +209,55 @@ export default defineType({
         },
       ],
     },
+
+    {
+      name: "special",
+      title: "Special Thanks",
+      type: "object",
+      fields: [
+        {
+          name: "german",
+          title: "German",
+          type: "object",
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
+        },
+        {
+          name: "english",
+          title: "English",
+          type: "object",
+          fields: [{ name: "headline", title: "Headline", type: "string" }],
+        },
+        {
+          name: "textGerman",
+          title: "German",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+        {
+          name: "textEnglish",
+          title: "English",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
+        },
+      ],
+    },
   ],
 });
