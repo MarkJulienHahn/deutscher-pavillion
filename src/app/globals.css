@@ -729,7 +729,7 @@ input:focus {
   margin-top: var(--space-M);
 }
 
-.dankListe {
+.dankListe, .dankText {
   padding-top: var(--space-M);
 }
 
@@ -738,6 +738,13 @@ input:focus {
   line-height: calc(var(--lineHeight-S) / 2);
   padding-bottom: 0px;
 }
+
+.dankText p {
+  font-size: var(--fontSize-S);
+  /* line-height: calc(var(--lineHeight-S) / 2); */
+  padding-bottom: 0px;
+}
+
 
 .teamHeadline p, .teamHeadline h3, .teamHeadline {
   font-size: var(--fontSize-M);
