@@ -1,9 +1,7 @@
 export const menuEN = [
   { name: "Exhibition", slug: "exhibition" },
-  { name: "Artists", slug: "artists" },
-  { name: "Works", slug: "works" },
-  { name: "Curator", slug: "curator" },
-  { name: "Chroniclers", slug: "chroniclers" },
+  { name: "Curatorial Concept", slug: "curatorial-concept" },
+  { name: "Program", slug: "program" },
   { name: "Visit", slug: "visit" },
   { name: "Press", slug: "press" },
   { name: "Team", slug: "team" },
@@ -12,10 +10,8 @@ export const menuEN = [
 
 export const menuDE = [
   { name: "Ausstellung", slug: "ausstellung" },
-  { name: "Künstler:innen", slug: "kuenstlerinnen" },
-  { name: "Kuratorin", slug: "kuratorin" },
-  { name: "Arbeiten", slug: "arbeiten" },
-  { name: "Chronisten", slug: "chronisten" },
+  { name: "Kuratorisches Konzept", slug: "kuratorisches-konzept" },
+  { name: "Programm", slug: "programm" },
   { name: "Besuch", slug: "besuch" },
   { name: "Presse", slug: "presse" },
   { name: "Team", slug: "team" },

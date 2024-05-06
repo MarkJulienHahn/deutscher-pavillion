@@ -1,17 +1,31 @@
+import { useRef, useEffect } from "react";
+
 import { PortableText } from "@portabletext/react";
 import SwiperComponent from "../SwiperComponent";
 
-const ArtistSingleEntry = ({ entry, locale }) => {
+const ArtistSingleEntry = ({ entry, locale, scrollAnchor }) => {
+  const ref = useRef();
+
+  const scrollFunction = () => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollAnchor == entry?._key && scrollFunction();
+  }, [scrollAnchor]);
+
+
+
   return (
     <>
-      <h2>
+      <h2 ref={ref}>
         <em>{entry.title}</em>
       </h2>
       <p className="medium">
         {locale == "de" ? entry?.medium?.de : entry?.medium?.en}
       </p>
       {entry.images?.length ? (
-        <SwiperComponent entry={entry} locale={locale} artists={true}/>
+        <SwiperComponent entry={entry} locale={locale} artists={true} />
       ) : (
         ""
       )}

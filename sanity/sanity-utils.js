@@ -8,6 +8,16 @@ const client = createClient({
 
 export default client;
 
+export async function getHome() {
+  return client.fetch(
+    groq`*[_type == "home"]|order(orderRank){"image": image.asset->{...}}`
+  );
+}
+
+export async function getProgram() {
+  return client.fetch(groq`*[_type == "program"]|order(orderRank){...}`);
+}
+
 export async function getAbout() {
   return client.fetch(groq`*[_type == "about"]{...}`);
 }
@@ -18,7 +28,7 @@ export async function getLivestream() {
 
 export async function getArtists() {
   return client.fetch(
-    groq`*[_type == "artists"]|order(orderRank){..., "works": works[]{..., "images": images[]{..., asset->{...}}}}`
+    groq`*[_type == "artists"]|order(orderRank){..., "portrait": portrait{..., "asset": asset->{...}}, "works": works[]{...,  "images": images[]{..., asset->{...}}}}`
   );
 }
 
@@ -29,9 +39,9 @@ export async function getArtistImages() {
   );
 }
 
-export async function getCurators() {
+export async function getCuratorialConcept() {
   return client.fetch(
-    groq`*[_type == "curators"]|order(orderRank){..., "image": image{..., "asset": asset->{...}
+    groq`*[_type == "curatorialConcept"]{..., "portrait": portrait{..., "asset": asset->{...}
   }}`
   );
 }
@@ -75,13 +85,13 @@ export async function getThanks() {
 
 export async function getExhibitionPavillon() {
   return client.fetch(
-    groq`*[_type == "exhibitionPavillon"]|{..., "images": images[]{..., "asset": asset->{...}}, "artists": artists[]->{"name": name, "slug": slug}}`
+    groq`*[_type == "exhibitionPavillon"]|{..., "images": images[]{..., "asset": asset->{...}}, "artists": artists[]->{"coverImage": coverImage{"asset": asset->{...}}, name, slug}}`
   );
 }
 
 export async function getExhibitionCertosa() {
   return client.fetch(
-    groq`*[_type == "exhibitionCertosa"]|{..., "images": images[]{..., "asset": asset->{...}}, "artists": artists[]->{"name": name, "slug": slug}}`
+    groq`*[_type == "exhibitionCertosa"]|{..., "images": images[]{..., "asset": asset->{...}}, "artists": artists[]->{"coverImage": coverImage{"asset": asset->{...}}, name, slug}}`
   );
 }
 

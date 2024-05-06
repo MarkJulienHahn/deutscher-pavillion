@@ -27,9 +27,50 @@ export default defineType({
       },
     },
     { name: "certosa", title: "La Certosa", type: "boolean" },
+
+    {
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      fields: [
+        {
+          title: "Alternative Text",
+          name: "alt",
+          type: "string",
+        },
+        {
+          title: "SEO friendly file-name",
+          name: "filename",
+          type: "slug",
+          isUnique: false,
+          description: "Example: yael-bartana-deutscher-pavillon-2024",
+        },
+      ],
+    },
+
+    {
+      name: "portrait",
+      title: "Portrait",
+      type: "image",
+      fields: [
+        {
+          title: "Alternative Text",
+          name: "alt",
+          type: "string",
+        },
+        {
+          title: "SEO friendly file-name",
+          name: "filename",
+          type: "slug",
+          isUnique: false,
+          description: "Example: yael-bartana-deutscher-pavillon-2024",
+        },
+      ],
+    },
+
     {
       name: "text",
-      title: "Text",
+      title: "Biography",
       type: "object",
       fields: [
         {
@@ -64,7 +105,6 @@ export default defineType({
         },
       ],
     },
-
 
     {
       name: "works",
@@ -115,7 +155,9 @@ export default defineType({
                               styles: [{ title: "Normal", value: "normal" }],
                               lists: [],
                               marks: {
-                                decorators: [{ title: "Emphasis", value: "em" }],
+                                decorators: [
+                                  { title: "Emphasis", value: "em" },
+                                ],
                               },
                             },
                           ],
@@ -130,7 +172,9 @@ export default defineType({
                               styles: [{ title: "Normal", value: "normal" }],
                               lists: [],
                               marks: {
-                                decorators: [{ title: "Emphasis", value: "em" }],
+                                decorators: [
+                                  { title: "Emphasis", value: "em" },
+                                ],
                               },
                             },
                           ],
@@ -196,9 +240,6 @@ export default defineType({
         },
       ],
     },
-
-
-
 
     // {
     //   name: "artworkTitle",

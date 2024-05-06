@@ -6,6 +6,8 @@ import ExhibitionEntry from "./ExhibitionEntry";
 import Nav from "../Nav/Nav";
 import Switch from "../Switch";
 
+import { Link } from "../../src/navigation";
+
 import useWindowDimensions from "../useWindowDimensions";
 import { use100vh } from "react-div-100vh";
 
@@ -33,55 +35,36 @@ export default function ExhibitionSwitch({
 
   const [showHeadline, setShowHeadline] = useState(true);
 
-  const [scrollPositionLeft, setScrollPositionLeft] = useState("");
-  const left = useRef();
-  const leftHeadline = useRef();
+  // const [scrollPositionLeft, setScrollPositionLeft] = useState("");
+  // const left = useRef();
+  // const leftHeadline = useRef();
 
-  const [scrollPositionRight, setScrollPositionRight] = useState("");
-  const right = useRef();
-  const rightHeadline = useRef();
+  // const [scrollPositionRight, setScrollPositionRight] = useState("");
+  // const right = useRef();
+  // const rightHeadline = useRef();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPositionLeft(left.current.scrollTop);
-      setScrollPositionRight(right.current.scrollTop);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollPositionLeft(left.current.scrollTop);
+  //     setScrollPositionRight(right.current.scrollTop);
+  //   };
 
-    left.current.addEventListener("scroll", handleScroll);
-    right.current.addEventListener("scroll", handleScroll);
-  });
+  //   left.current.addEventListener("scroll", handleScroll);
+  //   right.current.addEventListener("scroll", handleScroll);
+  // });
 
-  useEffect(() => {
-    scrollPositionLeft > 50 && focusLeft && setShowHeadline(false);
-    scrollPositionLeft < 50 && focusLeft && setShowHeadline(true);
+  // useEffect(() => {
+  //   scrollPositionLeft > 50 && focusLeft && setShowHeadline(false);
+  //   scrollPositionLeft < 50 && focusLeft && setShowHeadline(true);
 
-    scrollPositionRight > 50 && !focusLeft && setShowHeadline(false);
-    scrollPositionRight < 50 && !focusLeft && setShowHeadline(true);
-  }, [scrollPositionLeft, scrollPositionRight]);
+  //   scrollPositionRight > 50 && !focusLeft && setShowHeadline(false);
+  //   scrollPositionRight < 50 && !focusLeft && setShowHeadline(true);
+  // }, [scrollPositionLeft, scrollPositionRight]);
 
   useEffect(() => {
     setTimeout(setDelay(false), 500);
     switched && setFocusLeft(false);
   }, []);
-
-
-  // useEffect(() => {
-  //   !focusLeft &&
-  //     setTimeout(() => {
-  //       leftHeadline.current.scrollIntoView({
-  //         behavior: "smooth",
-  //         block: "start",
-  //       });
-  //     }, 500);
-  //   focusLeft &&
-  //     setTimeout(
-  //       rightHeadline.current.scrollIntoView({
-  //         behavior: "smooth",
-  //         block: "start",
-  //       }),
-  //       500
-  //     );
-  // }, [focusLeft]);
 
   return (
     <>
@@ -104,49 +87,44 @@ export default function ExhibitionSwitch({
       >
         <div
           className="columnWrapper bgRed active"
-          ref={left}
           onClick={!focusLeft ? () => setFocusLeft(true) : () => {}}
         >
-          <div className={"top"} ref={leftHeadline}></div>
-
-          <div
-            className="artistSelector"
-            style={{ pointerEvents: focusLeft ? "auto" : "none", marginBottom: "var(--space-M)" }}
-          >
-            <h2>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h2>
+          <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}</h3>
+          <div className="nameListWrapper">
+            <h2>
+              <Link href={"/deutscher-pavillon"}>
+                {locale == "de" ? "Der Pavillon" : "The Pavilion"}
+              </Link>
+            </h2>
+            {exhibitionPavillon?.artists?.map((artist, i) => (
+              <div className="nameWrapper" key={i}>
+                <h1>
+                  <Link href={`/${artist.slug.current}`}>{artist.name}</Link>
+                </h1>
+              </div>
+            ))}
           </div>
-
-          {exhibitionPavillon.map((entry, i) => (
-            <ExhibitionEntry
-              entry={entry}
-              locale={locale}
-              key={i}
-              certosa={false}
-            />
-          ))}
         </div>
 
         <div
-          className="columnWrapper bgBlue"
-          ref={right}
-          onClick={focusLeft ? () => setFocusLeft(false) : () => {}}
+          className="columnWrapper bgBlue active"
+          onClick={!focusLeft ? () => setFocusLeft(true) : () => {}}
         >
-          <div className={"top"} ref={rightHeadline}></div>
-          <div
-            className="artistSelector"
-            style={{ pointerEvents: !focusLeft ? "auto" : "none" }}
-          >
-            <h2>La Certosa</h2>
+          <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}</h3>
+          <div className="nameListWrapper">
+            <h2>
+              <Link href={"/deutscher-pavillon"}>
+                {locale == "de" ? "Der Pavillon" : "The Pavilion"}
+              </Link>
+            </h2>
+            {exhibitionCertosa?.artists?.map((artist, i) => (
+              <div className="nameWrapper" key={i}>
+                <h2>
+                  <Link href={`/${artist.slug.current}`}>{artist.name}</Link>
+                </h2>
+              </div>
+            ))}
           </div>
-          {exhibitionCertosa.map((entry, i) => (
-            <ExhibitionEntry
-              entry={entry}
-              locale={locale}
-              key={i}
-              anchor={anchor}
-              certosa={true}
-            />
-          ))}
         </div>
       </div>
     </>

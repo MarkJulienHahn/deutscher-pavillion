@@ -4,15 +4,31 @@ export const myStructure = (S, context) =>
   S.list()
     .title("Content")
     .items([
+      orderableDocumentListDeskItem({
+        type: "home",
+        title: "Home",
+        S,
+        context,
+      }),
+
+      S.divider(),
+
       S.listItem()
         .title("About")
         .id("about")
         .child(S.document().schemaType("about").documentId("about")),
 
-      S.listItem()
-        .title("Livestream")
-        .id("livestream")
-        .child(S.document().schemaType("livestream").documentId("livestream")),
+      orderableDocumentListDeskItem({
+        type: "program",
+        title: "Program",
+        S,
+        context,
+      }),
+
+      // S.listItem()
+      //   .title("Livestream")
+      //   .id("livestream")
+      //   .child(S.document().schemaType("livestream").documentId("livestream")),
 
       S.divider(),
 
@@ -31,12 +47,12 @@ export const myStructure = (S, context) =>
 
       S.divider(),
 
-      S.listItem()
-        .title("Künstler:innen Portraits")
-        .id("artistImages")
-        .child(
-          S.document().schemaType("artistImages").documentId("artistImages")
-        ),
+      // S.listItem()
+      //   .title("Künstler:innen Portraits")
+      //   .id("artistImages")
+      //   .child(
+      //     S.document().schemaType("artistImages").documentId("artistImages")
+      //   ),
 
       orderableDocumentListDeskItem({
         type: "artists",
@@ -45,26 +61,28 @@ export const myStructure = (S, context) =>
         context,
       }),
 
-      orderableDocumentListDeskItem({
-        type: "curators",
-        title: "Kuratorin",
-        S,
-        context,
-      }),
-
       S.listItem()
-      .title("Chroniclers Intro")
-      .id("chroniclesIntro")
-      .child(
-        S.document().schemaType("chroniclesIntro").documentId("chroniclesIntro")
-      ),
+        .title("Kuratorisches Konzept")
+        .id("curatorialConcept")
+        .child(
+          S.document().schemaType("curatorialConcept").documentId("curatorialConcept")
+        ),
 
-      orderableDocumentListDeskItem({
-        type: "chronicles",
-        title: "Chroniclers",
-        S,
-        context,
-      }),
+      // S.listItem()
+      //   .title("Chroniclers Intro")
+      //   .id("chroniclesIntro")
+      //   .child(
+      //     S.document()
+      //       .schemaType("chroniclesIntro")
+      //       .documentId("chroniclesIntro")
+      //   ),
+
+      // orderableDocumentListDeskItem({
+      //   type: "chronicles",
+      //   title: "Chroniclers",
+      //   S,
+      //   context,
+      // }),
 
       S.listItem()
         .title("Special")
@@ -73,19 +91,19 @@ export const myStructure = (S, context) =>
 
       S.divider(),
 
-      orderableDocumentListDeskItem({
-        type: "programPavillon",
-        title: "Programm | Deutscher Pavillon",
-        S,
-        context,
-      }),
+      // orderableDocumentListDeskItem({
+      //   type: "programPavillon",
+      //   title: "Programm | Deutscher Pavillon",
+      //   S,
+      //   context,
+      // }),
 
-      orderableDocumentListDeskItem({
-        type: "programCertosa",
-        title: "Programm | Certosa",
-        S,
-        context,
-      }),
+      // orderableDocumentListDeskItem({
+      //   type: "programCertosa",
+      //   title: "Programm | Certosa",
+      //   S,
+      //   context,
+      // }),
 
       S.divider(),
 

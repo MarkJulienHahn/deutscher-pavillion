@@ -1,27 +1,33 @@
-"use client";
+"use client"
 
-import NavMenu from "../Nav/NavMenu";
-import ExhibitionSwitch from "./ExhibitionSwitch";
+import React from "react";
+import ExhibitionEntry from "./ExhibitionEntry";
 
-export default function Exhibition({
-  exhibitionPavillon,
-  exhibitionCertosa,
-  locale,
-  switched,
-}) {
+const Exhibition = ({ locale, exhibition, location }) => {
+
   return (
-    <main>
-      <div className="columnPageWrapper">
-        <div>
-          <ExhibitionSwitch
-            locale={locale}
-            exhibitionPavillon={exhibitionPavillon}
-            exhibitionCertosa={exhibitionCertosa}
-            switched={switched}
-          />
-        </div>
-      </div>
-      <NavMenu locale={locale} />
-    </main>
+    <div
+      className={`singlePageWrapper ${
+        location == "pavilion" ? "orange" : "blue"
+      }`}
+    >
+      <h2>
+        {location == "pavilion"
+          ? locale == "de"
+            ? "Deutscher Pavillon"
+            : "German Pavilion"
+          : "La Certosa"}
+      </h2>
+      {exhibition.map((entry, i) => (
+        <ExhibitionEntry
+          entry={entry}
+          locale={locale}
+          key={i}
+          certosa={false}
+        />
+      ))}
+    </div>
   );
-}
+};
+
+export default Exhibition;

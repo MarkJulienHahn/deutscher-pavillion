@@ -1,11 +1,23 @@
 import ArtistSingle from "../../../../components/Artists/ArtistSingle";
-import { getArtists } from "../../../../sanity/sanity-utils";
+import {
+  getArtists,
+  getExhibitionPavillon,
+  getExhibitionCertosa,
+} from "../../../../sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
   const artists = await getArtists();
+  const exhibitionPavillon = await getExhibitionPavillon();
+  const exhibitionCertosa = await getExhibitionCertosa();
   return (
     <>
-      <ArtistSingle slug={"yael-bartana"} artists={artists} locale={locale} />
+      <ArtistSingle
+        slug={"yael-bartana"}
+        artists={artists}
+        locale={locale}
+        exhibitionPavillon={exhibitionPavillon}
+        exhibitionCertosa={exhibitionCertosa}
+      />
     </>
   );
 }

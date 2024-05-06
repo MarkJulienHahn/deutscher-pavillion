@@ -40,8 +40,6 @@ export default function SwiperInnerArtists({
     setImgHeight(ref.current.clientHeight);
   }, [windowWidth]);
 
-  console.log(image.asset.metadata.dimensions.aspectRatio);
-
   return (
     <>
       <div

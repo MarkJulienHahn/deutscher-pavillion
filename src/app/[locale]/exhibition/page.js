@@ -1,4 +1,4 @@
-import Exhibition from "../../../../components/Exhibition/Exhibition";
+import Exhibitions from "../../../../components/Exhibition/Exhibitions";
 
 import {
   getExhibitionPavillon,
@@ -9,7 +9,7 @@ export default async function page({ params: { locale } }) {
   const exhibitionPavillon = await getExhibitionPavillon();
   const exhibitionCertosa = await getExhibitionCertosa();
   return (
-    <Exhibition
+    <Exhibitions
       exhibitionPavillon={exhibitionPavillon}
       exhibitionCertosa={exhibitionCertosa}
       locale={locale}

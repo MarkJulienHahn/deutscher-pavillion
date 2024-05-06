@@ -1,13 +1,16 @@
-import exhibitionPavillon from "./exhibitionPavillon"
-import exhibitionCertosa from "./exhibitionCertosa"
+import home from "./home";
+import program from "./program"
 
-import programPavillon from "./programPavillon"
-import programCertosa from "./programCertosa"
+import exhibitionPavillon from "./exhibitionPavillon";
+import exhibitionCertosa from "./exhibitionCertosa";
 
-import about from "./about"
+import programPavillon from "./programPavillon";
+import programCertosa from "./programCertosa";
+
+import about from "./about";
 import artists from "./artists";
-import artistImages from "./artistImages"
-import curators from "./curators";
+import artistImages from "./artistImages";
+import curatorialConcept from "./curatorialConcept";
 import chroniclesIntro from "./chroniclesIntro";
 import chronicles from "./chronicles";
 import visit from "./visit";
@@ -22,10 +25,13 @@ import special from "./special";
 import privacy from "./privacy";
 import imprint from "./imprint";
 
-import durationType from "./duration/durationType"
-import timeValueType from "./duration/timeValueType"
+import durationType from "./duration/durationType";
+import timeValueType from "./duration/timeValueType";
 
 const schemaTypes = [
+  home,
+  program,
+
   exhibitionPavillon,
   exhibitionCertosa,
 
@@ -35,7 +41,7 @@ const schemaTypes = [
   about,
   artists,
   artistImages,
-  curators,
+  curatorialConcept,
   chroniclesIntro,
   chronicles,
   livestream,
@@ -51,7 +57,7 @@ const schemaTypes = [
   imprint,
 
   durationType,
-  timeValueType
+  timeValueType,
 ];
 
 export default schemaTypes;

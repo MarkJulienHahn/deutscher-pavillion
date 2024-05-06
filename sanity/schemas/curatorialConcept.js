@@ -2,57 +2,49 @@ import { defineType } from "sanity";
 import { orderRankField } from "@sanity/orderable-document-list";
 
 export default defineType({
-  name: "curators",
-  title: "Curators",
+  name: "curatorialConcept",
+  title: "Kuratorisches Konzept",
   type: "document",
 
   fields: [
     {
-      name: "name",
-      title: "Name",
-      type: "string",
-      validation: (Rule) => Rule.required().min(3).max(80),
-    },
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      validation: (Rule) =>
-        Rule.required().warning(
-          "Please make sure there is a valid Slug by pressing GENERATE"
-        ),
-      options: {
-        source: "name",
-      },
-    },
-    {
-      name: "image",
-      title: "Image",
-      type: "image",
+      name: "title",
+      title: "Title",
+      type: "object",
       fields: [
         {
-          title: "Captions",
-          name: "captions",
-          type: "object",
-          fields: [
-            { title: "German", name: "german", type: "string" },
-            { title: "English", name: "english", type: "string" },
+          name: "de",
+          title: "German",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
           ],
         },
         {
-          title: "Alternative Text",
-          name: "alt",
-          type: "string",
-        },
-        {
-          title: "SEO friendly file-name",
-          name: "filename",
-          type: "slug",
-          isUnique: false,
-          description: "Example: yael-bartana-deutscher-pavillon-2024",
+          name: "en",
+          title: "German",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [{ title: "Normal", value: "normal" }],
+              lists: [],
+              marks: {
+                decorators: [{ title: "Emphasis", value: "em" }],
+              },
+            },
+          ],
         },
       ],
     },
+
     {
       name: "text",
       title: "Text",
@@ -92,8 +84,37 @@ export default defineType({
     },
 
     {
-      name: "textBottom",
-      title: "Text Bottom",
+      name: "portrait",
+      title: "Portrait",
+      type: "image",
+      fields: [
+        {
+          title: "Captions",
+          name: "captions",
+          type: "object",
+          fields: [
+            { title: "German", name: "german", type: "string" },
+            { title: "English", name: "english", type: "string" },
+          ],
+        },
+        {
+          title: "Alternative Text",
+          name: "alt",
+          type: "string",
+        },
+        {
+          title: "SEO friendly file-name",
+          name: "filename",
+          type: "slug",
+          isUnique: false,
+          description: "Example: yael-bartana-deutscher-pavillon-2024",
+        },
+      ],
+    },
+
+    {
+      name: "biography",
+      title: "Text",
       type: "object",
       fields: [
         {

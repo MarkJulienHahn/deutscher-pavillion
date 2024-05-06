@@ -1,18 +1,16 @@
 import React from "react";
 import Program from "../../../../components/Program/Program";
 
-import { getProgramPavillon, getProgramCertosa } from "../../../../sanity/sanity-utils";
+import { getProgram } from "../../../../sanity/sanity-utils";
 
 export default async function page({ params: { locale } }) {
-  const programPavillon = await getProgramPavillon();
-  const programCertosa = await getProgramCertosa();
+  const program = await getProgram();
   return (
-    <></>
-    // <Program
-    //   programPavillon={programPavillon}
-    //   programCertosa={programCertosa}
-    //   locale={locale}
-    // />
+
+    <Program
+      program={program}
+      locale={locale}
+    />
   );
 }
 

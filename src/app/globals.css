@@ -135,10 +135,167 @@ input:focus {
 .singlePageWrapper {
   background: var(--gold);
   padding: var(--space-L) var(--space-S);
+  min-height: 100vh;
 }
 
 .singlePageWrapper h1:first-child {
-  padding-bottom: var(--space-XL);
+  padding-bottom: calc(var(--space-L) + var(--space-M));
+}
+
+.introSliderWrapper {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  overflow: hidden;
+}
+
+.introSlideWrapper {
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.introMarquee {
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  z-index: 10;
+  background: var(--gold);
+  width: 100vw;
+}
+
+.marqueeBig p {
+  font-size: var(--fontSize-M);
+  padding-right: var(--space-XS);
+}
+
+.marqueeBig {
+  display: flex;
+  align-items: flex-end;
+  padding-right: var(--space-S);
+  transform: translateY(-20px);
+}
+
+.marqueeSmall p {
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+  padding-right: var(--space-XS);
+}
+
+.marqueeBig p br {
+  display: none;
+}
+
+.marqueeSmall {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 800px;
+  height: 68px;
+  padding-right: var(--space-S);
+}
+
+.marqueeEntryWrapper {
+  display: flex;
+  padding-right: var(--space-S);
+}
+
+.programWrapper {
+}
+
+.programButton {
+  height: 30px;
+  margin-top: 20px;
+  margin-right: var(--space-S);
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+  padding: 0 10px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.programBig p {
+  font-size: var(--fontSize-M);
+  line-height: var(--lineHeight-M);
+  text-align: center;
+}
+
+.programSmall {
+  padding-top: var(--space-XS);
+}
+
+.programSmall p {
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+  text-align: center;
+}
+
+.twoColumn {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.oneColumn {
+  height: 100%;
+  width: 50vw;
+  padding-top: var(--space-L);
+  text-align: center;
+  z-index: 0;
+}
+
+.hoverImage {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  display: none;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.nameListWrapper {
+  padding-top: var(--space-M);
+  z-index: 500;
+}
+
+.nameListWrapper h2 {
+  z-index: 500;
+}
+
+.nameListWrapper h2:first-child {
+  padding-bottom: var(--space-M);
+}
+
+.nameListWrapper h2:hover {
+  color: var(--gold);
+}
+
+.nameWrapper:hover {
+  color: var(--gold);
+}
+
+.nameWrapper {
+  height: 85px;
+}
+
+.nameWrapper:hover .hoverImage {
+  display: block;
+  z-index: 0;
+  /* position: absolute; */
+}
+
+.blue {
+  background: var(--blue);
+  color: var(--red);
+}
+
+.orange {
+  background: var(--red);
+}
+
+.slider-horizontal {
+  padding-bottom: 0px !important;
 }
 
 .columnPageWrapper {
@@ -159,6 +316,10 @@ input:focus {
 .columnWrapper {
   padding: 350px var(--space-S) var(--space-S) var(--space-S);
   width: 50%;
+}
+
+.columnWrapper h3 {
+  text-align: center;
 }
 
 .bgRed {
@@ -216,10 +377,15 @@ input:focus {
   padding-bottom: var(--space-XS);
 }
 
+.textCurator {
+  padding: var(--space-S) var(--space-XL) var(--space-XL);
+  text-indent: 30px;
+}
+
 .imageCurator {
   position: relative;
-  width: 50vw;
-  margin: var(--space-S) 0 var(--space-M) 0;
+  width: 30vw;
+  margin-top: var(--space-S);
 }
 
 .imageCuratorOuter {
@@ -234,10 +400,11 @@ input:focus {
 
 .sectionWrapper {
   padding-bottom: var(--space-M);
-}
-
-.sectionWrapper h2 {
-  padding-bottom: var(--space-S);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
 }
 
 .button {
@@ -349,6 +516,20 @@ input:focus {
   text-align: center;
 }
 
+.artistScrollMenu {
+  margin: var(--space-M) 0;
+  text-align: center;
+  font-family: "ABCDailyScotch";
+}
+
+.artistScrollMenu div {
+  font-size: var(--fontSize-S);
+  line-height: var(--lineHeight-S);
+  text-decoration: underline;
+  cursor: pointer;
+  height: 35px;
+}
+
 .artistSelector,
 .groupPicture,
 .groupPictureMobile {
@@ -393,7 +574,6 @@ input:focus {
 }
 
 .columnWrapper {
-  height: 101vh;
   overflow-y: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none;
@@ -433,7 +613,7 @@ input:focus {
 }
 
 .exhibitionEntryWrapper {
-  padding: 0 var(--space-L) var(--space-XL);
+  padding: var(--space-M) var(--space-L) var(--space-XL);
 }
 .exhibitionImageWrapper {
   padding-top: var(--space-M);
@@ -496,11 +676,30 @@ input:focus {
   padding-bottom: var(--space-XS);
 }
 
+.curatorTitle p {
+  font-size: var(--fontSize-L);
+  line-height: var(--lineHeight-L);
+  font-family: "ABCDailyScotch";
+  text-align: center;
+}
+
+.scrollLink {
+  padding: var(--fontSize-XS) 0;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .imageCaption {
   position: absolute;
   transform: translateY(35px);
   font-size: var(--fontSize-XS);
   line-height: var(--lineHeight-XS);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 
 .imageCaption p {
@@ -513,6 +712,10 @@ input:focus {
   bottom: 0;
   transform: translateY(34px);
   font-size: var(--fontSize-XS);
+}
+
+.biographyWrapper {
+  padding-top: Var(--space-L);
 }
 
 .artistsMobile {
@@ -730,7 +933,7 @@ input:focus {
 }
 
 .dankListe {
-  padding-top: var(--space-M)
+  padding-top: var(--space-M);
 }
 
 .dankListe p {
@@ -757,9 +960,9 @@ input:focus {
 }
 
 .switchWrapper {
-  position: fixed;
+  position: absolute;
   top: 105px;
-  left: calc(50% - 250px);
+  left: calc(50vw - 250px);
   width: 450px;
   border: 3px solid var(--blue);
   border-radius: 50px;
@@ -813,12 +1016,16 @@ input:focus {
 }
 
 .artistSingleWrapper {
-  padding: var(--space-XL);
+  padding: var(--space-XL) 0;
 }
 
-/* .artistSingleHeadline h2 {
-  line-height: 46px;
-} */
+.artistSingleWrapper p {
+  padding: 0 var(--space-XL);
+}
+
+.artistSingleWrapper h2 {
+  padding: var(--space-M) var(--space-XL) var(--space-XS);
+}
 
 .medium {
   font-size: var(--fontSize-XS);
@@ -849,6 +1056,10 @@ input:focus {
 
 .worksInner h2 {
   hyphens: none;
+}
+
+.exhibitionMobile {
+  display: none;
 }
 
 @media screen and (max-width: 1700px) {
@@ -927,8 +1138,26 @@ input:focus {
   .inputRow input {
     height: unset;
   }
-  .artistSingleWrapper {
-    padding: var(--space-L) var(--space-L);
+  .switchOuter {
+    position: relative;
+  }
+  .artistSingleWrapper p {
+    padding: 0 var(--space-M);
+  }
+  .exhibitionDesktop {
+    display: none;
+  }
+  .exhibitionMobile {
+    display: block;
+  }
+  .nameListWrapper h2:first-child {
+    padding-bottom: 80px;
+  }
+  .nameWrapper {
+    height: 68px;
+  }
+  .columnWrapper {
+    padding-top: 250px;
   }
 }
 
@@ -989,6 +1218,10 @@ input:focus {
     hyphens: none;
     -webkit-hyphens: none;
   }
+  .downloadDate {
+    padding-top: var(--space-M);
+  }
+
   .downloadRow,
   .downloadLeft {
     flex-direction: column;
@@ -999,7 +1232,7 @@ input:focus {
   }
   .downloadTitle,
   .downloadDate {
-    padding-top: var(--space-S);
+    /* padding-top: var(--space-S); */
     padding-right: 0;
   }
   .downloadTitle {
@@ -1024,7 +1257,7 @@ input:focus {
   }
 
   .columnWrapper {
-    padding-top: 160px;
+    padding-top: 200px;
   }
   .columnPageWrapper {
     transition: transform 0.2s ease;
@@ -1102,12 +1335,14 @@ input:focus {
   .dankListe p {
     line-height: var(--lineHeight-S);
   }
+
   .switchWrapper {
     top: 75px;
     width: 70vw;
-    left: calc(50% - 35vw);
+    left: calc(50vw - 35vw);
     height: 60px;
     border-width: 2px;
+    position: absolute;
   }
   .switchNamesWrapper {
     display: flex;
@@ -1146,5 +1381,31 @@ input:focus {
     height: 80px;
     padding: 0;
     min-height: unset;
+  }
+  .artistSingleWrapper p {
+    padding: 0;
+  }
+  .exhibitionDesktop {
+    display: none;
+  }
+  .exhibitionMobile {
+    display: block;
+  }
+  .nameWrapper {
+    height: 45 px;
+  }
+  .sectionWrapper {
+    width: 100%;
+  }
+
+  .sectionWrapper h2 {
+    padding: var(--space-L) 0 var(--space-S);
+  }
+  .marqueeBig p {
+    font-size: var(--fontSize-L);
+    padding-bottom: 5px;
+  }
+  .marqueeSmall {
+    max-width: 400px;
   }
 }

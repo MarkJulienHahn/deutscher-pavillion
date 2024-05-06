@@ -1,4 +1,4 @@
-import Exhibition from "../../../../components/Exhibition/Exhibition";
+import Exhibition from "../../../../components/Exhibition/Exhibitions";
 
 import {
   getExhibitionPavillon,

@@ -24,7 +24,7 @@
   top: 0;
   left: 0;
   transition: opacity 0.5s ease;
-  z-index: 100;
+  z-index: 1000;
   overscroll-behavior: none;
 }
 
@@ -63,7 +63,7 @@
 .menuListWrapper {
   margin-top: 16vh;
   width: 100vw;
-  height: 650px;
+  height: 550px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -131,7 +131,7 @@
 
 @media screen and (max-width: 1700px) {
   .menuListWrapper {
-    height: 470px;
+    height: 430px;
   }
   .menuItem,
   .firstMenuItem,
@@ -168,7 +168,7 @@
   .menuListWrapper {
     margin-top: 16vh;
     width: 100vw;
-    height: 350px;
+    height: 300px;
     left: 0;
     display: flex;
     flex-direction: column;

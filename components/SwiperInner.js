@@ -33,7 +33,6 @@ export default function SwiperInner({ image, locale, trigger, setIndex, i }) {
     setImgHeight(ref.current.clientHeight);
   }, [windowWidth]);
 
-  console.log(image);
 
   return (
     <>

@@ -26,7 +26,6 @@ export default function Nav({ locale, color }) {
   const [onlyNoButton, setOnlyNoButton] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [twoColors, setTwoColors] = useState(false);
-  const [menuHidden, setMenuHidden] = useState(false);
   const [orange, setOrange] = useState(false);
 
   const pathname = usePathname();
@@ -73,20 +72,20 @@ export default function Nav({ locale, color }) {
   }, [lastScrollY]);
 
   useEffect(() => {
-    // pathname.includes("exhibition") ||
-    // pathname.includes("ausstellung") ||
+    pathname.includes("exhibition") ||
+    pathname.includes("ausstellung") ||
     pathname.includes("artists") ||
-    pathname.includes("kuenstlerinnen") ||
-    pathname.includes("program") ||
-    pathname.includes("programm")
+    pathname.includes("kuenstlerinnen")
+    // pathname.includes("program") ||
+    // pathname.includes("programm")
       ? setTwoColors(true)
       : setTwoColors(false);
 
     windowWidth < 1000 && setTwoColors(false);
 
-    pathname == "/en" || pathname == "/de"
-      ? setOnlyNoButton(true)
-      : setOnlyNoButton(false);
+    // pathname == "/en" || pathname == "/de"
+    //   ? setOnlyNoButton(true)
+    //   : setOnlyNoButton(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -133,7 +132,8 @@ export default function Nav({ locale, color }) {
     pathname.includes("robert-lippok") ||
     pathname.includes("jan-st-werner") ||
     pathname.includes("nicole-l-huillier") ||
-    pathname.includes("michael-akstaller")
+    pathname.includes("michael-akstaller")  ||
+    pathname.includes("la-certosa")
       ? setOrange(true)
       : setOrange(false);
   }, [pathname]);
