@@ -58,9 +58,8 @@ const ExhibitionTwoColumn = ({
             </Link>
           </h2>
           {exhibitionCertosa?.artists?.map((artist, i) => (
-            <div className="nameWrapper">
+            <div className="nameWrapper" key={i}>
               <h2
-                key={i}
                 onMouseEnter={() =>
                   setImageRight(artist?.coverImage?.asset.url)
                 }
