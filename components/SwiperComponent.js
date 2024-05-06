@@ -23,11 +23,14 @@ export default function SwiperComponent({ entry, locale, artists }) {
   return (
     <>
       <div className="sliderWrapper">
-        <div className="sliderControl">
+        <div
+          className="sliderControl"
+          style={{ cursor: entry.images.length > 1 ? "pointer" : "default" }}
+        >
           <span className="sliderControlInner" onClick={triggerPrev}></span>
           <span className="sliderControlInner" onClick={triggerNext}></span>
         </div>
-        <Swiper spaceBetween={0}>
+        <Swiper spaceBetween={0} loop={true}>
           {entry.images.map((image, i) => (
             <SwiperSlide key={i}>
               {artists ? (

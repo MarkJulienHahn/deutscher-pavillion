@@ -147,6 +147,7 @@ input:focus {
   width: 100vw;
   height: calc(100vh - 50px);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .introSlideWrapper {
@@ -684,7 +685,7 @@ input:focus {
 }
 
 .scrollLink {
-  padding: var(--fontSize-XS) 0;
+  padding: 0 0 var(--fontSize-XS) 0;
   display: flex;
   justify-content: center;
   text-decoration: underline;

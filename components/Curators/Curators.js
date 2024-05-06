@@ -33,7 +33,7 @@ export default function Curators({ content, locale }) {
         <h1>Çağla Ilk</h1>
 
         <div className="scrollLink" onClick={biographyScroll}>
-          <a>Biography</a>
+          <a style={{ paddingTop: "var(--space-XS)" }}>Biography</a>
         </div>
 
         <div className="curatorTitle">
