@@ -14,11 +14,13 @@ const ArtistSingleEntry = ({ entry, locale, scrollAnchor }) => {
     scrollAnchor == entry?._key && scrollFunction();
   }, [scrollAnchor]);
 
-
+  console.log(entry)
 
   return (
     <>
-      <h2 ref={ref}>
+      <h2 ref={ref} 
+      id={entry.slug?.current}
+      >
         <em>{entry.title}</em>
       </h2>
       <p className="medium">

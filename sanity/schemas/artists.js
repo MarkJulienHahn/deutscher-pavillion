@@ -122,6 +122,14 @@ export default defineType({
               type: "string",
             },
             {
+              name: "slug",
+              title: "Slug",
+              type: "slug",
+              options: {
+                source: "title",
+              },
+            },
+            {
               name: "medium",
               title: "Medium",
               type: "object",
