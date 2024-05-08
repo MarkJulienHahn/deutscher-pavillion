@@ -50,9 +50,10 @@ export default function SwiperInnerArtists({
         }}
       >
         <Image
-          src={`${urlFor(image.asset.url).url()}/${
-            image.filename?.current || "german-pavillon-2024-vernice-biennale"
-          }`}
+          // src={`${urlFor(image.asset.url).url()}/${
+          //   image.filename?.current || "german-pavillon-2024-vernice-biennale"
+          // }`}
+          src={urlFor(image.asset.url).quality(50).url()}
           alt={
             image.alt ||
             "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
@@ -62,7 +63,7 @@ export default function SwiperInnerArtists({
           style={{
             objectFit: "cover",
             width: "100%",
-            aspectRatio: 1.5
+            aspectRatio: 1.5,
           }}
         />
         {image.caption ? (
@@ -79,22 +80,17 @@ export default function SwiperInnerArtists({
             <span
               className="imageCaption"
               style={{
-                top: `${
-                  (imgWidth / 1.5) - 30
-                }px`,
+                top: `${imgWidth / 1.5 - 30}px`,
               }}
             >
               <PortableText value={image.caption.de} />
             </span>
           )
-        : 
-        image.caption?.en && (
+        : image.caption?.en && (
             <span
               className="imageCaption"
               style={{
-                top: `${
-                  (imgWidth / 1.5) - 30
-                }px`,
+                top: `${imgWidth / 1.5 - 30}px`,
               }}
             >
               <PortableText value={image.caption.en} />

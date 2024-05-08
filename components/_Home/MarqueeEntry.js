@@ -7,10 +7,18 @@ const MarqueeEntry = ({ entry, locale }) => {
     entry.startpage && (
       <div className="marqueeEntryWrapper">
         {entry.location == "La Certosa" && (
-          <div className="programButton blue">La Certosa</div>
+          <div
+            style={{ marginRight: "var(--space-S" }}
+            className="programButton blue"
+          >
+            La Certosa
+          </div>
         )}
         {entry.location == "German Pavillon" && (
-          <div className="programButton orange">
+          <div
+            style={{ marginRight: "var(--space-S" }}
+            className="programButton orange"
+          >
             {locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}
           </div>
         )}

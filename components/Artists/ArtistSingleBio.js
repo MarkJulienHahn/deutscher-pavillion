@@ -49,33 +49,66 @@ const ArtistSingle = ({
         className="artistSingleWrapper"
         style={artist.certosa ? blueBG : orangeBG}
       >
-        <div className="artistSingleHeadline">
+        <div>
           <h2>{artist?.name}</h2>
-        </div>
-        <div className="scrollLink" onClick={biographyScroll}>
-          <a>Biography</a>
-        </div>
 
-        {artist.works?.length > 1 && (
-          <div className="artistScrollMenu">
-            {artist.works?.map((entry, i) => (
-              <div key={i} onClick={() => scrollAnchorFct(entry?._key)}>
-                {entry?.title}
+          {artist?.portrait && (
+            <div className="imageCuratorOuter">
+              <div
+                className="imageCurator"
+                style={{
+                  height:
+                    imgWidth /
+                    artist.portrait.asset.metadata.dimensions.aspectRatio,
+                }}
+                ref={ref}
+              >
+                <Image
+                  src={`${urlFor(artist.portrait.asset.url).url()}/${
+                    artist.portrait.filename?.current ||
+                    "german-pavillon-2024-vernice-biennale"
+                  }`}
+                  alt={
+                    artist.portrait.alt ||
+                    "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
+                  }
+                  fill
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                    aspectRatio:
+                      artist.portrait.asset.metadata.dimensions.aspectRatio,
+                  }}
+                />
+                {locale == "de"
+                  ? artist.portrait.captions?.german && (
+                      <p className="imageCaptionCurator">
+                        {artist.portrait.captions.german}
+                      </p>
+                    )
+                  : artist.portrait.captions?.english && (
+                      <p className="imageCaptionCurator">
+                        {artist.portrait.captions.english}
+                      </p>
+                    )}
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          )}
 
-        {artist?.works?.map((entry, i) => (
-          <ArtistSingleEntry
-            scrollAnchor={scrollAnchor}
-            entry={entry}
-            key={i}
-            locale={locale}
-          />
-        ))}
+          {artist.text && (
+            <div style={{ paddingTop: "var(--space-S)" }}>
+              <PortableText
+                value={
+                  locale == "de"
+                    ? artist.text.textGerman
+                    : artist.text.textEnglish
+                }
+              />
+            </div>
+          )}
+        </div>
       </div>
-      
       <div className="exhibitionDesktop">
         <ExhibitionTwoColumn
           locale={locale}

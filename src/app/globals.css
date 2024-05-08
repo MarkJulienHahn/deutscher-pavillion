@@ -206,7 +206,6 @@ input:focus {
 .programButton {
   height: 30px;
   margin-top: 20px;
-  margin-right: var(--space-S);
   font-size: var(--fontSize-XS);
   line-height: var(--lineHeight-XS);
   padding: 0 10px;
@@ -405,7 +404,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .button {
@@ -1408,5 +1407,8 @@ input:focus {
   }
   .marqueeSmall {
     max-width: 400px;
+  }
+  .index {
+    transform: translateY(-73px);
   }
 }
