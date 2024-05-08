@@ -53,19 +53,24 @@ export default function SwiperInnerArtists({
           // src={`${urlFor(image.asset.url).url()}/${
           //   image.filename?.current || "german-pavillon-2024-vernice-biennale"
           // }`}
-          src={urlFor(image.asset.url).quality(50).url()}
+          src={urlFor(image.asset.url)
+            // .width(Math.floor(windowWidth * 1.5))
+            .quality(50)
+            .url()}
           alt={
             image.alt ||
             "An Image of by the German Pavillon of the 2024 Venice Art Biennale"
           }
           loading="lazy"
           fill
+          placeholder="blur"
+          blurDataURL={image.asset.metadata.lqip}
           style={{
             objectFit: "cover",
-            width: "100%",
             aspectRatio: 1.5,
           }}
         />
+
         {image.caption ? (
           <p className="caption">
             {locale == "de" ? image.caption.german : image.caption.english}

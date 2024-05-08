@@ -2,12 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 
-import { PortableText } from "@portabletext/react";
-
-import Image from "next/image";
+import Link from "next/link"
 import useWindowDimensions from "../useWindowDimensions";
-
-import { urlFor } from "../../hooks/useImageUrlBuilder";
 
 import ArtistSingleEntry from "./ArtistSingleEntry";
 import ExhibitionTwoColumn from "../Exhibition/ExhibitionTwoColumn";
@@ -32,15 +28,10 @@ const ArtistSingle = ({
     setImgWidth(ref.current?.clientWidth);
   }, [windowWidth]);
 
-  const biography = useRef();
   const ref = useRef();
 
   const scrollAnchorFct = async (ref) => {
     setScrollAnchor(ref), setTimeout(() => setScrollAnchor(null), 500);
-  };
-
-  const biographyScroll = () => {
-    biography.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -52,8 +43,8 @@ const ArtistSingle = ({
         <div className="artistSingleHeadline">
           <h2>{artist?.name}</h2>
         </div>
-        <div className="scrollLink" onClick={biographyScroll}>
-          <a>Biography</a>
+        <div className="scrollLink">
+          <Link href={`${artist.slug.current}/bio`}>Biography</Link>
         </div>
 
         {artist.works?.length > 1 && (
@@ -75,7 +66,7 @@ const ArtistSingle = ({
           />
         ))}
       </div>
-      
+
       <div className="exhibitionDesktop">
         <ExhibitionTwoColumn
           locale={locale}

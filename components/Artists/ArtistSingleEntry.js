@@ -14,8 +14,6 @@ const ArtistSingleEntry = ({ entry, locale, scrollAnchor }) => {
     scrollAnchor == entry?._key && scrollFunction();
   }, [scrollAnchor]);
 
-  console.log(entry)
-
   return (
     <>
       <h2 ref={ref} 
