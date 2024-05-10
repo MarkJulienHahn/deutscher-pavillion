@@ -12,8 +12,6 @@ export default async function Homepage({ locale }) {
   const home = await getHome();
   const program = await getProgram();
 
-  console.log(program);
-
   return (
     <>
       <Landing locale={locale} />
