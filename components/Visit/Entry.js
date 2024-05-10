@@ -13,13 +13,13 @@ export default function Entry({ entry, locale }) {
   return (
     <div className="introText centered">
       {url ? (
-        <h2>
+        <h3>
           <a href={url} target="_blank" rel="noreferrer">
             {headline}
           </a>
-        </h2>
+        </h3>
       ) : (
-        <h2>{headline}</h2>
+        <h3>{headline}</h3>
       )}
       <div className="sectionWrapper">
         <PortableText value={text} components={serializers} />

@@ -134,12 +134,12 @@ input:focus {
 
 .singlePageWrapper {
   background: var(--gold);
-  padding: var(--space-L) var(--space-S);
+  padding: var(--space-XL) var(--space-S);
   min-height: 100vh;
 }
 
 .singlePageWrapper h1:first-child {
-  padding-bottom: calc(var(--space-L) + var(--space-M));
+  padding-bottom: calc(var(--space-L));
 }
 
 .introSliderWrapper {
@@ -200,7 +200,11 @@ input:focus {
   padding-right: var(--space-S);
 }
 
-.programWrapper {
+.showMore {
+  cursor: pointer;
+  text-align: center;
+  font-size: var(--fontSize-XS);
+  margin-top: var(--space-M);
 }
 
 .programButton {
@@ -214,9 +218,16 @@ input:focus {
   align-items: center;
 }
 
+.programBig {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .programBig p {
   font-size: var(--fontSize-M);
   line-height: var(--lineHeight-M);
+  max-width: 1300px;
   text-align: center;
 }
 
@@ -332,9 +343,22 @@ input:focus {
   color: var(--red);
 }
 
+.introText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.introText h3 {
+  padding-bottom: var(--space-XS);
+}
+
 .introText p {
-  font-size: var(--fontSize-M);
-  line-height: var(--lineHeight-M);
+  font-size: var(--fontSize-S);
+  line-height: var(--lineHeight-S);
+  max-width: 1300px;
 }
 
 .introTextBottom p {
@@ -404,6 +428,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -466,11 +491,16 @@ input:focus {
   margin-bottom: var(--space-S);
 }
 
+.rfm-marquee {
+  min-width: unset !important;
+}
+
 .teamWrapper p {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);
   padding: 0 !important;
   text-align: center;
+  max-width: 1300px;
 }
 
 .teamWrapper a {
@@ -1060,6 +1090,16 @@ input:focus {
 
 .exhibitionMobile {
   display: none;
+}
+
+.artistInfoWrapper h3 {
+  text-align: center;
+  padding-top: var(--space-L);
+  padding-bottom: var(--space-XS);
+}
+
+.artistInfoWrapper p {
+  text-align: center;
 }
 
 @media screen and (max-width: 1700px) {

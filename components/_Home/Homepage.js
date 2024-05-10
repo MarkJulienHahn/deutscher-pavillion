@@ -12,17 +12,14 @@ export default async function Homepage({ locale }) {
   const home = await getHome();
   const program = await getProgram();
 
-
-  console.log(program)
+  console.log(program);
 
   return (
     <>
       <Landing locale={locale} />
       <div className="introMarquee">
         <Marquee speed={80}>
-          {program.map((entry, i) => (
-            <MarqueeEntry key={i} entry={entry} locale={locale} />
-          ))}
+          <MarqueeEntry entry={program[0]} locale={locale} />
         </Marquee>
       </div>
       <Introslider locale={locale} entry={home} />

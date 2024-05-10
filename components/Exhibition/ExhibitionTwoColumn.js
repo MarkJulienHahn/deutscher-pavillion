@@ -20,11 +20,11 @@ const ExhibitionTwoColumn = ({
           backgroundColor: "var(--red)",
         }}
       >
-        <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}</h3>
+        {/* <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}</h3> */}
         <div className="nameListWrapper">
           <h2>
             <Link href={"/deutscher-pavillon"}>
-              {locale == "de" ? "Der Pavillon" : "The Pavilion"}
+              {locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}
             </Link>
           </h2>
           {exhibitionPavillon?.artists?.map((artist, i) => (
@@ -50,11 +50,11 @@ const ExhibitionTwoColumn = ({
           color: "var(--red)",
         }}
       >
-        <h3>La Certosa</h3>
+        {/* <h3>La Certosa</h3> */}
         <div className="nameListWrapper">
           <h2>
             <Link href={"/la-certosa"}>
-              {locale == "de" ? "Die Insel" : "The Island"}
+             La Certosa
             </Link>
           </h2>
           {exhibitionCertosa?.artists?.map((artist, i) => (

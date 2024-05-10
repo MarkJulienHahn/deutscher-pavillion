@@ -2,10 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 
-import Link from "next/link"
+import Link from "next/link";
 import useWindowDimensions from "../useWindowDimensions";
 
 import ArtistSingleEntry from "./ArtistSingleEntry";
+import ArtistSingleInfoEntry from "./ArtistSingleInfoEntry";
 import ExhibitionTwoColumn from "../Exhibition/ExhibitionTwoColumn";
 import ExhibitionSwitch from "../Exhibition/ExhibitionSwitch";
 
@@ -47,7 +48,7 @@ const ArtistSingle = ({
           <Link href={`${artist.slug.current}/bio`}>Biography</Link>
         </div>
 
-        {artist.works?.length > 1 && (
+        {/* {artist.works?.length > 1 && (
           <div className="artistScrollMenu">
             {artist.works?.map((entry, i) => (
               <div key={i} onClick={() => scrollAnchorFct(entry?._key)}>
@@ -55,10 +56,19 @@ const ArtistSingle = ({
               </div>
             ))}
           </div>
-        )}
+        )} */}
 
         {artist?.works?.map((entry, i) => (
           <ArtistSingleEntry
+            scrollAnchor={scrollAnchor}
+            entry={entry}
+            key={i}
+            locale={locale}
+          />
+        ))}
+
+        {artist?.info?.map((entry, i) => (
+          <ArtistSingleInfoEntry
             scrollAnchor={scrollAnchor}
             entry={entry}
             key={i}
