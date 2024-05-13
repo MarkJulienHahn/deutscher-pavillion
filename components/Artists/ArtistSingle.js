@@ -9,6 +9,7 @@ import ArtistSingleEntry from "./ArtistSingleEntry";
 import ArtistSingleInfoEntry from "./ArtistSingleInfoEntry";
 import ExhibitionTwoColumn from "../Exhibition/ExhibitionTwoColumn";
 import ExhibitionSwitch from "../Exhibition/ExhibitionSwitch";
+import ScrollMenuArtists from "../ScrollMenuArtists";
 
 const blueBG = { background: "var(--blue)", color: "var(--red)" };
 const orangeBG = { background: "var(--red)", color: "var(--blue)" };
@@ -20,6 +21,7 @@ const ArtistSingle = ({
   exhibitionPavillon,
   exhibitionCertosa,
 }) => {
+  const [inView, setInView] = useState(null);
   const [imgWidth, setImgWidth] = useState(null);
   const [scrollAnchor, setScrollAnchor] = useState(null);
   const artist = artists.filter((element) => element.slug.current == slug)[0];
@@ -48,15 +50,13 @@ const ArtistSingle = ({
           <Link href={`${artist.slug.current}/bio`}>Biography</Link>
         </div>
 
-        {/* {artist.works?.length > 1 && (
-          <div className="artistScrollMenu">
-            {artist.works?.map((entry, i) => (
-              <div key={i} onClick={() => scrollAnchorFct(entry?._key)}>
-                {entry?.title}
-              </div>
-            ))}
-          </div>
-        )} */}
+        {artist.works?.length && (
+          <ScrollMenuArtists
+            inView={inView}
+            artist={artist}
+            scrollAnchorFct={scrollAnchorFct}
+          />
+        )}
 
         {artist?.works?.map((entry, i) => (
           <ArtistSingleEntry
@@ -64,6 +64,7 @@ const ArtistSingle = ({
             entry={entry}
             key={i}
             locale={locale}
+            setInView={setInView}
           />
         ))}
 
@@ -73,6 +74,7 @@ const ArtistSingle = ({
             entry={entry}
             key={i}
             locale={locale}
+            setInView={setInView}
           />
         ))}
       </div>

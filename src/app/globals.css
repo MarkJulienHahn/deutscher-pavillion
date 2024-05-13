@@ -402,13 +402,14 @@ input:focus {
 }
 
 .textCurator {
-  padding: var(--space-S) var(--space-XL) var(--space-XL);
+  padding: var(--space-S) var(--space-XL) 0;
   text-indent: 30px;
 }
 
 .imageCurator {
   position: relative;
   width: 30vw;
+  height: 40vw;
   margin-top: var(--space-S);
 }
 
@@ -547,17 +548,35 @@ input:focus {
 }
 
 .artistScrollMenu {
+  position: fixed;
+  top: calc(50% - 150px);
   margin: var(--space-M) 0;
-  text-align: center;
+  width: 240px;
   font-family: "ABCDailyScotch";
+  z-index: 500;
+  padding-left: 35px;
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
 }
 
 .artistScrollMenu div {
-  font-size: var(--fontSize-S);
-  line-height: var(--lineHeight-S);
-  text-decoration: underline;
+  margin-bottom: var(--space-S);
   cursor: pointer;
-  height: 35px;
+}
+
+.artistScrollMenu p {
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+}
+
+.dot {
+  position: absolute;
+  width: 15px !important;
+  height: 15px;
+  border-radius: 20px;
+  background: var(--blue);
+  left: var(--space-XS);
+  margin-top: 3px;
 }
 
 .artistSelector,
@@ -577,7 +596,8 @@ input:focus {
 }
 
 .chroniclePicture {
-  margin-bottom: 50px;
+  margin-bottom: 5px;
+  aspect-ratio: 1.5;
 }
 
 .artistSelector h3 {
@@ -732,9 +752,11 @@ input:focus {
   width: 100vw;
 }
 
-.imageCaption p {
+.imageCaptionChroniclers {
   font-size: var(--fontSize-XS);
   line-height: var(--lineHeight-XS);
+  text-align: center;
+  padding-bottom: var(--space-S);
 }
 
 .imageCaptionCurator {
@@ -765,26 +787,18 @@ input:focus {
   padding-right: var(--space-S);
 }
 
-.chronicleEntryInner {
-  /* width: 50%; */
-}
-
 .chronicleEntryInner h2 {
   padding-bottom: var(--space-S);
 }
 
-.introTextChronicles p {
-  font-size: var(--fontSize-M);
-  line-height: var(--lineHeight-M);
-}
-
 .introTextChronicles {
-  padding-bottom: var(--space-L);
+  padding-bottom: var(--space-M);
 }
 
 .textChronicles {
   font-size: var(--fontSize-S);
   line-height: var(--lineHeight-S);
+  padding-bottom: var(--space-M);
 }
 
 .imageChronicles {
@@ -796,10 +810,10 @@ input:focus {
 .imageArray {
   padding-top: var(--space-M);
 }
-
+/* 
 .chroniclesTextWrapper {
   display: flex;
-}
+} */
 
 @keyframes fadeIn {
   0% {
@@ -1102,6 +1116,15 @@ input:focus {
   text-align: center;
 }
 
+.chroniclesPage {
+  padding: var(--space-L) var(--space-XL) 0;
+  text-indent: 30px;
+}
+
+.chroniclesPage h2 {
+  padding-bottom: var(--space-S);
+}
+
 @media screen and (max-width: 1700px) {
   :root {
     --fontSize-S: 25px;
@@ -1167,7 +1190,8 @@ input:focus {
     padding: 0 50px;
   }
   .imageCurator {
-    width: 66%;
+    width: 40vw;
+    height: 55vw;
   }
   .chroniclesTextWrapper {
     display: block;
@@ -1198,6 +1222,42 @@ input:focus {
   }
   .columnWrapper {
     padding-top: 250px;
+  }
+  .chroniclesPage {
+    padding: var(--space-L) var(--space-M) 0;
+  }
+  .textCurator {
+    padding: var(--space-S) var(--space-M) 0;
+  }
+  .artistSingleWrapper h2 {
+    padding: var(--space-M) var(--space-XS) var(--space-XS);
+  }
+
+  .scrollCurator {
+    background: var(--gold);
+  }
+
+  .artistScrollMenu {
+    padding-top: var(--space-XS);
+    padding-left: calc(50vw - 100px);
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;
+    text-align: center;
+    transition: padding 0.5s ease;
+    /* padding-left: 35px; */
+  }
+
+  .artistScrollMenu div {
+    margin-bottom: var(--space-XS);
+    width: 200px;
+  }
+  .navVisible {
+    padding-top: var(--space-XS);
+  }
+  .navHidden {
+    padding-top: 90px;
   }
 }
 
@@ -1322,6 +1382,7 @@ input:focus {
   }
   .textCurator {
     margin-top: var(--space-S);
+    padding: var(--space-S) var(--space-XS) 0;
   }
   .introTextBottom span {
     width: 100%;
@@ -1331,7 +1392,8 @@ input:focus {
     padding-bottom: var(--space-M);
   }
   .imageCurator {
-    width: 100%;
+    width: 100vw;
+    height: 150vw;
   }
   .exhibitionWrapper {
     display: none;
@@ -1369,6 +1431,7 @@ input:focus {
     transform: translateY(0);
   }
   .chroniclesPage {
+    padding: var(--space-L) var(--space-XS) 0;
     padding-bottom: inherit;
     margin-bottom: 0;
   }
@@ -1404,9 +1467,7 @@ input:focus {
   .switchButtonMobile {
     display: block;
   }
-  /* .artistSingleHeadline h2 {
-    line-height: 20px;
-  } */
+ 
   .artistSingleWrapper {
     padding: var(--space-L) var(--space-S);
   }
@@ -1450,5 +1511,8 @@ input:focus {
   }
   .index {
     transform: translateY(-73px);
+  }
+  .navHidden {
+    padding-top: 60px;
   }
 }

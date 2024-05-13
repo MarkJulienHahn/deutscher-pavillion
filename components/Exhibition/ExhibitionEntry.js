@@ -4,7 +4,6 @@ import { PortableText } from "@portabletext/react";
 import { Link } from "../../src/navigation";
 
 export default function ExhibitionEntry({ entry, certosa, locale }) {
-
   return (
     <div className="exhibitionEntryWrapper">
       <div className="exhibitionArtists">
@@ -18,13 +17,13 @@ export default function ExhibitionEntry({ entry, certosa, locale }) {
         value={locale == "de" ? entry.text.german : entry.text.english}
       />
 
-      <div className="exhibitionImageWrapper">
-        {entry.images.length ? (
+      {entry.images.length ? (
+        <div className="exhibitionImageWrapper">
           <SwiperComponent entry={entry} locale={locale} />
-        ) : (
-          ""
-        )}
-      </div>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

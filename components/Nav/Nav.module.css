@@ -218,3 +218,21 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .menuListWrapper {
+    height: 260px;
+  }
+
+  .menuItem h1,
+  .firstMenuItem h1,
+  .lastMenuItem h1 {
+    font-size: 20pt;
+  }
+
+  .menuItem,
+  .firstMenuItem,
+  .lastMenuItem {
+    height: 25px;
+  }
+}

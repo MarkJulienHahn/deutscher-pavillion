@@ -114,7 +114,7 @@ export default defineType({
 
     {
       name: "biography",
-      title: "Text",
+      title: "Biography",
       type: "object",
       fields: [
         {
@@ -144,6 +144,73 @@ export default defineType({
               marks: {
                 decorators: [{ title: "Emphasis", value: "em" }],
               },
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "info",
+      title: "Info",
+      type: "array",
+      of: [
+        {
+          name: "work",
+          title: "Work",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "slug",
+              title: "Slug",
+              type: "slug",
+              options: {
+                source: "title",
+              },
+            },
+
+            {
+              name: "text",
+              title: "Text",
+              type: "object",
+              fields: [
+                {
+                  name: "de",
+                  title: "German",
+                  type: "array",
+                  of: [
+                    {
+                      type: "block",
+                      styles: [{ title: "Normal", value: "normal" }],
+                      lists: [],
+                      marks: {
+                        decorators: [{ title: "Emphasis", value: "em" }],
+                      },
+                    },
+                  ],
+                },
+
+                {
+                  name: "en",
+                  title: "English",
+                  type: "array",
+                  of: [
+                    {
+                      type: "block",
+                      styles: [{ title: "Normal", value: "normal" }],
+                      lists: [],
+                      marks: {
+                        decorators: [{ title: "Emphasis", value: "em" }],
+                      },
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },
