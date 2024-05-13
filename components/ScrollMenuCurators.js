@@ -86,7 +86,7 @@ const ScrollMenu = ({ inView, content, locale, scrollAnchorFct, page }) => {
       </div>
 
       {content?.info?.map((entry, i) => (
-        <div>
+        <div key={i}>
           {entry?.slug.current == inView && (
             <div
               style={{
