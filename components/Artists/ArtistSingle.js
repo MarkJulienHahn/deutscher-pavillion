@@ -10,6 +10,8 @@ import ArtistSingleInfoEntry from "./ArtistSingleInfoEntry";
 import ExhibitionTwoColumn from "../Exhibition/ExhibitionTwoColumn";
 import ExhibitionSwitch from "../Exhibition/ExhibitionSwitch";
 import ScrollMenuArtists from "../ScrollMenuArtists";
+import CertosaMap from "../../components/svg/CertosaMap.js";
+import PavilionMap from "../../components/svg/PavilionMap.js";
 
 const blueBG = { background: "var(--blue)", color: "var(--red)" };
 const orangeBG = { background: "var(--red)", color: "var(--blue)" };
@@ -48,6 +50,10 @@ const ArtistSingle = ({
         </div>
         <div className="scrollLink">
           <Link href={`${artist.slug.current}/bio`}>Biography</Link>
+        </div>
+
+        <div className="mapWrapperArtists">
+          {artist.certosa ? <CertosaMap /> : <PavilionMap />}
         </div>
 
         {artist.works?.length && (

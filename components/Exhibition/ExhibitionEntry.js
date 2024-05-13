@@ -17,13 +17,13 @@ export default function ExhibitionEntry({ entry, certosa, locale }) {
         value={locale == "de" ? entry.text.german : entry.text.english}
       />
 
-      {entry.images.length ? (
+      {/* {entry.images.length ? (
         <div className="exhibitionImageWrapper">
           <SwiperComponent entry={entry} locale={locale} />
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 }

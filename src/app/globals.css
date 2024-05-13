@@ -67,6 +67,7 @@ body {
   background: var(--gold);
   /* overscroll-behavior: none; */
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -263,6 +264,15 @@ input:focus {
   top: 0;
   z-index: 0;
   pointer-events: none;
+}
+
+.hoverContainer:hover .hoverButton {
+  display: block;
+}
+
+.hoverButton {
+  display: none;
+  font-size: 20pt;
 }
 
 .nameListWrapper {
@@ -1125,6 +1135,14 @@ input:focus {
   padding-bottom: var(--space-S);
 }
 
+.mapWrapper {
+  padding-top: var(--fontSize-M);
+}
+
+.mapWrapperArtists {
+  transform: scale(80%)
+}
+
 @media screen and (max-width: 1700px) {
   :root {
     --fontSize-S: 25px;
@@ -1258,6 +1276,16 @@ input:focus {
   }
   .navHidden {
     padding-top: 90px;
+  }
+  .mapWrapper {
+    padding-top: 0;
+    height: 100vw;
+    /* transform: translateY(-25vh) */
+  }
+  
+  .mapWrapperArtists {
+    padding-top: 0;
+    height: 100vw;
   }
 }
 
@@ -1467,7 +1495,7 @@ input:focus {
   .switchButtonMobile {
     display: block;
   }
- 
+
   .artistSingleWrapper {
     padding: var(--space-L) var(--space-S);
   }

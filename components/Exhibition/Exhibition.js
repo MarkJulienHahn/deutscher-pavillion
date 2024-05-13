@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import React from "react";
 import ExhibitionEntry from "./ExhibitionEntry";
+import CertosaMap from "../../components/svg/CertosaMap.js";
+import PavilionMap from "../../components/svg/PavilionMap.js";
 
 const Exhibition = ({ locale, exhibition, location }) => {
-
   return (
     <div
       className={`singlePageWrapper ${
@@ -18,6 +19,11 @@ const Exhibition = ({ locale, exhibition, location }) => {
             : "German Pavilion"
           : "La Certosa"}
       </h2>
+
+      <div className="mapWrapper">
+       {location == "certosa" ? <CertosaMap /> : <PavilionMap />}
+      </div>
+
       {exhibition.map((entry, i) => (
         <ExhibitionEntry
           entry={entry}
