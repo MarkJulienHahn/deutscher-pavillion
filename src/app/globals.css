@@ -1140,7 +1140,7 @@ input:focus {
 }
 
 .mapWrapperArtists {
-  transform: scale(80%)
+  transform: scale(80%);
 }
 
 @media screen and (max-width: 1700px) {
@@ -1280,12 +1280,15 @@ input:focus {
   .mapWrapper {
     padding-top: 0;
     height: 100vw;
-    /* transform: translateY(-25vh) */
+    display: flex;
+    align-items: center;
   }
-  
+
   .mapWrapperArtists {
     padding-top: 0;
     height: 100vw;
+    display: flex;
+    align-items: center;
   }
 }
 
