@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+
 import Image from "next/image";
 
 import Artist from "./Artist";
@@ -8,6 +9,7 @@ import ArtistsMobile from "./AristsMobile";
 import NavMenu from "../Nav/NavMenu";
 
 import useWindowDimensions from "../useWindowDimensions";
+
 import { urlFor } from "../../hooks/useImageUrlBuilder";
 
 const visible = {
@@ -20,27 +22,28 @@ const invisible = {
   height: "81.6px",
   transform: "translateX(2px)",
 };
-
 const Artists = ({ artists, artistImages, locale }) => {
   const [anchor, setAnchor] = useState(null);
   const [delay, setDelay] = useState(true);
   const [heightLeft, setHeightLeft] = useState(null);
   const [heightRight, setHeightRight] = useState(null);
   const [heightRightMobile, setHeightRightMobile] = useState(null);
-  const [showHeadline, setShowHeadline] = useState(true);
-  const [scrollPositionLeft, setScrollPositionLeft] = useState(0);
-  const [scrollPositionRight, setScrollPositionRight] = useState(0);
-
-  const left = useRef();
-  const right = useRef();
-  const rightMobile = useRef();
-
-  const { windowWidth } = useWindowDimensions();
 
   const anchorFunction = (slug) => {
     setAnchor(slug);
     setTimeout(() => setAnchor(null), 500);
   };
+
+  const [showHeadline, setShowHeadline] = useState(true);
+
+  const [scrollPositionLeft, setScrollPositionLeft] = useState("");
+  const left = useRef();
+
+  const [scrollPositionRight, setScrollPositionRight] = useState("");
+  const right = useRef();
+  const rightMobile = useRef();
+
+  const { windowWidth } = useWindowDimensions();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,12 +53,7 @@ const Artists = ({ artists, artistImages, locale }) => {
 
     left.current.addEventListener("scroll", handleScroll);
     right.current.addEventListener("scroll", handleScroll);
-
-    return () => {
-      left.current.removeEventListener("scroll", handleScroll);
-      right.current.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  });
 
   useEffect(() => {
     (scrollPositionLeft > 240 || scrollPositionRight > 240) &&
@@ -66,7 +64,7 @@ const Artists = ({ artists, artistImages, locale }) => {
   }, [scrollPositionLeft, scrollPositionRight]);
 
   useEffect(() => {
-    setTimeout(() => setDelay(false), 500);
+    setTimeout(setDelay(false), 500);
   }, []);
 
   useEffect(() => {
@@ -85,10 +83,11 @@ const Artists = ({ artists, artistImages, locale }) => {
   }, [left, right, rightMobile, windowWidth]);
 
   useEffect(() => {
-    let isProgrammaticScroll = false;
+    let isProgrammaticScroll = false; // Flag to indicate if the scroll is programmatic
 
     const handleScroll = (e) => {
       if (isProgrammaticScroll) {
+        // Reset the flag and exit if the scroll was programmatic
         isProgrammaticScroll = false;
         return;
       }
@@ -101,22 +100,21 @@ const Artists = ({ artists, artistImages, locale }) => {
         scrollableElement.scrollTop /
         (scrollableElement.scrollHeight - scrollableElement.clientHeight);
 
+      // Set the flag before programmatically setting scrollTop
       isProgrammaticScroll = true;
       otherElement.scrollTop =
         scrollRatio * (otherElement.scrollHeight - otherElement.clientHeight);
     };
 
-    const leftElement = left.current;
-    const rightElement = right.current;
-
-    leftElement?.addEventListener("scroll", handleScroll);
-    rightElement?.addEventListener("scroll", handleScroll);
-
+    left.current?.addEventListener("scroll", handleScroll);
+    right.current?.addEventListener("scroll", handleScroll);
+    handleScroll;
+    // Clean up
     return () => {
-      leftElement?.removeEventListener("scroll", handleScroll);
-      rightElement?.removeEventListener("scroll", handleScroll);
+      left.current?.removeEventListener("scroll", handleScroll);
+      right.current?.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, []); // Dependencies array remains empty for component mount effect
 
   return (
     <main>
@@ -139,8 +137,9 @@ const Artists = ({ artists, artistImages, locale }) => {
             </h1>
           )}
 
-          <div className="artistSelector">
+          <div className="artistSelector">  
             <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavillon"}</h3>
+
             {artists.map((artist, i) =>
               !artist.certosa ? (
                 <ArtistOverviewEntry
@@ -222,7 +221,7 @@ const Artists = ({ artists, artistImages, locale }) => {
                   }}
                 />
               </div>
-            )}
+            )}{" "}
             {locale == "de"
               ? artistImages.imageLeft.captions?.german && (
                   <p
