@@ -76,9 +76,9 @@ export default function Nav({ locale, color }) {
     pathname.includes("ausstellung") ||
     pathname.includes("artists") ||
     pathname.includes("kuenstlerinnen")
-    // pathname.includes("program") ||
-    // pathname.includes("programm")
-      ? setTwoColors(true)
+      ? // pathname.includes("program") ||
+        // pathname.includes("programm")
+        setTwoColors(true)
       : setTwoColors(false);
 
     windowWidth < 1000 && setTwoColors(false);
@@ -132,7 +132,7 @@ export default function Nav({ locale, color }) {
     pathname.includes("robert-lippok") ||
     pathname.includes("jan-st-werner") ||
     pathname.includes("nicole-l-huillier") ||
-    pathname.includes("michael-akstaller")  ||
+    pathname.includes("michael-akstaller") ||
     pathname.includes("la-certosa")
       ? setOrange(true)
       : setOrange(false);
@@ -166,7 +166,9 @@ export default function Nav({ locale, color }) {
                 ? hidden
                 : color == "orange" || orange
                 ? orangeMode
-                : visible
+                : showButton
+                ? visible
+                : hidden
             }
           >
             {locale == "de" ? "Menü" : "Menu"}

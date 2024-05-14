@@ -13,7 +13,7 @@ const SvgCertosaMap = (props) => (
     <defs>
       <style>
         {
-          '.certosaMap_svg__cls-1,.certosaMap_svg__cls-3,.certosaMap_svg__cls-4,.certosaMap_svg__cls-5{stroke:#fff}.certosaMap_svg__cls-1,.certosaMap_svg__cls-3{stroke-linecap:round;stroke-linejoin:round}.certosaMap_svg__cls-1,.certosaMap_svg__cls-3,.certosaMap_svg__cls-5{fill:none}.certosaMap_svg__cls-1,.certosaMap_svg__cls-5{stroke-width:4.4px}.certosaMap_svg__cls-4{fill:#00f}.certosaMap_svg__cls-8,.certosaMap_svg__cls-9{isolation:isolate;font-family:ABCDailyBETA-Regular,"ABC Daily BETA"}.certosaMap_svg__cls-10,.certosaMap_svg__cls-11{stroke-width:0;fill:#ff5c50}.certosaMap_svg__cls-12,.certosaMap_svg__cls-4{stroke-width:3.5px}.certosaMap_svg__cls-12,.certosaMap_svg__cls-8,.certosaMap_svg__cls-9{fill:#fff}.certosaMap_svg__cls-3{stroke-width:8.7px}.certosaMap_svg__cls-12{stroke:#00f}.certosaMap_svg__cls-8{font-size:31.2px}.certosaMap_svg__cls-5{stroke-dasharray:0 0 17.5 8.7}.certosaMap_svg__cls-9{font-size:31.2px}'
+          '.certosaMap_svg__cls-1,.certosaMap_svg__cls-3,.certosaMap_svg__cls-4,.certosaMap_svg__cls-5{stroke:#fff}.certosaMap_svg__cls-1,.certosaMap_svg__cls-3{stroke-linecap:round;stroke-linejoin:round}.certosaMap_svg__cls-1,.certosaMap_svg__cls-3,.certosaMap_svg__cls-5{fill:none}.certosaMap_svg__cls-1,.certosaMap_svg__cls-5{stroke-width:4.4px}.certosaMap_svg__cls-4{fill:#00f}.certosaMap_svg__cls-8,.certosaMap_svg__cls-9{isolation:isolate;font-family:ABCDailyBETA-Regular,"ABC Daily BETA"}.certosaMap_svg__cls-10,.certosaMap_svg__cls-11{stroke-width:0;fill:#ff5c50}.certosaMap_svg__cls-12,.certosaMap_svg__cls-4{stroke-width:3.5px}.certosaMap_svg__cls-12,.certosaMap_svg__cls-8,.certosaMap_svg__cls-9{fill:#fff}.certosaMap_svg__cls-3{stroke-width:8.7px}.certosaMap_svg__cls-12{stroke:#00f}.certosaMap_svg__cls-8{font-size:31.2px}.certosaMap_svg__cls-5{stroke-dasharray:0 0 17.5 8.7}.certosaMap_svg__cls-9{font-size:45px}.certosaMap_svg__cls-13{font-size:31px;fill:white}'
         }
       </style>
     </defs>
@@ -183,7 +183,7 @@ const SvgCertosaMap = (props) => (
             }}
           />
           <text
-            className="certosaMap_svg__cls-9"
+            className="certosaMap_svg__cls-13"
             transform="translate(1192.8 1337.1)"
           >
             <tspan x={0} y={0}>
@@ -194,7 +194,7 @@ const SvgCertosaMap = (props) => (
             className="hoverButton"
             x="1300"
             y="1290"
-            width="335"
+            width="465"
             height="158"
             rx="15"
             fill="var(--red)"
@@ -204,7 +204,7 @@ const SvgCertosaMap = (props) => (
             transform="translate(1192.8 1337.1)"
           >
             <tspan
-              x={150}
+              x={165}
               y={0}
               style={{ fill: "white", fontFamily: "ABCDaily" }}
             >
@@ -218,7 +218,7 @@ const SvgCertosaMap = (props) => (
               Volumes Inverted
             </tspan>
             <tspan
-              x={180}
+              x={200}
               y={80}
               style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
             >
@@ -242,7 +242,7 @@ const SvgCertosaMap = (props) => (
             }}
           />
           <text
-            className="certosaMap_svg__cls-9"
+            className="certosaMap_svg__cls-13"
             transform="translate(1591.5 1073.3)"
           >
             <tspan x={0} y={0}>
@@ -253,7 +253,7 @@ const SvgCertosaMap = (props) => (
             className="hoverButton"
             x="1700"
             y="1025"
-            width="335"
+            width="455"
             height="118"
             rx="15"
             fill="var(--red)"
@@ -270,7 +270,7 @@ const SvgCertosaMap = (props) => (
               Nicole L’Huillier
             </tspan>
             <tspan
-              x={175}
+              x={195}
               y={40}
               style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
             >
@@ -294,7 +294,7 @@ const SvgCertosaMap = (props) => (
             }}
           />
           <text
-            className="certosaMap_svg__cls-9"
+            className="certosaMap_svg__cls-13"
             transform="translate(1978 561.5)"
           >
             <tspan x={0} y={0}>
@@ -305,7 +305,7 @@ const SvgCertosaMap = (props) => (
             className="hoverButton"
             x="2085"
             y="510"
-            width="410"
+            width="570"
             height="122"
             rx="15"
             fill="var(--red)"
@@ -315,7 +315,7 @@ const SvgCertosaMap = (props) => (
             transform="translate(1978 561.5)"
           >
             <tspan
-              x={170}
+              x={185}
               y={0}
               style={{ fill: "white", fontFamily: "ABCDaily" }}
             >
@@ -346,7 +346,7 @@ const SvgCertosaMap = (props) => (
             }}
           />
           <text
-            className="certosaMap_svg__cls-9"
+            className="certosaMap_svg__cls-13"
             transform="translate(1571.5 1560.4)"
           >
             <tspan x={0} y={0}>
@@ -357,7 +357,7 @@ const SvgCertosaMap = (props) => (
             className="hoverButton"
             x="1678"
             y="1510.4"
-            width="335"
+            width="465"
             height="158"
             rx="15"
             fill="var(--red)"
@@ -367,7 +367,7 @@ const SvgCertosaMap = (props) => (
             transform="translate(1571.5 1560.4)"
           >
             <tspan
-              x={150}
+              x={160}
               y={0}
               style={{ fill: "white", fontFamily: "ABCDaily" }}
             >
@@ -381,7 +381,7 @@ const SvgCertosaMap = (props) => (
               Volumes Inverted
             </tspan>{" "}
             <tspan
-              x={150}
+              x={160}
               y={80}
               style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
             >
@@ -405,7 +405,7 @@ const SvgCertosaMap = (props) => (
             }}
           />
           <text
-            className="certosaMap_svg__cls-9"
+            className="certosaMap_svg__cls-13"
             transform="translate(990.7 1300.2)"
           >
             <tspan x={0} y={0}>
@@ -416,7 +416,7 @@ const SvgCertosaMap = (props) => (
             className="hoverButton"
             x="1097"
             y="1250"
-            width="320"
+            width="420"
             height="122"
             rx="15"
             fill="var(--red)"
@@ -433,7 +433,7 @@ const SvgCertosaMap = (props) => (
               Robert Lippok
             </tspan>
             <tspan
-              x={230}
+              x={268}
               y={40}
               style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
             >
@@ -457,7 +457,7 @@ const SvgCertosaMap = (props) => (
             }}
           />
           <text
-            className="certosaMap_svg__cls-9"
+            className="certosaMap_svg__cls-13"
             transform="translate(480 1632.3)"
           >
             <tspan x={0} y={0}>
@@ -468,7 +468,7 @@ const SvgCertosaMap = (props) => (
             className="hoverButton"
             x="587"
             y="1582"
-            width="390"
+            width="520"
             height="122"
             rx="15"
             fill="var(--red)"
@@ -485,7 +485,7 @@ const SvgCertosaMap = (props) => (
               Louis Chude-Sokei
             </tspan>
             <tspan
-              x={212}
+              x={222}
               y={40}
               style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
             >
@@ -509,7 +509,7 @@ const SvgCertosaMap = (props) => (
             }}
           />
           <text
-            className="certosaMap_svg__cls-9"
+            className="certosaMap_svg__cls-13"
             transform="translate(391.6 1736.4)"
           >
             <tspan x={0} y={0}>
@@ -520,7 +520,7 @@ const SvgCertosaMap = (props) => (
             className="hoverButton"
             x="497"
             y="1686"
-            width="390"
+            width="520"
             height="122"
             rx="15"
             fill="var(--red)"
@@ -537,7 +537,7 @@ const SvgCertosaMap = (props) => (
               Louis Chude-Sokei
             </tspan>
             <tspan
-              x={212}
+              x={229}
               y={40}
               style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
             >

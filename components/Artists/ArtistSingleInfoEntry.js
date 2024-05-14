@@ -34,7 +34,7 @@ const ArtistSingleInfoEntry = ({
     <div ref={ref} className="artistInfoWrapper">
       <div
         ref={scrollRef}
-        style={{ position: "absolute", transform: "translateY(-120px)" }}
+        className="scrollAnchor"
       />
       {curator ? (
         <h2

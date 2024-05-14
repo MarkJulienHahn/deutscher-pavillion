@@ -141,9 +141,9 @@ const SvgPavilionMap = (props) => (
         <rect
           className="hoverButton"
           x="1930"
-          y="1335"
-          width="355"
-          height="158"
+          y="1325"
+          width="495"
+          height="168"
           rx="15"
           fill="var(--blue)"
         />
@@ -152,7 +152,7 @@ const SvgPavilionMap = (props) => (
           transform="translate(1840 1380.1)"
         >
           <tspan
-            x={170}
+            x={195}
             y={0}
             style={{ fill: "white", fontFamily: "ABCDaily" }}
           >
@@ -166,7 +166,7 @@ const SvgPavilionMap = (props) => (
             Light to the Nations
           </tspan>
           <tspan
-            x={160}
+            x={170}
             y={80}
             style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
           >
@@ -197,9 +197,9 @@ const SvgPavilionMap = (props) => (
         <rect
           className="hoverButton"
           x="1220"
-          y="255"
-          width="280"
-          height="118"
+          y="245"
+          width="360"
+          height="128"
           rx="15"
           fill="var(--blue)"
         />
@@ -215,7 +215,7 @@ const SvgPavilionMap = (props) => (
             Yael Bartana
           </tspan>
           <tspan
-            x={175}
+            x={188}
             y={40}
             style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
           >
@@ -246,9 +246,9 @@ const SvgPavilionMap = (props) => (
         <rect
           className="hoverButton"
           x="545"
-          y="510"
-          width="540"
-          height="118"
+          y="500"
+          width="760"
+          height="128"
           rx="15"
           fill="var(--blue)"
         />
@@ -257,7 +257,7 @@ const SvgPavilionMap = (props) => (
           transform="translate(435 555)"
         >
           <tspan
-            x={277}
+            x={357}
             y={0}
             style={{ fill: "white", fontFamily: "ABCDaily" }}
           >
@@ -295,9 +295,9 @@ const SvgPavilionMap = (props) => (
         <rect
           className="hoverButton"
           x="615"
-          y="565"
-          width="540"
-          height="118"
+          y="555"
+          width="765"
+          height="128"
           rx="15"
           fill="var(--blue)"
         />
@@ -306,7 +306,7 @@ const SvgPavilionMap = (props) => (
           transform="translate(505 610)"
         >
           <tspan
-            x={277}
+            x={360}
             y={0}
             style={{ fill: "white", fontFamily: "ABCDaily" }}
           >
@@ -344,9 +344,9 @@ const SvgPavilionMap = (props) => (
         <rect
           className="hoverButton"
           x="525"
-          y="1330"
-          width="455"
-          height="118"
+          y="1320"
+          width="638"
+          height="128"
           rx="15"
           fill="var(--blue)"
         />
@@ -355,7 +355,7 @@ const SvgPavilionMap = (props) => (
           transform="translate(415 1375)"
         >
           <tspan
-            x={250}
+            x={285}
             y={0}
             style={{ fill: "white", fontFamily: "ABCDaily" }}
           >
@@ -392,19 +392,19 @@ const SvgPavilionMap = (props) => (
         />
         <rect
           className="hoverButton"
-          x="550"
-          y="763"
-          width="500"
-          height="162"
+          x="350"
+          y="753"
+          width="700"
+          height="172"
           rx="15"
           fill="var(--blue)"
         />
         <text
           className="certosaMap_svg__cls-9 hoverButton"
-          transform="translate(595 810)"
+          transform="translate(395 810)"
         >
           <tspan
-            x={110}
+            x={155}
             y={0}
             style={{ fill: "white", fontFamily: "ABCDaily" }}
           >
@@ -418,7 +418,7 @@ const SvgPavilionMap = (props) => (
             Monument eines unbekannten
           </tspan>
           <tspan
-            x={50}
+            x={70}
             y={80}
             style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
           >
@@ -434,7 +434,7 @@ const SvgPavilionMap = (props) => (
           d="M1127.2 1720.2c0 6.7 4.4 9.6 10.1 9.6s9.4-4.4 9.4-10.1-3.6-9.6-9.3-9.6-10.2 4.4-10.2 10.1m-.8-11v5c1.8-5.1 6.3-7.9 12-7.9s14.3 5 14.3 13.2-6.6 14.1-15.4 14.1-17.4-7.3-17.4-21.6 7.5-22.7 18-22.7 14.2 5.4 14.2 11.2-1.3 4.6-3.8 4.6c-1.7.1-3.2-1.1-3.3-2.8v-.3c0-1.3.7-2.1.7-3.5 0-2.6-2.3-5.6-7.9-5.6s-11.4 3.6-11.4 16.4m46.1 2c0-19.4-15.7-35.1-35.1-35.1s-35.1 15.7-35.1 35.1 15.7 35.1 35.1 35.1 35.1-15.7 35.1-35.1"
           className="pavilionMap_svg__cls-2"
           data-name="Layer 6.2"
-        />{" "}
+        />
         <circle
           cx={1137}
           cy={1710}
@@ -448,19 +448,19 @@ const SvgPavilionMap = (props) => (
         />
         <rect
           className="hoverButton"
-          x="550"
-          y="1673"
-          width="500"
-          height="162"
+          x="350"
+          y="1663"
+          width="710"
+          height="172"
           rx="15"
           fill="var(--blue)"
         />
         <text
           className="certosaMap_svg__cls-9 hoverButton"
-          transform="translate(595 1720)"
+          transform="translate(395 1720)"
         >
           <tspan
-            x={110}
+            x={160}
             y={0}
             style={{ fill: "white", fontFamily: "ABCDaily" }}
           >
@@ -474,7 +474,7 @@ const SvgPavilionMap = (props) => (
             Monument eines unbekannten
           </tspan>
           <tspan
-            x={58}
+            x={88}
             y={80}
             style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
           >
@@ -506,9 +506,9 @@ const SvgPavilionMap = (props) => (
         <rect
           className="hoverButton"
           x="1530"
-          y="763"
-          width="500"
-          height="162"
+          y="753"
+          width="705"
+          height="172"
           rx="15"
           fill="var(--blue)"
         />
@@ -517,7 +517,7 @@ const SvgPavilionMap = (props) => (
           transform="translate(1575 810)"
         >
           <tspan
-            x={105}
+            x={152}
             y={0}
             style={{ fill: "white", fontFamily: "ABCDaily" }}
           >
@@ -531,7 +531,7 @@ const SvgPavilionMap = (props) => (
             Monument eines unbekannten
           </tspan>
           <tspan
-            x={90}
+            x={133}
             y={80}
             style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
           >

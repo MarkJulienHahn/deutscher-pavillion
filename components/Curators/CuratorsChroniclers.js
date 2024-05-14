@@ -31,7 +31,7 @@ const CuratorsChroniclers = ({
     <div className="chroniclesPage" ref={ref}>
       <div
         ref={scrollRef}
-        style={{ position: "absolute", transform: "translateY(-120px)" }}
+        className="scrollAnchor"
       />
       <h2>{locale == "de" ? "Chronisten" : "Chroniclers"}</h2>
 

@@ -37,7 +37,7 @@ const CuratorsBiography = ({ content, locale, scrollAnchor, setInView }) => {
     <div className="biographyWrapper" ref={ref}>
       <div
         ref={scrollRef}
-        style={{ position: "absolute", transform: "translateY(-120px)" }}
+        className="scrollAnchor"
       />
       <h2>{locale == "de" ? "Biografie" : "Biography"}</h2>
 

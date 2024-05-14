@@ -272,7 +272,7 @@ input:focus {
 
 .hoverButton {
   display: none;
-  font-size: 20pt;
+  font-size: 30pt;
 }
 
 .nameListWrapper {
@@ -555,6 +555,11 @@ input:focus {
 
 .landingWrapper h3 {
   text-align: center;
+}
+
+.scrollAnchor {
+  padding-top: 200px;
+  margin-top: -200px;
 }
 
 .artistScrollMenu {
@@ -1249,6 +1254,8 @@ input:focus {
   }
   .artistSingleWrapper h2 {
     padding: var(--space-M) var(--space-XS) var(--space-XS);
+    padding-top: 170px;
+    margin-top: -170px;
   }
 
   .scrollCurator {
@@ -1264,7 +1271,7 @@ input:focus {
     width: 100vw;
     text-align: center;
     transition: padding 0.5s ease;
-    /* padding-left: 35px; */
+    filter: drop-shadow(0 -12px 10px black);
   }
 
   .artistScrollMenu div {
@@ -1289,6 +1296,16 @@ input:focus {
     height: 100vw;
     display: flex;
     align-items: center;
+  }
+  .artistInfoWrapper h3 {
+    text-align: center;
+    padding-top: calc(var(--space-L) + 100px);
+    padding-bottom: var(--space-XS);
+    margin-top: -100px;
+  }
+  .scrollLink {
+    padding-top: 200px;
+    margin-top: -200px
   }
 }
 
