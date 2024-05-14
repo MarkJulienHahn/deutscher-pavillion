@@ -84,10 +84,17 @@ export const myStructure = (S, context) =>
         context,
       }),
 
-      S.listItem()
-        .title("Special")
-        .id("special")
-        .child(S.document().schemaType("special").documentId("special")),
+      orderableDocumentListDeskItem({
+        type: "ersanInterviews",
+        title: "Ersan Interviews",
+        S,
+        context,
+      }),
+
+      // S.listItem()
+      //   .title("Special")
+      //   .id("special")
+      //   .child(S.document().schemaType("special").documentId("special")),
 
       S.divider(),
 

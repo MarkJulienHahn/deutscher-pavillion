@@ -120,3 +120,7 @@ export async function getSpecial() {
     groq`*[_type == "special"]{..., "images": images[]{..., "asset": asset->{...}}}`
   );
 }
+
+export async function getInterview() {
+  return client.fetch(groq`*[_type == "ersanInterviews"]{...}`);
+}

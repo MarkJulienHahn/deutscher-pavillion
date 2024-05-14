@@ -1,5 +1,6 @@
 export const menuEN = [
   { name: "Exhibition", slug: "exhibition" },
+  { name: "Artists", slug: "artists" },
   { name: "Curatorial Concept", slug: "curatorial-concept" },
   { name: "Program", slug: "program" },
   { name: "Visit", slug: "visit" },
@@ -10,6 +11,7 @@ export const menuEN = [
 
 export const menuDE = [
   { name: "Ausstellung", slug: "ausstellung" },
+  { name: "Kuenstler:innen", slug: "kuenstlerinnen" },
   { name: "Kuratorisches Konzept", slug: "kuratorisches-konzept" },
   { name: "Programm", slug: "programm" },
   { name: "Besuch", slug: "besuch" },

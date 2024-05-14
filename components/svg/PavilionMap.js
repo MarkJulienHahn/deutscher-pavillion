@@ -163,7 +163,7 @@ const SvgPavilionMap = (props) => (
             y={40}
             style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
           >
-            Light to the Nations
+            Light To The Nations
           </tspan>
           <tspan
             x={170}

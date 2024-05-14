@@ -223,7 +223,7 @@ export default function Thanks({ thanks, locale }) {
                   : thanks.special.english.headline}
               </p>
               <div
-                className="dankText"
+                className="dankListe dankText"
               >
                 <PortableText
                   value={

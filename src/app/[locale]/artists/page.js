@@ -6,8 +6,7 @@ export default async function page({ params: { locale } }) {
   const artists = await getArtists();
   const artistImages = await getArtistImages();
   return (
-    <></>
-    // <Artists artists={artists} artistImages={artistImages[0]} locale={locale} />
+    <Artists artists={artists} artistImages={artistImages[0]} locale={locale} />
   );
 }
 

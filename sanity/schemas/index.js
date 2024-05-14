@@ -25,6 +25,8 @@ import special from "./special";
 import privacy from "./privacy";
 import imprint from "./imprint";
 
+import ersanInterviews from "./ersanInterviews";
+
 import durationType from "./duration/durationType";
 import timeValueType from "./duration/timeValueType";
 
@@ -52,6 +54,7 @@ const schemaTypes = [
   dank,
 
   special,
+  ersanInterviews,
 
   privacy,
   imprint,

@@ -7,6 +7,15 @@ import ProgramEntry from "../Program/ProgramEntry";
 
 export default function Team({ program, locale }) {
   const [showArchive, setShowArchive] = useState(false);
+
+  const currentDate = new Date();
+
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const day = String(currentDate.getDate()).padStart(2, "0");
+
+  const formattedDate = `${year}-${month}-${day}`;
+
   return (
     <main>
       <div className="singlePageWrapper">
@@ -16,7 +25,7 @@ export default function Team({ program, locale }) {
 
             {program.map(
               (entry, i) =>
-                i < 5 && (
+                entry.date >= formattedDate && (
                   <ProgramEntry
                     key={i}
                     entry={entry}
@@ -27,25 +36,28 @@ export default function Team({ program, locale }) {
             )}
 
             {!showArchive ? (
-              <h3 className="showMore" onClick={() => setShowArchive(!showArchive)}>
-                Mehr Anzeigen
+              <h3
+                className="showMore"
+                onClick={() => setShowArchive(!showArchive)}
+              >
+                {locale == "de" ? "[ Vergangene Veranstaltungen ]" : "[ Past Events ]"}
               </h3>
             ) : (
               ""
             )}
             {showArchive && (
               <div className="programArchiveAccordeon">
-                {program.map(
-                  (entry, i) =>
-                    i >= 5 && (
-                      <ProgramEntry
-                        key={i}
-                        entry={entry}
-                        locale={locale}
-                        certosa={true}
-                      />
-                    )
-                )}
+            {program.map(
+              (entry, i) =>
+                entry.date < formattedDate && (
+                  <ProgramEntry
+                    key={i}
+                    entry={entry}
+                    locale={locale}
+                    certosa={true}
+                  />
+                )
+            )}
               </div>
             )}
           </>

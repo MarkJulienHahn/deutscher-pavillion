@@ -15,6 +15,13 @@ export default defineType({
         "If this is active, the post will be shown on the startpage.",
     },
     {
+      title: "Date",
+      name: "date",
+      type: "date",
+      description:
+        "Dieses Datum dient nur der Sortierung und wird nicht im Frontend angezeigt. Bei mehrtägigen Veranstaltungen bitte das letzte Datum angeben.",
+    },
+    {
       name: "textBig",
       title: "Text Big",
       type: "object",

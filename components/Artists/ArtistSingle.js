@@ -49,11 +49,9 @@ const ArtistSingle = ({
           <h2>{artist?.name}</h2>
         </div>
         <div className="scrollLink">
-          <Link href={`${artist.slug.current}/bio`}>Biography</Link>
-        </div>
-
-        <div className="mapWrapperArtists">
-          {artist.certosa ? <CertosaMap /> : <PavilionMap />}
+          <Link href={`${artist.slug.current}/bio`}>
+            {locale == "de" ? "Biografie" : "Biography"}
+          </Link>
         </div>
 
         {artist.works?.length && (
@@ -83,6 +81,9 @@ const ArtistSingle = ({
             setInView={setInView}
           />
         ))}
+        <div className="mapWrapperArtists">
+          {artist.certosa ? <CertosaMap /> : <PavilionMap />}
+        </div>
       </div>
 
       <div className="exhibitionDesktop">

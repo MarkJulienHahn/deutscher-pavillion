@@ -33,13 +33,7 @@ const CuratorsIntro = ({
         {locale == "de" ? "Kuratorisches Konzept" : "Curatorial Concept"}
       </h1>
       <h1>Çağla Ilk</h1>
-      <div
-        className="scrollLink"
-        onClick={() => scrollAnchorFct("biography")}
-        ref={ref}
-      >
-        <a style={{ paddingTop: "var(--space-XS)" }}>Biography</a>
-      </div>
+
       <div className="curatorTitle">
         <PortableText
           value={locale == "de" ? content.title.de : content.title.en}

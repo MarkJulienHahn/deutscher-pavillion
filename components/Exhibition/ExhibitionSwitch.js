@@ -89,11 +89,10 @@ export default function ExhibitionSwitch({
           className="columnWrapper bgRed active"
           onClick={!focusLeft ? () => setFocusLeft(true) : () => {}}
         >
-          <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}</h3>
           <div className="nameListWrapper">
             <h2>
               <Link href={"/deutscher-pavillon"}>
-                {locale == "de" ? "Der Pavillon" : "The Pavilion"}
+                {locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}
               </Link>
             </h2>
             {exhibitionPavillon?.artists?.map((artist, i) => (
@@ -110,7 +109,6 @@ export default function ExhibitionSwitch({
           className="columnWrapper bgBlue active"
           onClick={!focusLeft ? () => setFocusLeft(true) : () => {}}
         >
-          <h3>{locale == "de" ? "Deutscher Pavillon" : "German Pavilion"}</h3>
           <div className="nameListWrapper">
             <h2>
               <Link href={"/deutscher-pavillon"}>

@@ -4,6 +4,8 @@ import { PortableText } from "@portabletext/react";
 import SwiperComponent from "../SwiperComponent";
 import { useInView } from "react-intersection-observer";
 
+import { serializers } from "../../hooks/portableTextSerializer";
+
 const ArtistSingleInfoEntry = ({
   entry,
   locale,
@@ -32,15 +34,9 @@ const ArtistSingleInfoEntry = ({
 
   return (
     <div ref={ref} className="artistInfoWrapper">
-      <div
-        ref={scrollRef}
-        className="scrollAnchor"
-      />
+      <div ref={scrollRef} className="scrollAnchor" />
       {curator ? (
-        <h2
-          style={{ marginTop: "var(--space-L)" }}
-          id={entry.slug?.current}
-        >
+        <h2 style={{ marginTop: "var(--space-L)" }} id={entry.slug?.current}>
           {entry.title}
         </h2>
       ) : (
@@ -56,7 +52,10 @@ const ArtistSingleInfoEntry = ({
       ) : (
         ""
       )}
-      <PortableText value={locale == "de" ? entry.text?.de : entry.text?.en} />
+      <PortableText
+        value={locale == "de" ? entry.text?.de : entry.text?.en}
+        components={serializers}
+      />
     </div>
   );
 };
