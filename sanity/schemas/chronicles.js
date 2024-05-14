@@ -14,6 +14,18 @@ export default defineType({
       validation: (Rule) => Rule.required().min(3).max(80),
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      validation: (Rule) =>
+        Rule.required().warning(
+          "Please make sure there is a valid Slug by pressing GENERATE"
+        ),
+      options: {
+        source: "name",
+      },
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",

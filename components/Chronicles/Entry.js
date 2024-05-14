@@ -11,7 +11,6 @@ function isEven(number) {
 }
 
 export default function Entry({ locale, entry, i }) {
-
   return (
     <div
       className={`chronicleEntryWrapper ${
@@ -19,6 +18,7 @@ export default function Entry({ locale, entry, i }) {
       } ${i > 0 ? "offsetTop" : ""}`}
     >
       <div className="chronicleEntryInner">
+        <div id={entry?.slug?.current} style={{transform: "translateY(-60px)"}}></div>
         <h2>{entry.name}</h2>
         <div className="chroniclePicture">
           <Image

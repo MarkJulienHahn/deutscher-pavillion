@@ -371,7 +371,7 @@ const SvgPavilionMap = (props) => (
         </text>
       </g>
     </Link>
-    <Link href="/ersan-mondtag">
+    <Link href="/ersan-mondtag/#monument-eines-unbekannten-menschen">
       <g className="hoverContainer">
         <path
           id="pavilionMap_svg__Layer_6.1"
@@ -427,7 +427,7 @@ const SvgPavilionMap = (props) => (
         </text>
       </g>
     </Link>
-    <Link href="/ersan-mondtag">
+    <Link href="/ersan-mondtag/#monument-eines-unbekannten-menschen">
       <g className="hoverContainer">
         <path
           id="pavilionMap_svg__Layer_6.2"
@@ -484,7 +484,7 @@ const SvgPavilionMap = (props) => (
       </g>
     </Link>
 
-    <Link href="/ersan-mondtag">
+    <Link href="/ersan-mondtag/#monument-eines-unbekannten-menschen">
       <g className="hoverContainer">
         <path
           id="pavilionMap_svg__Layer_6.3"

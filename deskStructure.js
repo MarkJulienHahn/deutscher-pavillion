@@ -68,21 +68,21 @@ export const myStructure = (S, context) =>
           S.document().schemaType("curatorialConcept").documentId("curatorialConcept")
         ),
 
-      // S.listItem()
-      //   .title("Chroniclers Intro")
-      //   .id("chroniclesIntro")
-      //   .child(
-      //     S.document()
-      //       .schemaType("chroniclesIntro")
-      //       .documentId("chroniclesIntro")
-      //   ),
+      S.listItem()
+        .title("Chroniclers Intro")
+        .id("chroniclesIntro")
+        .child(
+          S.document()
+            .schemaType("chroniclesIntro")
+            .documentId("chroniclesIntro")
+        ),
 
-      // orderableDocumentListDeskItem({
-      //   type: "chronicles",
-      //   title: "Chroniclers",
-      //   S,
-      //   context,
-      // }),
+      orderableDocumentListDeskItem({
+        type: "chronicles",
+        title: "Chroniclers",
+        S,
+        context,
+      }),
 
       S.listItem()
         .title("Special")

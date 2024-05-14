@@ -169,8 +169,19 @@ const SvgCertosaMap = (props) => (
         style={{ cursor: "pointer" }}
       />
 
-      <Link href="/jan-st-werner">
+      <Link href="/jan-st-werner/#volumes-inverted">
         <g className="hoverContainer">
+          <circle
+            cx={1220}
+            cy={1329}
+            r={42}
+            style={{
+              opacity: 0,
+              strokeMiterlimit: 10,
+              strokeWidth: 7,
+              pointerEvents: "auto",
+            }}
+          />
           <text
             className="certosaMap_svg__cls-9"
             transform="translate(1192.8 1337.1)"
@@ -184,7 +195,7 @@ const SvgCertosaMap = (props) => (
             x="1300"
             y="1290"
             width="335"
-            height="118"
+            height="158"
             rx="15"
             fill="var(--red)"
           />
@@ -206,12 +217,30 @@ const SvgCertosaMap = (props) => (
             >
               Volumes Inverted
             </tspan>
+            <tspan
+              x={180}
+              y={80}
+              style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
+            >
+              Ruin/Ruine
+            </tspan>
           </text>
         </g>
       </Link>
 
-      <Link href="/nicole-l-huillier">
+      <Link href="/nicole-l-huillier/#encuentros">
         <g className="hoverContainer">
+          <circle
+            cx={1615}
+            cy={1065}
+            r={42}
+            style={{
+              opacity: 0,
+              strokeMiterlimit: 10,
+              strokeWidth: 7,
+              pointerEvents: "auto",
+            }}
+          />
           <text
             className="certosaMap_svg__cls-9"
             transform="translate(1591.5 1073.3)"
@@ -251,8 +280,19 @@ const SvgCertosaMap = (props) => (
         </g>
       </Link>
 
-      <Link href="/michael-akstaller">
+      <Link href="/michael-akstaller/#scattered-by-the-trees">
         <g className="hoverContainer">
+          <circle
+            cx={2007}
+            cy={552}
+            r={42}
+            style={{
+              opacity: 0,
+              strokeMiterlimit: 10,
+              strokeWidth: 7,
+              pointerEvents: "auto",
+            }}
+          />
           <text
             className="certosaMap_svg__cls-9"
             transform="translate(1978 561.5)"
@@ -292,8 +332,19 @@ const SvgCertosaMap = (props) => (
         </g>
       </Link>
 
-      <Link href="/jan-st-werner">
+      <Link href="/jan-st-werner/#volumes-inverted">
         <g className="hoverContainer">
+          <circle
+            cx={1595}
+            cy={1550}
+            r={42}
+            style={{
+              opacity: 0,
+              strokeMiterlimit: 10,
+              strokeWidth: 7,
+              pointerEvents: "auto",
+            }}
+          />
           <text
             className="certosaMap_svg__cls-9"
             transform="translate(1571.5 1560.4)"
@@ -307,7 +358,7 @@ const SvgCertosaMap = (props) => (
             x="1678"
             y="1510.4"
             width="335"
-            height="122"
+            height="158"
             rx="15"
             fill="var(--red)"
           />
@@ -328,13 +379,31 @@ const SvgCertosaMap = (props) => (
               style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
             >
               Volumes Inverted
+            </tspan>{" "}
+            <tspan
+              x={150}
+              y={80}
+              style={{ fill: "white", fontFamily: "ABCDailyScotch" }}
+            >
+              Lagoon/Lagune
             </tspan>
           </text>
         </g>
       </Link>
 
-      <Link href="/robert-lippok">
+      <Link href="/robert-lippok/#feld">
         <g className="hoverContainer">
+          <circle
+            cx={1015}
+            cy={1290}
+            r={42}
+            style={{
+              opacity: 0,
+              strokeMiterlimit: 10,
+              strokeWidth: 7,
+              pointerEvents: "auto",
+            }}
+          />
           <text
             className="certosaMap_svg__cls-9"
             transform="translate(990.7 1300.2)"
@@ -376,6 +445,17 @@ const SvgCertosaMap = (props) => (
 
       <Link href="/curatorial-concept#louis-chude-sokei">
         <g className="hoverContainer">
+          <circle
+            cx={500}
+            cy={1622}
+            r={42}
+            style={{
+              opacity: 0,
+              strokeMiterlimit: 10,
+              strokeWidth: 7,
+              pointerEvents: "auto",
+            }}
+          />
           <text
             className="certosaMap_svg__cls-9"
             transform="translate(480 1632.3)"
@@ -417,6 +497,17 @@ const SvgCertosaMap = (props) => (
 
       <Link href="/curatorial-concept#louis-chude-sokei">
         <g className="hoverContainer">
+          <circle
+            cx={413}
+            cy={1726}
+            r={42}
+            style={{
+              opacity: 0,
+              strokeMiterlimit: 10,
+              strokeWidth: 7,
+              pointerEvents: "auto",
+            }}
+          />
           <text
             className="certosaMap_svg__cls-9"
             transform="translate(391.6 1736.4)"
