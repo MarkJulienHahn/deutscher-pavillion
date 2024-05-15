@@ -3,15 +3,11 @@ import Livestream from "./Livestream";
 import MarqueeEntry from "./MarqueeEntry";
 
 import Introslider from "./Introslider";
-import { getLivestream, getHome, getProgram } from "../../sanity/sanity-utils";
+
 
 import Marquee from "react-fast-marquee";
 
-export default async function Homepage({ locale }) {
-  const livestream = await getLivestream();
-  const home = await getHome();
-  const program = await getProgram();
-
+export default async function Homepage({ locale, livestream, home, program }) {
   return (
     <>
       <Landing locale={locale} />
@@ -25,5 +21,3 @@ export default async function Homepage({ locale }) {
     </>
   );
 }
-
-export const revalidate = 10;
