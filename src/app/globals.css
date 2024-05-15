@@ -146,10 +146,24 @@ input:focus {
 .introSliderWrapper {
   position: relative;
   width: 100vw;
-  /* height: calc(100vh - 50px); */
+  height: calc(100vh - 50px);
   overflow: hidden;
   cursor: pointer;
+  /* opacity: 0;
+  animation: fadeIn 0.1s ease;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; */
 }
+
+/* .introBottom {
+  position: absolute;
+  bottom: var(--space-XS);
+  width: 100%;
+  opacity: 0;
+  animation: fadeIn 0.1s ease;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+} */
 
 .introSlideWrapper {
   width: 100%;
@@ -548,7 +562,7 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
   top: 0;
   left: 0;
   background: var(--gold);
@@ -736,6 +750,7 @@ input:focus {
   animation-fill-mode: forwards;
   display: flex;
   align-items: center;
+  height: 100vh;
 }
 
 .animationInner {
@@ -1198,6 +1213,10 @@ input:focus {
   display: none !important;
 }
 
+#farewell {
+  margin-top: 100px
+}
+
 @media screen and (max-width: 1700px) {
   :root {
     --fontSize-S: 25px;
@@ -1626,5 +1645,11 @@ input:focus {
     margin: var(--space-S) 0 0px;
     padding: var(--space-S) 40px 10px;
     border: 2px solid var(--blue);
+  }
+  .curatorTop {
+    padding-top: 150px;
+  }
+  #farewell {
+    margin-top: -100px
   }
 }

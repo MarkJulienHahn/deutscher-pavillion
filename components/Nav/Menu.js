@@ -12,7 +12,7 @@ export const menuEN = [
 export const menuDE = [
   { name: "Ausstellung", slug: "ausstellung" },
   { name: "Künstler:innen", slug: "kuenstlerinnen" },
-  { name: "Curatorial", slug: "curatorial" },
+  { name: "Das Kuratorische", slug: "curatorial" },
   { name: "Programm", slug: "programm" },
   { name: "Besuch", slug: "besuch" },
   { name: "Presse", slug: "presse" },

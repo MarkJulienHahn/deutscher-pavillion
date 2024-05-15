@@ -28,9 +28,9 @@ const CuratorsIntro = ({
   }, [inView]);
 
   return (
-    <div ref={ref} style={{ paddingTop: "150px"}}>
+    <div ref={ref} className="curatorTop">
       <h1 ref={scrollRef} style={{ paddingTop: "100px", marginTop: "-100px" }}>
-        Curatorial
+        {locale == "de" ? "Das Kuratorische" : "Curatorial"}
       </h1>
       <h1>Çağla Ilk</h1>
 

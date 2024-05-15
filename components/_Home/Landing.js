@@ -62,7 +62,7 @@ export default function Landing({ locale }) {
         <div className="animationInner">{View}</div>
       </div>
 
-      <div ref={ref}>
+      <div ref={ref} className="introBottom">
         {locale == "de" ? (
           <h3>
             20. April – 24. November
