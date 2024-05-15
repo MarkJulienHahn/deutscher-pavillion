@@ -12,7 +12,7 @@ const CuratorsIntro = ({
   const scrollRef = useRef();
 
   const { ref, inView } = useInView({
-    threshold: 0.15,
+    threshold: 0.1,
   });
 
   const scrollFunction = () => {
@@ -28,8 +28,10 @@ const CuratorsIntro = ({
   }, [inView]);
 
   return (
-    <div ref={ref}>
-      <h1 ref={scrollRef}>Curatorial</h1>
+    <div ref={ref} style={{ paddingTop: "200px", marginTop: "-200px" }}>
+      <h1 ref={scrollRef} style={{ paddingTop: "200px", marginTop: "-200px" }}>
+        Curatorial
+      </h1>
       <h1>Çağla Ilk</h1>
 
       <div className="curatorTitle">

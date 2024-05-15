@@ -146,7 +146,7 @@ input:focus {
 .introSliderWrapper {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 50px);
+  /* height: calc(100vh - 50px); */
   overflow: hidden;
   cursor: pointer;
 }
@@ -548,7 +548,7 @@ input:focus {
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   top: 0;
   left: 0;
   background: var(--gold);
@@ -1615,5 +1615,8 @@ input:focus {
   }
   .nameListWrapper {
     padding-top: 0;
+  }
+  .sliderControl {
+    display: none;
   }
 }
