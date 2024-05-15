@@ -272,7 +272,12 @@ export default defineType({
                 source: "title",
               },
             },
-
+            {
+              name: "threshold",
+              title: "Threshold",
+              type: "number",
+              description: "Important field for Scroll-To Navigation. Don't edit."
+            },
             {
               name: "text",
               title: "Text",
@@ -288,7 +293,10 @@ export default defineType({
                       styles: [{ title: "Normal", value: "normal" }],
                       lists: [],
                       marks: {
-                        decorators: [{ title: "Emphasis", value: "em" }],
+                        decorators: [
+                          { title: "Emphasis", value: "em" },
+                          { title: "Bubble", value: "strong" },
+                        ],
                       },
                     },
                   ],
@@ -304,7 +312,10 @@ export default defineType({
                       styles: [{ title: "Normal", value: "normal" }],
                       lists: [],
                       marks: {
-                        decorators: [{ title: "Emphasis", value: "em" }],
+                        decorators: [
+                          { title: "Emphasis", value: "em" },
+                          { title: "Bubble", value: "strong" },
+                        ],
                       },
                     },
                   ],

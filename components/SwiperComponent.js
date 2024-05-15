@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import SwiperInner from "./SwiperInner";
 import SwiperInnerArtists from "./SwiperInnerArtists";
+
+import { Navigation, Pagination } from 'swiper/modules';
 
 export default function SwiperComponent({ entry, locale, artists }) {
   const [index, setIndex] = useState(1);
@@ -30,7 +33,15 @@ export default function SwiperComponent({ entry, locale, artists }) {
           <span className="sliderControlInner" onClick={triggerPrev}></span>
           <span className="sliderControlInner" onClick={triggerNext}></span>
         </div>
-        <Swiper spaceBetween={0} loop={true}>
+        <Swiper
+          spaceBetween={0}
+          loop={true}
+          navigation={true}
+          pagination={{ clickable: true }}
+          modules={[Navigation, Pagination]}
+          onSlideChange={(swiper) => setIndex(swiper.realIndex + 1)}
+          onSwiper={(swiper) => setIndex(swiper.realIndex + 1)}
+        >
           {entry.images.map((image, i) => (
             <SwiperSlide key={i}>
               {artists ? (

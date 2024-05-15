@@ -12,7 +12,6 @@ const ArtistSingleInfoEntry = ({
   scrollAnchor,
   setInView,
   curator,
-  threshold,
 }) => {
   const scrollRef = useRef();
 
@@ -21,7 +20,7 @@ const ArtistSingleInfoEntry = ({
   };
 
   const { ref, inView } = useInView({
-    threshold: threshold ? threshold : 0,
+    threshold: entry?.threshold ? entry?.threshold : 0.4,
   });
 
   useEffect(() => {
@@ -31,6 +30,8 @@ const ArtistSingleInfoEntry = ({
   useEffect(() => {
     inView && setInView(entry.slug?.current);
   }, [inView]);
+
+  console.log(entry.title, entry?.threshold);
 
   return (
     <div ref={ref} className="artistInfoWrapper">

@@ -15,7 +15,7 @@ const CuratorsChroniclers = ({
 }) => {
   const scrollRef = useRef();
   const { ref, inView } = useInView({
-    threshold: 0.25,
+    threshold: 0.20,
   });
   const scrollFunction = () => {
     scrollRef.current.scrollIntoView({ behavior: "smooth" });

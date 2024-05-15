@@ -5,10 +5,10 @@ import { PortableText } from "@portabletext/react";
 export default function Artist({ artist, locale, anchor }) {
   const ref = useRef();
 
-  // useEffect(() => {
-  //   anchor == artist.slug.current &&
-  //     ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  // }, [anchor]);
+  useEffect(() => {
+    anchor == artist.slug.current &&
+      ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [anchor]);
 
   return (
     <div className={"artistWrapper"}>

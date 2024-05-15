@@ -22,7 +22,7 @@ export default async function page({ params: { locale } }) {
         >
           {locale == "de" ? interview[1]?.title : interview[1]?.titleEn}
         </h3>
-        <PortableText value={interview[1]?.text.textGerman} />
+        <PortableText value={locale == "de" ? interview[1]?.text.textGerman : interview[1]?.text.textEnglish} />
       </div>
     </main>
   );

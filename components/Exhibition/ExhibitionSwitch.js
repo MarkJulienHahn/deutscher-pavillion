@@ -8,6 +8,8 @@ import Switch from "../Switch";
 
 import { Link } from "../../src/navigation";
 
+import { usePathname } from "next/navigation";
+
 import useWindowDimensions from "../useWindowDimensions";
 import { use100vh } from "react-div-100vh";
 
@@ -27,6 +29,8 @@ export default function ExhibitionSwitch({
   const [focusLeft, setFocusLeft] = useState(true);
 
   const height = use100vh();
+
+  const pathname = usePathname();
 
   const anchorFunction = (slug) => {
     setAnchor(slug);
@@ -68,7 +72,16 @@ export default function ExhibitionSwitch({
 
   return (
     <>
-      <Nav locale={locale} color={focusLeft ? "normal" : "orange"} />
+      <Nav
+        locale={locale}
+        color={
+          !focusLeft &&
+          !pathname.includes("yael") &&
+          !pathname.includes("ersan-mondtag")
+            ? "orange"
+            : "normal"
+        }
+      />
 
       <Switch
         locale={locale}
@@ -111,9 +124,7 @@ export default function ExhibitionSwitch({
         >
           <div className="nameListWrapper">
             <h2>
-              <Link href={"/deutscher-pavillon"}>
-                {locale == "de" ? "Der Pavillon" : "The Pavilion"}
-              </Link>
+              <Link href={"/la-certosa"}>La Certosa</Link>
             </h2>
             {exhibitionCertosa?.artists?.map((artist, i) => (
               <div className="nameWrapper" key={i}>

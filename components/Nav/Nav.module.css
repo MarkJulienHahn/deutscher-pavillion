@@ -106,7 +106,7 @@
 
 .menuBottom {
   padding: var(--space-M);
-  width: calc(100vw - 2 * var(--space-S));
+  width: 100vw;
   display: flex;
   justify-content: space-between;
 }
@@ -179,6 +179,7 @@
   .menuBottom {
     flex-direction: column;
     text-align: center;
+
   }
   .menuBottom p {
     font-size: var(--fontSize-M);

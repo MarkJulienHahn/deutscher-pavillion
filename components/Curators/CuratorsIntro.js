@@ -12,7 +12,7 @@ const CuratorsIntro = ({
   const scrollRef = useRef();
 
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.15,
   });
 
   const scrollFunction = () => {
@@ -29,9 +29,7 @@ const CuratorsIntro = ({
 
   return (
     <div ref={ref}>
-      <h1 ref={scrollRef}>
-        {locale == "de" ? "Kuratorisches Konzept" : "Curatorial Concept"}
-      </h1>
+      <h1 ref={scrollRef}>Curatorial</h1>
       <h1>Çağla Ilk</h1>
 
       <div className="curatorTitle">

@@ -17,12 +17,14 @@ export default async function page() {
             textAlign: "center",
             width: "100%",
             marginBottom: "var(--space-L)",
-            fontFamily: "ABCDailyScotch"
+            fontFamily: "ABCDailyScotch",
           }}
         >
           {interview[0]?.title}
         </h3>
-        <PortableText value={interview[0]?.text.textGerman} />
+        <span style={{textAlign: "center"}}>
+          <PortableText value={interview[0]?.text.textGerman} />
+        </span>
       </div>
     </main>
   );

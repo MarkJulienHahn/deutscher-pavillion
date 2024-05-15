@@ -80,7 +80,10 @@ const ScrollMenu = ({ inView, content, locale, scrollAnchorFct, page }) => {
             className="dot"
           />
         )}
-        <div onClick={() => scrollAnchorFct("biography")}>
+        <div
+          onClick={() => scrollAnchorFct("biography")}
+          style={{ fontFamily: "ABCDaily" }}
+        >
           {locale == "de" ? "Biografie" : "Biography"}
         </div>
       </div>
@@ -95,7 +98,12 @@ const ScrollMenu = ({ inView, content, locale, scrollAnchorFct, page }) => {
               className="dot"
             />
           )}
-          <div onClick={() => scrollAnchorFct(entry?._key)}>{entry?.title}</div>
+          <div
+            onClick={() => scrollAnchorFct(entry?._key)}
+            style={{ fontFamily: "ABCDaily" }}
+          >
+            {entry?.title}
+          </div>
         </div>
       ))}
 
@@ -108,7 +116,10 @@ const ScrollMenu = ({ inView, content, locale, scrollAnchorFct, page }) => {
             className="dot"
           />
         )}
-        <div onClick={() => scrollAnchorFct("chroniclers")}>
+        <div
+          onClick={() => scrollAnchorFct("chroniclers")}
+          style={{ fontFamily: "ABCDaily" }}
+        >
           {locale == "de" ? "Chronisten" : "Chroniclers"}
         </div>
       </div>

@@ -12,7 +12,7 @@ const ArtistSingleEntry = ({ entry, locale, scrollAnchor, setInView }) => {
   };
 
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.2,
   });
 
   useEffect(() => {

@@ -45,7 +45,10 @@ export default defineType({
           of: [
             {
               type: "block",
-              styles: [{ title: "Normal", value: "normal" }],
+              styles: [
+                { title: "Normal", value: "normal" },
+                { title: "Center", value: "center" }
+              ],
               lists: [],
               marks: {
                 decorators: [{ title: "Emphasis", value: "em" }],
@@ -53,6 +56,7 @@ export default defineType({
             },
           ],
         },
+        
         {
           name: "textEnglish",
           title: "English",
@@ -60,7 +64,10 @@ export default defineType({
           of: [
             {
               type: "block",
-              styles: [{ title: "Normal", value: "normal" }],
+              styles: [
+                { title: "Normal", value: "normal" },
+                { title: "Center", value: "center" }
+              ],
               lists: [],
               marks: {
                 decorators: [{ title: "Emphasis", value: "em" }],

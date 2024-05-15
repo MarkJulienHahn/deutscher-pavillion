@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade } from "swiper/modules";
+import { EffectFade, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
@@ -27,7 +27,15 @@ const Introslider = ({ locale, entry }) => {
         <span className="sliderControlInner" onClick={triggerPrev}></span>
         <span className="sliderControlInner" onClick={triggerNext}></span>
       </div>
-      <Swiper modules={[EffectFade]} effect="fade" loop="true">
+      <Swiper
+        modules={[EffectFade, Autoplay]}
+        effect="fade"
+        loop="true"
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
+      >
         {entry.map((image, i) => (
           <SwiperSlide key={i}>
             <IntrosliderInner
