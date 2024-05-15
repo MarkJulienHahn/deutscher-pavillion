@@ -25,3 +25,5 @@ export default async function Homepage({ locale }) {
     </>
   );
 }
+
+export const revalidate = 10;
