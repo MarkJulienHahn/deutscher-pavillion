@@ -1619,4 +1619,7 @@ input:focus {
   .sliderControl {
     display: none;
   }
+  .introSliderWrapper .sliderControl {
+    display: flex;
+  }
 }

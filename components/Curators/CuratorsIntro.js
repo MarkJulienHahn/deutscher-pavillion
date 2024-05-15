@@ -28,8 +28,8 @@ const CuratorsIntro = ({
   }, [inView]);
 
   return (
-    <div ref={ref} style={{ paddingTop: "200px", marginTop: "-200px" }}>
-      <h1 ref={scrollRef} style={{ paddingTop: "200px", marginTop: "-200px" }}>
+    <div ref={ref} style={{ paddingTop: "150px"}}>
+      <h1 ref={scrollRef} style={{ paddingTop: "100px", marginTop: "-100px" }}>
         Curatorial
       </h1>
       <h1>Çağla Ilk</h1>
