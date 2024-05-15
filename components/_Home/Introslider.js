@@ -7,11 +7,15 @@ import { EffectFade, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
+import { use100vh } from "react-div-100vh";
+
 import IntrosliderInner from "./IntrosliderInner";
 
 const Introslider = ({ locale, entry }) => {
   const [index, setIndex] = useState(1);
   const [trigger, setTrigger] = useState(null);
+
+  const height = use100vh();
 
   const triggerNext = () => {
     setTrigger("next"), setTimeout(() => setTrigger(null));
@@ -22,7 +26,7 @@ const Introslider = ({ locale, entry }) => {
   };
 
   return (
-    <div className="introSliderWrapper">
+    <div className="introSliderWrapper" style={{ height: height }}>
       <div className="sliderControl" style={{ top: "80px" }}>
         <span className="sliderControlInner" onClick={triggerPrev}></span>
         <span className="sliderControlInner" onClick={triggerNext}></span>
