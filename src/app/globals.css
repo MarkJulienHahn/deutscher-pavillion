@@ -1622,4 +1622,9 @@ input:focus {
   .introSliderWrapper .sliderControl {
     display: flex;
   }
+  .artistInfoWrapper p a strong {
+    margin: var(--space-S) 0 0px;
+    padding: var(--space-S) 40px 10px;
+    border: 2px solid var(--blue);
+  }
 }
