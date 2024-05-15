@@ -443,7 +443,7 @@ const SvgCertosaMap = (props) => (
         </g>
       </Link>
 
-      <Link href="/curatorial-concept#louis-chude-sokei">
+      <Link href="/curatorial#louis-chude-sokei">
         <g className="hoverContainer">
           <circle
             cx={500}
@@ -495,7 +495,7 @@ const SvgCertosaMap = (props) => (
         </g>
       </Link>
 
-      <Link href="/curatorial-concept#louis-chude-sokei">
+      <Link href="/curatorial#louis-chude-sokei">
         <g className="hoverContainer">
           <circle
             cx={413}
