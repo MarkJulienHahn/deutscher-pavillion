@@ -483,6 +483,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .downloadLeft {
