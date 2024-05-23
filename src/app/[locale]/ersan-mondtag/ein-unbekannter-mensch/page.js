@@ -24,19 +24,12 @@ export default async function page({ params: { locale } }) {
         >
           {locale == "de" ? interview[1]?.title : interview[1]?.titleEn}
         </h3>
-        <PortableText
-          value={
-            locale == "de"
-              ? interview[1]?.text.textGerman
-              : interview[1]?.text.textEnglish
-          }
-        />
         <div
           style={{
             position: "relative",
             width: "100%",
             height: "70vw",
-            marginTop: "100px",
+            marginBottom: "100px",
           }}
         >
           <Image
@@ -45,6 +38,13 @@ export default async function page({ params: { locale } }) {
             style={{ objectFit: "contain" }}
           />
         </div>
+        <PortableText
+          value={
+            locale == "de"
+              ? interview[1]?.text.textGerman
+              : interview[1]?.text.textEnglish
+          }
+        />
       </div>
     </main>
   );
