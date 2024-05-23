@@ -47,7 +47,7 @@ export default defineType({
               type: "block",
               styles: [
                 { title: "Normal", value: "normal" },
-                { title: "Center", value: "center" }
+                { title: "Center", value: "center" },
               ],
               lists: [],
               marks: {
@@ -56,7 +56,7 @@ export default defineType({
             },
           ],
         },
-        
+
         {
           name: "textEnglish",
           title: "English",
@@ -66,7 +66,7 @@ export default defineType({
               type: "block",
               styles: [
                 { title: "Normal", value: "normal" },
-                { title: "Center", value: "center" }
+                { title: "Center", value: "center" },
               ],
               lists: [],
               marks: {
@@ -77,7 +77,24 @@ export default defineType({
         },
       ],
     },
-    
+    {
+      name: "image",
+      title: "Image",
+      type: "image",
+      fields: [
+        {
+          title: "Alternative Text",
+          name: "alt",
+          type: "string",
+        },
+        {
+          title: "SEO friendly file-name",
+          name: "filename",
+          type: "slug",
+          description: "Example: yael-bartana-deutscher-pavillon-2024",
+        },
+      ],
+    },
 
     orderRankField({ type: "artists" }),
   ],

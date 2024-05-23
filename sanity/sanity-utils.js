@@ -122,5 +122,5 @@ export async function getSpecial() {
 }
 
 export async function getInterview() {
-  return client.fetch(groq`*[_type == "ersanInterviews"]{...}`);
+  return client.fetch(groq`*[_type == "ersanInterviews"]{...,"image": image{..., "asset": asset->{...}}}`);
 }
